@@ -31,7 +31,7 @@ function updateNav() {
       // Move item to the hidden list
       $vlinks.children('*:not(.masthead__menu-item--lg)').last().prependTo($hlinks);
 
-      availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
+      availableSpace = calculateAvailableSpace();
     }
 
     // Show the dropdown btn
