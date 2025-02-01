@@ -32,11 +32,11 @@ function updateNav() {
       $vlinks.children('*:not(.masthead__menu-item--lg)').last().prependTo($hlinks);
 
       availableSpace = calculateAvailableSpace();
-    }
-
-    // Show the dropdown btn
-    if ($btn.hasClass('hidden')) {
-      $btn.removeClass('hidden');
+      
+      // Show the dropdown btn
+      if ($btn.hasClass('hidden')) {
+        $btn.removeClass('hidden');
+      }
     }
 
     // The visible list is not overflowing
