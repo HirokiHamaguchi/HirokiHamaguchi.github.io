@@ -25,6 +25,9 @@ redirect_from:
 * 2023 to now \| Research Assistant\\
   * Supervisor: [Nobuyuki Yoshioka](https://sites.google.com/view/nyso/about)
 
+* 2024 to 2025 \| Teaching Assistant\\
+  * Teacher: [Naoki Marumo](https://sites.google.com/view/nmarumo)
+
 * 2022 to 2023 \| Asprova (part time job)\\
   * [8th Asprova Programming Contest](https://atcoder.jp/contests/asprocon8)
 
