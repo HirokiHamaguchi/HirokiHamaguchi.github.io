@@ -1,0 +1,73 @@
+[
+  {
+    "pub_date": "2025-01-28",
+    "title": "Faster computation of nonstabilizerness",
+    "authors": [
+      "Hiroki Hamaguchi",
+      "Kou Hamada",
+      "Naoki Marumo",
+      "Nobuyuki Yoshioka"
+    ],
+    "venue": "Physical Review Applied",
+    "category": "manuscript",
+    "excerpt": "Faster computation of stabilizer fidelity and stabilizer extent.",
+    "url_slug": "Faster-Computation-of-Nonstabilizerness",
+    "paper_url": "https://journals-aps-org.utokyo.idm.oclc.org/prapplied/abstract/10.1103/PhysRevApplied.23.014069"
+  },
+  {
+    "pub_date": "2024-12-29",
+    "title": "Initial Placement for Fruchterman--Reingold Force Model with Coordinate Newton Direction",
+    "authors": [
+      "Hiroki Hamaguchi",
+      "Naoki Marumo",
+      "Akiko Takeda"
+    ],
+    "venue": "arXiv",
+    "category": "preprint",
+    "excerpt": "Using Coordinate Newton and L-BFGS, compute the graph layout.",
+    "url_slug": "Initial-Placement-for-Fruchterman-Reingold-Force-Model-with-Coordinate-Newton-Direction",
+    "paper_url": "https://arxiv.org/abs/2412.20317",
+    "slides_url": "https://github.com/HirokiHamaguchi/Initial_Placement_for_Fruchterman-Reingold_Force_Model_with_Coordinate_Newton_Direction/blob/main/doc/presentation/presentation.pdf?raw=true"
+  },
+  {
+    "pub_date": "2024-09-05",
+    "title": "Handbook for Quantifying Robustness of Magic",
+    "authors": [
+      "Hiroki Hamaguchi",
+      "Kou Hamada",
+      "Nobuyuki Yoshioka"
+    ],
+    "venue": "Quantum",
+    "category": "manuscript",
+    "excerpt": "Computation of Robustness of Magic using Column Generation.",
+    "url_slug": "Handbook-for-Quantifying-Robustness-of-Magic",
+    "paper_url": "https://quantum-journal.org/papers/q-2024-09-05-1461/",
+    "content": "Press at [here](https://www.t.u-tokyo.ac.jp/press/pr2024-09-06-001)."
+  },
+  {
+    "pub_date": "2024-08-07",
+    "title": "Sample Complexity of Low-rank Tensor Recovery from Uniformly Random Entries",
+    "authors": [
+      "Hiroki Hamaguchi",
+      "Shin-ichi Tanigawa"
+    ],
+    "venue": "arXiv",
+    "category": "preprint",
+    "excerpt": "Using the graph rigidity, prove the sample complexity.",
+    "url_slug": "Sample-Complexity-of-Low-rank-Tensor-Recovery-from-Uniformly-Random-Entries",
+    "paper_url": "https://arxiv.org/abs/2408.03504"
+  },
+  {
+    "pub_date": "2023-10-19",
+    "title": "魔法状態評価の大規模化に向けた効率的アルゴリズム",
+    "authors": [
+      "浜口広樹",
+      "浜田航宇"
+    ],
+    "venue": "情報処理学会研究報告",
+    "category": "preprint",
+    "excerpt": "Handbook for Quantifying Robustness of Magic の日本語版",
+    "url_slug": "Handbook-for-Efficiently-Quantifying-Robustness-of-Magic",
+    "paper_url": "https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=228560&item_no=1"
+  }
+]

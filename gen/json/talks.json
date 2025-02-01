@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Fast computation of magic monotones",
+        "authors": [
+            "Hiroki Hamaguchi",
+            "Kou Hamada (equal contribution)"
+        ],
+        "type": "poster",
+        "url_slug": "Fast-computation-of-magic-monotones",
+        "venue": "24th Asian Quantum Information Science Conference",
+        "date": "2024-08-29",
+        "location": "Hokkaido University, Japan",
+        "talk_url": "http://aqis-conf.org/2024/program",
+        "poster_url": "http://hirokihamaguchi.github.io/files/aqis2024_poster_monotone.pdf"
+    },
+    {
+        "title": "点配置同定問題における解の一意性条件",
+        "authors": [
+            "浜口広樹",
+            "谷川眞一"
+        ],
+        "type": "talk",
+        "url_slug": "The-Uniqueness-Condition-of-the-Point-Configuration-Problem",
+        "venue": "日本応用数理学会第20回研究部会連合発表会",
+        "date": "2024-03-05",
+        "location": "長岡技術科学大学",
+        "talk_url": "https://conference.wdc-jp.com/jsiam/union/2024/program/program_flash.html#QuS8muWgtO+8iEFMM+ism+e+qeWupO+8iQ==",
+        "slide_url": "https://github.com/HirokiHamaguchi/GraduationThesis/blob/main/doc/presentation/final/final.pdf?raw=true"
+    },
+    {
+        "title": "魔法状態評価の大規模化に向けた効率的アルゴリズム",
+        "authors": [
+            "浜口広樹",
+            "浜田航宇"
+        ],
+        "type": "talk",
+        "url_slug": "Efficient-algorithm-for-scaling-up-magic-state-evaluation",
+        "venue": "第10回量子ソフトウェア研究発表会",
+        "date": "2023-02-01",
+        "location": "立命館大学",
+        "talk_url": "https://www.ipsj.or.jp/kenkyukai/event/qs10.html"
+    }
+]

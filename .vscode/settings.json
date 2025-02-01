@@ -1,0 +1,52 @@
+{
+    "files.associations": {
+        "*.html": "liquid"
+    },
+    "material-icon-theme.files.associations": {
+        "*.html": "html"
+    },
+    "material-icon-theme.folders.associations": {
+        "_posts": "element",
+        "_programs": "element",
+        "_publications": "element",
+        "_talks": "element",
+        "_teaching": "element",
+        "files": "store",
+        "talkmap": "husky"
+    },
+    "latexlint.exceptions": [
+        "Quantifying-Robustness",
+        "Decoding-Tool-For-Substitution-Cipher"
+    ],
+    "cSpell.words": [
+        "Akiko",
+        "AQIS",
+        "Asprova",
+        "atcoder",
+        "BFGS",
+        "endfor",
+        "Fruchterman",
+        "Hamada",
+        "Hamaguchi",
+        "hari",
+        "HHIJKT",
+        "Hiroki",
+        "hlinks",
+        "ichi",
+        "ICPC",
+        "IPSJ",
+        "JSIAM",
+        "Marumo",
+        "Naoki",
+        "Nobuyuki",
+        "Nonstabilizerness",
+        "pixiv",
+        "Qiita",
+        "Reingold",
+        "Takeda",
+        "talkmap",
+        "Tanigawa",
+        "vlinks",
+        "Yoshioka"
+    ]
+}
