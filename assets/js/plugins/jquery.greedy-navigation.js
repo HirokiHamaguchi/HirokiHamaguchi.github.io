@@ -32,7 +32,7 @@ function updateNav() {
       $vlinks.children('*:not(.masthead__menu-item--lg)').last().prependTo($hlinks);
 
       availableSpace = calculateAvailableSpace();
-      
+
       // Show the dropdown btn
       if ($btn.hasClass('hidden')) {
         $btn.removeClass('hidden');
@@ -52,6 +52,7 @@ function updateNav() {
     // Hide the dropdown btn if hidden list is empty
     if (breaks.length < 1) {
       $btn.addClass('hidden');
+      $btn.removeClass('close');
       $hlinks.addClass('hidden');
     }
   }
@@ -59,7 +60,6 @@ function updateNav() {
   // Keep counter updated
   $btn.attr("count", breaks.length);
 }
-
 
 
 // Window listeners
