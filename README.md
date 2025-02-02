@@ -18,9 +18,10 @@ jekyll serve -l -H localhost
 
 ```bash
 git remove -v # Check the upstream exists
+git fetch upstream # Fetch the upstream
 git log upstream/master --oneline # Check the upstream log
 git checkout master # If you are already in the master branch, skip this
-git rebase --onto upstream/master xxxxxx upstream/master # xxxxxx is the commit hash of the last commit before the unmerged commit
+git rebase --onto master xxxxxx upstream/master # xxxxxx is the commit hash of the last commit before the unmerged commit
 # Fix the conflict if any
 git checkout master # Turn back to the master branch
 git merge @{-1} # Merge the rebased branch
