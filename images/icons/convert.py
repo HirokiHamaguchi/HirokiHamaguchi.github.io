@@ -5,7 +5,6 @@ from PIL import Image, ImageDraw
 svg_file = os.path.join(os.path.dirname(__file__), "graduation-cap-solid.svg")
 
 icon_sizes = {
-    "favicon.ico": (64, 64),
     "apple-touch-icon-57x57.png": (57, 57),
     "apple-touch-icon-60x60.png": (60, 60),
     "apple-touch-icon-72x72.png": (72, 72),
@@ -15,9 +14,10 @@ icon_sizes = {
     "apple-touch-icon-144x144.png": (144, 144),
     "apple-touch-icon-152x152.png": (152, 152),
     "apple-touch-icon-180x180.png": (180, 180),
-    "favicon-16x16.png": (16, 16),
-    "favicon-32x32.png": (32, 32),
-    "favicon-96x96.png": (96, 96),
+    "favicon-16x16.ico": (16, 16),
+    "favicon-32x32.ico": (32, 32),
+    "favicon-96x96.ico": (96, 96),
+    "favicon.ico": (64, 64),
 }
 
 base_size = 512
