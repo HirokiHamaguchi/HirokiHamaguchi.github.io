@@ -1,6 +1,6 @@
 ---
 title: "魔法状態評価の大規模化に向けた効率的アルゴリズム"
-authors: '浜口広樹, 浜田航宇'
+authors: '浜口広樹, 浜田航宇, 吉岡信行'
 collection: talks
 type: "talk"
 permalink: /talks/2023-02-01-Efficient-algorithm-for-scaling-up-magic-state-evaluation

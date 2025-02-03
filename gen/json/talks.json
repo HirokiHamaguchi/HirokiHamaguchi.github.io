@@ -3,7 +3,8 @@
         "title": "Fast computation of magic monotones",
         "authors": [
             "Hiroki Hamaguchi",
-            "Kou Hamada (equal contribution)"
+            "Kou Hamada",
+            "Yoshioka Nobuyuki"
         ],
         "type": "poster",
         "url_slug": "Fast-computation-of-magic-monotones",
@@ -31,7 +32,8 @@
         "title": "魔法状態評価の大規模化に向けた効率的アルゴリズム",
         "authors": [
             "浜口広樹",
-            "浜田航宇"
+            "浜田航宇",
+            "吉岡信行"
         ],
         "type": "talk",
         "url_slug": "Efficient-algorithm-for-scaling-up-magic-state-evaluation",

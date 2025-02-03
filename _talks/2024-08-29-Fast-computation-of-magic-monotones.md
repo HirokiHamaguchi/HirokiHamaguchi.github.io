@@ -1,6 +1,6 @@
 ---
 title: "Fast computation of magic monotones"
-authors: 'Hiroki Hamaguchi, Kou Hamada (equal contribution)'
+authors: 'Hiroki Hamaguchi, Kou Hamada, Yoshioka Nobuyuki'
 collection: talks
 type: "poster"
 permalink: /talks/2024-08-29-Fast-computation-of-magic-monotones
