@@ -63,6 +63,9 @@ redirect_from:
   * [Result](https://icpc.iisf.or.jp/2024-yokohama/domestic/icpc-2024-result/)
 * ICPC 2024 Asia Yokohama Regional \| 27th place (HHIJKT)
   * [Standings](https://icpcsec.firebaseapp.com/standings/)
+
+<!-- 
+
 * トヨタ自動車 実課題プログラミングコンテスト 2023 Spring \| サマリー特別賞
   * [サマリー](https://qiita.com/hari64/items/2ec50a8ccc5fbf405cee)
 
@@ -71,7 +74,9 @@ redirect_from:
 * Japan Mathematics Olympiad 2019 \| 本選
   * [Result](https://www.imojp.org/archive/mo2019/jmo2019/yosen_result.html)
 * Japan Mathematics Olympiad 2018 \| 本選
-  * [Result](https://www.imojp.org/archive/mo2018/jmo2018/yosen_result.html)
+  * [Result](https://www.imojp.org/archive/mo2018/jmo2018/yosen_result.html) 
+
+-->
 
 ### Other Sites
 
