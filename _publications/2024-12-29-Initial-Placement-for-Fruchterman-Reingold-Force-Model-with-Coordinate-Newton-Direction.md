@@ -1,5 +1,5 @@
 ---
-title: "Initial Placement for Fruchterman--Reingold Force Model with Coordinate Newton Direction"
+title: "Initial Placement for Fruchterman--Reingold Force Model With Coordinate Newton Direction"
 authors: 'Hiroki Hamaguchi, Naoki Marumo, Akiko Takeda'
 collection: publications
 category: preprint

@@ -11,6 +11,7 @@ This repository uses the template of [Academic Pages](https://github.com/academi
 ```bash
 sudo apt install ruby-dev ruby-bundler nodejs
 bundle install
+python gen/gen.py
 jekyll serve -l -H localhost
 ```
 
