@@ -3,7 +3,7 @@
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
+# `jekyll serve -l -H localhost`. If you change this file, please restart the
 # server process.
 
 # Basic Site Settings
@@ -23,13 +23,13 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Hiroki Hamaguchi"
-  pronouns         : # example: "she/her"  
+  pronouns         : # example: "she/her"
   bio              : "M2 Student"
   location         :
   employer         : "U-Tokyo"
   employerURL      : "https://www.u-tokyo.ac.jp/en/"
   uri              : # URL
-  email            : "hamaguchi-hiroki0510@g.ecc.u-tokyo.ac.jp"
+  email            : "hirokihamaguchi0331@gmail.com"
 
   # Academic websites
   arxiv            : # URL
@@ -46,8 +46,8 @@ author:
   codepen          : # Username
   dribbble         : # Username
   github           : "HirokiHamaguchi"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+  kaggle           : # Username
+  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")
 
   # Social media
   bluesky          : # Replace this with you Bluesky username
@@ -301,7 +301,7 @@ defaults:
       author_profile: true
       share: true
       comments: false
-  
+
 
 
 
