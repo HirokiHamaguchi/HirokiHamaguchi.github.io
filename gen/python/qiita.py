@@ -39,7 +39,7 @@ def qiita(dirname: str, html_escape: Callable[[str], str]):
 
         md = '---\ntitle: "' + title + '"'
 
-        md += """\npermalink: /year-archive/""" + date
+        md += """\npermalink: /blog-posts/""" + date
 
         md += "\ndate: " + str(date)
 
