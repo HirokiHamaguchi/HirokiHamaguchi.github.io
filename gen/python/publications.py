@@ -1,11 +1,12 @@
 import json
 import os
+from typing import Callable
 
 import numpy as np
 import pandas as pd
 
 
-def publications(dirname: str, html_escape: callable):
+def publications(dirname: str, html_escape: Callable[[str], str]):
     with open(
         os.path.join(dirname, "json/publications.json"),
         "r",
@@ -40,10 +41,10 @@ def publications(dirname: str, html_escape: callable):
         md += "\nvenue: '" + html_escape(item.venue) + "'"
 
         if len(str(item.paper_url)) > 5:
-            md += "\npaperurl: '" + item.paper_url + "'"
+            md += "\n" + "paperurl: '" + item.paper_url + "'"
 
         if item.slides_url is not np.nan:
-            md += "\nslidesurl: '" + item.slides_url + "'"
+            md += "\n" + "slidesurl: '" + item.slides_url + "'"
 
         md += "\n---"
 
@@ -69,6 +70,7 @@ def publications(dirname: str, html_escape: callable):
         with open(
             os.path.join(dirname, "../_publications", md_filename),
             "w",
+            encoding="utf-8",
         ) as f:
             f.write(md)
 

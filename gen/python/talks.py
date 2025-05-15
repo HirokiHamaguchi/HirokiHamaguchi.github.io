@@ -1,18 +1,18 @@
 import json
 import os
+from typing import Callable
 
 import numpy as np
 import pandas as pd
 
 
-def talks(dirname: str, html_escape: callable):
+def talks(dirname: str, html_escape: Callable[[str], str]):
     with open(os.path.join(dirname, "json/talks.json"), "r", encoding="utf-8") as file:
         data = json.load(file)
 
     talks = pd.DataFrame(data)
 
     for row, item in talks.iterrows():
-
         md_filename = str(item.date) + "-" + item.url_slug + ".md"
         html_filename = str(item.date) + "-" + item.url_slug
 
@@ -56,7 +56,9 @@ def talks(dirname: str, html_escape: callable):
 
         md_filename = os.path.basename(md_filename)
         print(md_filename)
-        with open(os.path.join(dirname, "../_talks/" + md_filename), "w") as f:
+        with open(
+            os.path.join(dirname, "../_talks/" + md_filename), "w", encoding="utf-8"
+        ) as f:
             f.write(md)
 
 

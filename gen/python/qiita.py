@@ -1,9 +1,10 @@
-import os
 import http.client
 import json
+import os
+from typing import Callable
 
 
-def qiita(dirname: str, html_escape: callable):
+def qiita(dirname: str, html_escape: Callable[[str], str]):
     USER_ID = "hari64"
 
     # Assume that the number of items is less than 100
@@ -50,7 +51,9 @@ def qiita(dirname: str, html_escape: callable):
 
         md_filename = str(date) + "-" + date + ".md"
 
-        with open(os.path.join(dirname, "../_posts/" + md_filename), "w") as f:
+        with open(
+            os.path.join(dirname, "../_posts/" + md_filename), "w", encoding="utf-8"
+        ) as f:
             f.write(md)
 
     conn.close()

@@ -1,7 +1,10 @@
-from python.publications import publications
-from python.talks import talks
-from python.qiita import qiita
 import os
+
+from python.publications import publications
+from python.qiita import qiita
+from python.talkmap import talkmap
+from python.talks import talks
+from python.view import print_view
 
 html_escape_table = {"&": "&amp;", '"': "&quot;", "'": "&apos;"}
 
@@ -17,7 +20,9 @@ def main():
     dirname = os.path.dirname(__file__)
     publications(dirname, html_escape)
     talks(dirname, html_escape)
+    talkmap(os.path.join(dirname, "../"))
     qiita(dirname, html_escape)
+    print_view()
 
 
 if __name__ == "__main__":
