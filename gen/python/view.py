@@ -12,7 +12,7 @@ def print_view():
     allStocks = 0
 
     with open(os.path.dirname(__file__) + "/qiitaToken") as f:
-        KEY = f.readline()
+        KEY = f.readline().strip()
 
     headers = {
         "content-type": "application/json",

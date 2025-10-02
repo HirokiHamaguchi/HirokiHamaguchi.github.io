@@ -41,5 +41,33 @@
         "date": "2023-02-01",
         "location": "立命館大学",
         "talk_url": "https://www.ipsj.or.jp/kenkyukai/event/qs10.html"
+    },
+    {
+        "title": "最適化手法を用いたグラフ描画とその初期配置",
+        "authors": [
+            "浜口広樹",
+            "丸茂直貴",
+            "武田朗子"
+        ],
+        "type": "talk",
+        "url_slug": "Graph-drawing-by-initial-placement",
+        "venue": "最適化の理論とアルゴリズム：未来を担う若手研究者の集い 2025",
+        "date": "2025-05-31",
+        "location": "筑波大学",
+        "talk_url": "https://orsj.org/raota/#tsukuba25"
+    },
+    {
+        "title": "数値誤差を考慮した正則化準ニュートン法",
+        "authors": [
+            "浜口広樹",
+            "丸茂直貴",
+            "武田朗子"
+        ],
+        "type": "poster",
+        "url_slug": "Regularized-quasi-Newton-method-considering-numerical-error",
+        "venue": "連続最適化および関連分野に関する夏季学校 2025",
+        "date": "2025-08-28",
+        "location": "統計数理研究所",
+        "talk_url": "https://www.ism.ac.jp/~mirai/sscoke/2025/"
     }
 ]
