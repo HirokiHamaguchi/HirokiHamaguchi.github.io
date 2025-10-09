@@ -21,3 +21,11 @@ I'm interested in
 * Machine Learning,
 
 etc.
+
+## Links
+
+* [Publications](https://hirokihamaguchi.github.io/publications/)
+* [Talks](https://hirokihamaguchi.github.io/talks/)
+* [CV](https://hirokihamaguchi.github.io/cv/)
+* [Programs](https://hirokihamaguchi.github.io/programs/)
+* [Blog Posts](https://hirokihamaguchi.github.io/blog-posts/)
