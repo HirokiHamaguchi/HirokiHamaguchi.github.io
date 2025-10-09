@@ -9,9 +9,10 @@ This repository uses the template of [Academic Pages](https://github.com/academi
 ## How to Run Locally
 
 ```bash
-sudo apt install ruby-dev ruby-bundler nodejs
+sudo apt install ruby-dev ruby-bundler nodejs jekyll
+bundle config set --local path 'vendor/bundle'
 bundle install
-python gen/gen.py
+uv run gen/gen.py
 jekyll serve -l -H localhost
 ```
 

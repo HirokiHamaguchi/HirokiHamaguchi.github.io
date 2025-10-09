@@ -11,7 +11,7 @@ def print_view():
     allLikes = 0
     allStocks = 0
 
-    with open(os.path.dirname(__file__) + "/qiitaToken") as f:
+    with open(os.path.expanduser("~/qiitaToken")) as f:
         KEY = f.readline().strip()
 
     headers = {
