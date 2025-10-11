@@ -1,7 +1,7 @@
 import glob
 import os
 
-import getorg  # type: ignore
+import getorg.orgmap  # type: ignore
 from geopy import Nominatim  # type: ignore
 
 
@@ -20,13 +20,12 @@ def talkmap(dirname: str):
                 lines_trim = lines[loc_start:]
                 loc_end = lines_trim.find('"')
                 location = lines_trim[:loc_end]
-
-            location_dict[location] = geo_coder.geocode(location)
-            print(location, "\n", location_dict[location])
+                location_dict[location] = geo_coder.geocode(location)
+                print(location, "\n", location_dict[location])
 
     getorg.orgmap.create_map_obj()
     getorg.orgmap.output_html_cluster_map(
         location_dict,
-        folder_name=os.path.join(dirname, "talkmap"),
+        folder_name=os.path.join(dirname, "files/talkmap"),
         hashed_usernames=False,
     )
