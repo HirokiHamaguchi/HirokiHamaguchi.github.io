@@ -2,7 +2,7 @@
 title: "LaTeX Lint"
 authors: 'Hiroki Hamaguchi'
 collection: programs
-permalink: /programs/LaTeX-Lint
+permalink: /programs/latex-lint
 excerpt: 'Linter for LaTeX with useful commands for academic writing.'
 thumbnail: "https://github.com/HirokiHamaguchi/latexlint/blob/master/images/mainIcon512.png?raw=true"
 date: 2025-01-06
