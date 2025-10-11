@@ -13,7 +13,7 @@ sudo apt install ruby-dev ruby-bundler nodejs jekyll
 bundle config set --local path 'vendor/bundle'
 bundle install
 uv run gen/gen.py
-jekyll serve -l -H localhost
+bundle exec jekyll serve -l -H localhost
 ```
 
 ## How to Update with the Upstream
