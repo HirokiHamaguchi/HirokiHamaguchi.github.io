@@ -7,8 +7,6 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
-
 ## Education
 
 * 2024-04 to now \| Master\\

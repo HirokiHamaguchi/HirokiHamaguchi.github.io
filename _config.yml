@@ -16,64 +16,6 @@ url                      : https://hirokihamaguchi.github.io # the base hostname
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "HirokiHamaguchi/HirokiHamaguchi.github.io"
 
-# Site Author - The following control what appear as part of the author content on the side bar.
-#               If a field is blank the icon and link will not appear, otherwise it will be shown.
-#               Additional customization can be done by editing /_includes/author-profile.html
-author:
-  # Biographic information
-  avatar           : "profile.png"
-  name             : "Hiroki Hamaguchi"
-  pronouns         : # example: "she/her"
-  bio              : "M2 Student"
-  location         :
-  employer         : "U-Tokyo"
-  employerURL      : "https://www.u-tokyo.ac.jp/en/"
-  uri              : # URL
-  email            : "hirokihamaguchi0331@gmail.com"
-
-  # Academic websites
-  arxiv            : # URL
-  googlescholar    : https://scholar.google.com/citations?user=kynVVgUAAAAJ # URL
-  impactstory      : # URL
-  orcid            : "https://orcid.org/0009-0005-7348-1356"
-  semantic         : # URL
-  pubmed           : # URL
-  researchgate     : # URL
-  scopus           : # URL
-
-  # Repositories and software development
-  bitbucket        : # Username
-  codepen          : # Username
-  dribbble         : # Username
-  github           : "HirokiHamaguchi"
-  kaggle           : # Username
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")
-
-  # Social media
-  bluesky          : # Replace this with you Bluesky username
-  facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
-  instagram        : # Username
-  lastfm           : # Username
-  linkedin         : # Username
-  mastodon         : # URL
-  medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
-  telegram         : # URL
-  tumblr           : # Username
-  twitter          : "hari64boli64"
-  vine             : # Username
-  weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
-  youtube          : "hari4181"
-  zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
@@ -94,7 +36,6 @@ talk_category:
 
 # Site Settings
 teaser                   : 500x300.png # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
@@ -190,7 +131,6 @@ defaults:
       layout: single
       author_profile: true
       share: false
-      related: true
   # _pages
   - scope:
       path: ""
