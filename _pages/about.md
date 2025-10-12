@@ -2,7 +2,7 @@
 permalink: /
 title: "About"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
@@ -28,4 +28,4 @@ etc.
 * [Talks](https://hirokihamaguchi.github.io/talks/)
 * [CV](https://hirokihamaguchi.github.io/cv/)
 * [Programs](https://hirokihamaguchi.github.io/programs/)
-* [Blog Posts](https://hirokihamaguchi.github.io/blog-posts/)
+* [Blogs](https://hirokihamaguchi.github.io/blogs/)

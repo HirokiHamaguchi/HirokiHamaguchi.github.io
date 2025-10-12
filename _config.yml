@@ -212,7 +212,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
       related: true
   # _pages
   - scope:
@@ -221,6 +221,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      share: false
   # _teaching
   - scope:
       path: ""
@@ -228,7 +229,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
   # _publications
   - scope:
       path: ""
@@ -236,7 +237,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
   # _portfolio
   - scope:
       path: ""
@@ -244,7 +245,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
   # _talks
   - scope:
       path: ""
@@ -252,7 +253,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
   # _programs
   - scope:
       path: ""
@@ -260,8 +261,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-
+      share: false
 
 
 

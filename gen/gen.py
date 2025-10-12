@@ -22,7 +22,7 @@ def main():
     talks(dirname, html_escape)
     talkmap(os.path.join(dirname, "../"))
     qiita(dirname, html_escape)
-    print_view()
+    print_view(dirname)
 
 
 if __name__ == "__main__":

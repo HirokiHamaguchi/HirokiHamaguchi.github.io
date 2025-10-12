@@ -39,7 +39,7 @@ def qiita(dirname: str, html_escape: Callable[[str], str]):
 
         md = '---\ntitle: "' + title + '"'
 
-        md += """\npermalink: /blog-posts/""" + date
+        md += """\npermalink: /blogs/""" + date
 
         md += "\ndate: " + str(date)
 
@@ -49,7 +49,12 @@ def qiita(dirname: str, html_escape: Callable[[str], str]):
 
         md += "\n\n" + "[Link to Qiita](" + jsonStr[num]["url"] + ")" + "\n"
 
-        md_filename = str(date) + "-" + date + ".md"
+        md_filename = (
+            str(date)
+            + "-"
+            + title.replace(" ", "-").replace("/", "-").replace(":", "-")
+            + ".md"
+        )
 
         with open(
             os.path.join(dirname, "../_posts/" + md_filename), "w", encoding="utf-8"

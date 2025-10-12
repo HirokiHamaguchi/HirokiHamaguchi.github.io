@@ -4,14 +4,14 @@ import os
 import requests
 
 
-def print_view():
+def print_view(dirname: str):
     USER_ID = "hari64"
     PER_PAGE = 20
     allViews = 0
     allLikes = 0
     allStocks = 0
 
-    with open(os.path.expanduser("~/qiitaToken")) as f:
+    with open(os.path.join(dirname, "qiitaToken")) as f:
         KEY = f.readline().strip()
 
     headers = {
