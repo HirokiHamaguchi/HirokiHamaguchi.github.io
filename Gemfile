@@ -8,6 +8,7 @@ group :jekyll_plugins do
   gem 'jemoji'
   gem 'webrick', '~> 1.8'
   gem "fiddle"
+  gem "faraday-retry"
   gem "tzinfo", "~> 1.2.10"
   gem "tzinfo-data", platforms: [:windows]
   gem "bigdecimal", "~> 3.3"
