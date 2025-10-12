@@ -7,9 +7,13 @@
    ========================================================================== */
 
 @media print {
-  .masthead,
-  .toc,
-  .page__share,
-  .page__related,
-  .ads,
+
+   .masthead,
+   .toc,
+   .page__share,
+   .page__related,
+   .ads {
+      display: none;
+   }
+
 }
