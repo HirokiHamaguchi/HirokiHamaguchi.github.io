@@ -4,14 +4,14 @@ layout: default
 
 <div id="main" role="main">
   {% if site.url %}
-  {% assign base_path = site.url | append: site.baseurl %}
-{% else %}
-  {% assign base_path = site.github.url %}
-{% endif %}
+    {% assign base_path = site.url | append: site.baseurl %}
+  {% else %}
+    {% assign base_path = site.github.url %}
+  {% endif %}
 
-<div class="sidebar sticky">
-  {% include author-profile.html %}
-</div>
+  <div class="sidebar sticky">
+    {% include author-profile.html %}
+  </div>
   <div class="archive">
     <h1 class="page__title">{{ page.title }}</h1>
     {{ content }}
