@@ -12,6 +12,7 @@ group :jekyll_plugins do
   gem "tzinfo", "~> 1.2.10"
   gem "tzinfo-data", platforms: [:windows]
   gem "bigdecimal", "~> 3.3"
+  gem 'wdm', '>= 0.1.0'
 end
 
 gem 'github-pages'

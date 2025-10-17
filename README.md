@@ -13,10 +13,10 @@ note folder is not reflected in the website. I will fix it.
 ## How to Run Locally
 
 ```bash
-uv run gen/gen.py
 gem install bundler
 bundle config set --local path 'vendor/bundle'
 bundle install
+uv run gen/gen.py
 bundle exec jekyll serve -l -H localhost
 ```
 
