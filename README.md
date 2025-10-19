@@ -14,9 +14,9 @@ note folder is not reflected in the website. I will fix it.
 
 ```bash
 gem install bundler
-bundle config set --local path 'vendor/bundle'
 bundle install
 uv run gen/gen.py
+bundle config set --local path 'vendor/bundle'
 bundle exec jekyll serve -l -H localhost
 ```
 
