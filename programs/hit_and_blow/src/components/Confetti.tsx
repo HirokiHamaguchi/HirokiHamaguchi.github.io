@@ -42,11 +42,11 @@ const Confetti: React.FC<ConfettiProps> = ({ active }) => {
         ];
 
         function launchConfetti() {
-            const count = 100; // 紙吹雪の数
+            const count = 300; // 紙吹雪の数
             for (let i = 0; i < count; i++) {
                 // 画面の上部全体に分散して配置
                 const x = Math.random() * canvas.width;
-                const y = -50 - Math.random() * 50; // 画面上部の少し上から開始
+                const y = - Math.random() * 300; // 画面上部の少し上から開始
 
                 // 下向きの速度を基本とし、少し左右にばらつきを加える
                 const vy = Math.random() * 2 + 1; // 下向きの初速度（軽め）
@@ -81,7 +81,7 @@ const Confetti: React.FC<ConfettiProps> = ({ active }) => {
                 ctx.rotate(p.rotation);
                 ctx.fillStyle = p.color;
                 ctx.globalAlpha = p.opacity;
-                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                ctx.fillRect(-p.size / 4, -p.size / 2, p.size / 2, p.size);
                 ctx.restore();
             });
 
