@@ -7,8 +7,7 @@ import {
     Text,
     Badge,
     Flex,
-    Button,
-    Spacer
+    Button
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { HitAndBlowGame } from '../utils/gameLogic';
@@ -16,6 +15,7 @@ import { GuessHistory, GameState } from '../types/game';
 import InputSection from './InputSection';
 import History from './History';
 import Message from './Message';
+import Confetti from './Confetti';
 
 const Game: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -102,75 +102,72 @@ const Game: React.FC = () => {
     };
 
     return (
-        <Container maxW="container.md" py={8}>
-            <VStack spacing={6}>
-                <Flex w="100%" align="center">
-                    <Heading as="h2" size="lg" color="blue.600">
-                        {t('title')}
-                    </Heading>
-                    <Spacer />
-                    <Button
-                        size="sm"
-                        variant="outline"
-                        onClick={toggleLanguage}
-                        colorScheme="blue"
+        <>
+            <Confetti active={gameState.gameWon} />
+            <Container maxW="container.md" py={8}>
+                <VStack spacing={6}>
+                    <Flex w="100%" justify="flex-end">
+                        <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={toggleLanguage}
+                            colorScheme="blue"
+                        >
+                            {t('languageSwitch')}
+                        </Button>
+                    </Flex>
+                    <Box
+                        p={6}
+                        borderWidth={1}
+                        borderRadius="lg"
+                        w="100%"
                     >
-                        {t('languageSwitch')}
-                    </Button>
-                </Flex>
+                        <Text mb={1}>
+                            <Text as="span" fontWeight="bold">Rule</Text>:&nbsp;
+                            {t('gameDescription')}
+                        </Text>
+                        <Text mb={1}>
+                            <Text as="span" fontWeight="bold">Hit</Text>:&nbsp;
+                            {t('hitDescription')}
+                        </Text>
+                        <Text mb={1}>
+                            <Text as="span" fontWeight="bold">Blow</Text>:&nbsp;
+                            {t('blowDescription')}
+                        </Text>
+                        <Text>
+                            {t('clearDescription')}
+                        </Text>
+                    </Box>
 
-                <Box
-                    p={6}
-                    borderWidth={1}
-                    borderRadius="lg"
-                    bg="blue.50"
-                    w="100%"
-                >
-                    <Text fontWeight="bold" mb={2}>
-                        {t('gameRules')}
-                    </Text>
-                    <Text mb={2}>
-                        {t('gameDescription')}
-                    </Text>
-                    <Text mb={1}>
-                        <Text as="span" fontWeight="bold">Hit</Text>: {t('hitDescription')}
-                    </Text>
-                    <Text mb={1}>
-                        <Text as="span" fontWeight="bold">Blow</Text>: {t('blowDescription')}
-                    </Text>
-                    <Text>
-                        {t('clearDescription')}
-                    </Text>
-                </Box>
+                    <InputSection
+                        onGuess={handleGuess}
+                        onReset={handleReset}
+                        disabled={gameState.gameWon}
+                    />
 
-                <InputSection
-                    onGuess={handleGuess}
-                    onReset={handleReset}
-                    disabled={gameState.gameWon}
-                />
+                    <Box textAlign="center">
+                        <Text fontSize="lg">
+                            {t('attempts')}: {gameState.attempts} {t('times')}
+                        </Text>
+                    </Box>
 
-                <Box textAlign="center">
-                    <Text fontSize="lg">
-                        {t('attempts')}: <Badge colorScheme="blue" fontSize="md">{gameState.attempts}</Badge> {t('times')}
-                    </Text>
-                </Box>
+                    {errorMessage && (
+                        <Message message={errorMessage} type="error" />
+                    )}
 
-                {errorMessage && (
-                    <Message message={errorMessage} type="error" />
-                )}
+                    {winMessage && (
+                        <Message message={winMessage} type="win" />
+                    )}
 
-                {winMessage && (
-                    <Message message={winMessage} type="win" />
-                )}
-
-                <Box w="100%">
-                    <Heading as="h3" size="md" mb={4} textAlign="center">
-                        {t('guessHistory')}
-                    </Heading>
-                    <History history={gameState.history} />
-                </Box>
-            </VStack>
-        </Container>
+                    <Box w="100%">
+                        <Heading as="h2" size="md" mb={4} textAlign="center">
+                            {t('guessHistory')}
+                        </Heading>
+                        <History history={gameState.history} />
+                    </Box>
+                </VStack>
+            </Container>
+        </>
     );
 };
 

@@ -33,7 +33,7 @@ const History: React.FC<HistoryProps> = ({ history }) => {
 
     return (
         <TableContainer>
-            <Table variant="simple" size="md">
+            <Table>
                 <Thead>
                     <Tr>
                         <Th textAlign="center">{t('attempt')}</Th>
@@ -46,7 +46,7 @@ const History: React.FC<HistoryProps> = ({ history }) => {
                     {sortedHistory.map((item) => (
                         <Tr key={item.attempt}>
                             <Td textAlign="center">
-                                <Badge colorScheme="blue">{item.attempt}</Badge>
+                                {item.attempt}
                             </Td>
                             <Td textAlign="center">
                                 <Text fontSize="lg" fontWeight="bold" letterSpacing="wider">

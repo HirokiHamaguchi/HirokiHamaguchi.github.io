@@ -120,7 +120,9 @@ date: {metadata["date"]}
     if assets.css:
         html_parts.append(f"<style>\n{assets.css}\n</style>\n")
 
-    html_parts.append(f'<div id="{assets.root_id}"></div>\n')
+    html_parts.append(
+        f'<div id="{assets.root_id}" style="all: unset; display: revert;"></div>\n'
+    )
 
     if assets.js:
         html_parts.append(f"<script>\n{assets.js}\n</script>\n")

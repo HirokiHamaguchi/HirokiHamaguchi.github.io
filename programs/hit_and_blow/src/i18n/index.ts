@@ -5,11 +5,10 @@ const resources = {
     en: {
         translation: {
             title: 'Hit and Blow Game',
-            gameRules: 'Game Rules:',
-            gameDescription: 'The computer selects 4 different numbers from 1-9 as the secret number. You guess by entering a 4-digit number.',
-            hitDescription: 'Hit: Correct number in correct position',
-            blowDescription: 'Blow: Correct number in wrong position',
-            clearDescription: 'Get all numbers in the correct position to clear!',
+            gameDescription: 'The secret number consists of four distinct digits from 1 to 9. Enter your 4-digit guess.',
+            hitDescription: 'Correct number in correct position',
+            blowDescription: 'Correct number in wrong position',
+            clearDescription: 'Get all numbers in the correct position to clear! (This game was created for testing purposes on this website.)',
             enterGuess: 'Enter 4 digits',
             guess: 'Guess',
             reset: 'Reset',
@@ -30,11 +29,10 @@ const resources = {
     ja: {
         translation: {
             title: 'Hit and Blow ゲーム',
-            gameRules: 'ゲームルール:',
-            gameDescription: 'コンピュータが1-9の異なる4つの数字を秘密の番号として選びます。あなたは4桁の数字を予想して入力してください。',
-            hitDescription: 'Hit: 正しい数字が正しい位置にある',
-            blowDescription: 'Blow: 正しい数字だが位置が違う',
-            clearDescription: 'すべての数字を正しい位置で当てるとクリアです！',
+            gameDescription: '1-9の異なる4つの数字が秘密の番号です。4桁の数字を予想して入力してください。',
+            hitDescription: '正しい数字が正しい位置にある',
+            blowDescription: '正しい数字が誤った位置にある',
+            clearDescription: '全ての数字を正しい位置で当てるとクリアです！ (なお、本ゲームはこのHPにおける動作確認を目的に作成されました。)',
             enterGuess: '4桁入力',
             guess: '予想',
             reset: 'リセット',
@@ -58,7 +56,7 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        lng: 'en', // default language
+        lng: 'ja', // default language
         fallbackLng: 'en',
         interpolation: {
             escapeValue: false

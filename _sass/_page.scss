@@ -61,19 +61,6 @@
     font-size: 1em;
   }
 
-  /* paragraph indents */
-  p {
-    margin: 0 0 $indent-var;
-
-    /* sibling indentation*/
-    @if $paragraph-indent ==true {
-      &+p {
-        text-indent: $indent-var;
-        margin-top: -($indent-var);
-      }
-    }
-  }
-
   a {
     text-decoration: underline;
 

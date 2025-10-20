@@ -1,4 +1,5 @@
 import { GameResult, GuessResult } from '../types/game';
+import i18n from '../i18n';
 
 export class HitAndBlowGame {
     private secretNumber: string;
@@ -22,20 +23,20 @@ export class HitAndBlowGame {
 
     validateGuess(guess: string): string | null {
         if (guess.length !== 4) {
-            return '4桁の数字を入力してください。';
+            return i18n.t('errorInvalidFormat');
         }
 
         if (!/^\d+$/.test(guess)) {
-            return '数字のみを入力してください。';
+            return i18n.t('errorInvalidDigits');
         }
 
         if (guess.includes('0')) {
-            return '0は使用できません。1-9の数字を使用してください。';
+            return i18n.t('errorInvalidDigits');
         }
 
         const uniqueDigits = new Set(guess);
         if (uniqueDigits.size !== 4) {
-            return '同じ数字を重複して使用することはできません。';
+            return i18n.t('errorDuplicateDigits');
         }
 
         return null;
@@ -70,7 +71,7 @@ export class HitAndBlowGame {
                 hit: result.hit,
                 blow: result.blow,
                 won: true,
-                message: `おめでとうございます！正解しました！`
+                message: i18n.t('congratulations')
             };
         }
 
