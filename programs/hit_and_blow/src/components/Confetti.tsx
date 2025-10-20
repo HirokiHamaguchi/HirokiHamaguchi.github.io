@@ -73,7 +73,7 @@ const Confetti: React.FC<ConfettiProps> = ({ active }) => {
                 p.vy += 0.01; // 重力（少し弱めに）
                 p.rotation += p.rotationSpeed;
                 p.life--;
-                p.opacity = Math.max(0, Math.min(1, (p.life + 120) / 120));
+                p.opacity = Math.max(0, Math.min(1, p.life / 120));
 
                 // 描画
                 ctx.save();
