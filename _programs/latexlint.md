@@ -15,3 +15,5 @@ This is a VS Code extension that provides a Linter for LaTeX with useful command
 [GitHub](https://github.com/HirokiHamaguchi/latexlint/tree/master)
 
 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=hari64boli64.latexlint)
+
+[Web Version](https://hirokihamaguchi.github.io/latexlint/)

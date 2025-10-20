@@ -3,7 +3,7 @@ title: "Memorize App"
 authors: 'Hiroki Hamaguchi'
 collection: programs
 permalink: /programs/memorize-app
-excerpt: '暗記用アプリ'
+excerpt: 'App for memorization.'
 thumbnail: "https://github.com/HirokiHamaguchi/memorize-app/blob/main/thumbnail.png?raw=true"
 date: 2025-10-01
 ---

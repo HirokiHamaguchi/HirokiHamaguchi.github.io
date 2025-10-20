@@ -3,7 +3,7 @@ title: "Decoding Tool for Substitution Cipher"
 authors: 'Hiroki Hamaguchi'
 collection: programs
 permalink: /programs/decoding-tool-for-substitution-cipher
-excerpt: '2023年の5月祭における工学博覧会暗号班の展示物'
+excerpt: 'Exhibit of the Cryptography Team at the 2023 May Festival.'
 thumbnail: "https://github.com/HirokiHamaguchi/DecodingToolForSubstitutionCipher/blob/master/imgs/2.png?raw=true"
 date: 2023-05-13
 ---
