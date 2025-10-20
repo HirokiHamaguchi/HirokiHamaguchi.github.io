@@ -1,4 +1,4 @@
-import { GameResult, GuessResult } from '../types/game';
+import { GameResult, GuessResult, GuessHistory } from '../types/game';
 import i18n from '../i18n';
 
 export class HitAndBlowGame {
@@ -42,14 +42,14 @@ export class HitAndBlowGame {
         return null;
     }
 
-    calculateHitAndBlow(guess: string): GameResult {
+    calculateHitAndBlow(guess: string, secretNumber: string): GameResult {
         let hit = 0;
         let blow = 0;
 
         for (let i = 0; i < 4; i++) {
-            if (guess[i] === this.secretNumber[i]) {
+            if (guess[i] === secretNumber[i]) {
                 hit++;
-            } else if (this.secretNumber.includes(guess[i])) {
+            } else if (secretNumber.includes(guess[i])) {
                 blow++;
             }
         }
@@ -63,7 +63,7 @@ export class HitAndBlowGame {
             return { error: validationError };
         }
 
-        const result = this.calculateHitAndBlow(guess);
+        const result = this.calculateHitAndBlow(guess, this.secretNumber);
 
         if (result.hit === 4) {
             return {
@@ -81,6 +81,29 @@ export class HitAndBlowGame {
             blow: result.blow,
             won: false
         };
+    }
+
+    choiceCandidate(history: GuessHistory[]): string | null {
+        // This is a placeholder for candidate selection logic.
+        // Implementing a full candidate selection algorithm is complex and context-dependent.
+        for (let index = 1234; index <= 9876; index++) {
+            const candidate = index.toString();
+            if (new Set(candidate).size !== 4 || candidate.includes('0')) {
+                continue;
+            }
+            let isValid = true;
+            for (const pastGuess of history) {
+                const result = this.calculateHitAndBlow(pastGuess.guess, candidate);
+                if (result.hit !== pastGuess.hit || result.blow !== pastGuess.blow || candidate === pastGuess.guess) {
+                    isValid = false;
+                    break;
+                }
+            }
+            if (isValid) {
+                return candidate;
+            }
+        }
+        return null;
     }
 
     getSecretNumber(): string {

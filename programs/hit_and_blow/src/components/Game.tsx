@@ -5,7 +5,6 @@ import {
     VStack,
     Heading,
     Text,
-    Badge,
     Flex,
     Button
 } from '@chakra-ui/react';
@@ -86,6 +85,8 @@ const Game: React.FC = () => {
             if (result.won) {
                 setWinMessage(`${t('congratulations')} (${newAttempts}${t('times')})`);
             }
+
+            console.log(game.choiceCandidate(newHistory));
         }
     };
 

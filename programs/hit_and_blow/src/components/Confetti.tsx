@@ -90,21 +90,18 @@ const Confetti: React.FC<ConfettiProps> = ({ active }) => {
 
             if (particlesRef.current.length > 0) {
                 animationRef.current = requestAnimationFrame(updateAndDraw);
+            } else {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
             }
         }
 
         // activeが true になったときにconfettiを発射
-        if (active) {
-            // 画面上部から降らせる
-            launchConfetti();
-        }
+        if (active) launchConfetti();
 
         updateAndDraw();
 
         return () => {
-            if (animationRef.current) {
-                cancelAnimationFrame(animationRef.current);
-            }
+            if (animationRef.current) cancelAnimationFrame(animationRef.current);
             window.removeEventListener('resize', resizeCanvas);
         };
     }, [active]);
@@ -114,7 +111,6 @@ const Confetti: React.FC<ConfettiProps> = ({ active }) => {
         if (!active && animationRef.current) {
             cancelAnimationFrame(animationRef.current);
             animationRef.current = null;
-            // パーティクルをクリア
             particlesRef.current = [];
         }
     }, [active]);
