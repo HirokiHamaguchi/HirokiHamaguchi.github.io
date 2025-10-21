@@ -9,8 +9,9 @@ interface ConfettiParticle {
     color: string;
     rotation: number;
     rotationSpeed: number;
-    life: number;
     opacity: number;
+    cosRotation: number;
+    sinRotation: number;
 }
 
 interface ConfettiProps {
@@ -21,6 +22,7 @@ const Confetti: React.FC<ConfettiProps> = ({ active }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const animationRef = useRef<number | null>(null);
     const particlesRef = useRef<ConfettiParticle[]>([]);
+    const frameCountRef = useRef<number>(0);
 
     useEffect(() => {
         if (!canvasRef.current) return;
@@ -51,16 +53,19 @@ const Confetti: React.FC<ConfettiProps> = ({ active }) => {
                 // 下向きの速度を基本とし、少し左右にばらつきを加える
                 const vy = Math.random() * 2 + 1; // 下向きの初速度（軽め）
 
+                const rotation = Math.random() * 2 * Math.PI;
+
                 particlesRef.current.push({
                     x,
                     y,
                     vy,
                     size: Math.random() * 8 + 4,
                     color: colors[Math.floor(Math.random() * colors.length)],
-                    rotation: Math.random() * 2 * Math.PI,
+                    rotation,
                     rotationSpeed: (Math.random() - 0.5) * 0.2,
-                    life: 240, // 約4秒（60fps換算）- 少し長めに
-                    opacity: 1
+                    opacity: 1,
+                    cosRotation: Math.cos(rotation),
+                    sinRotation: Math.sin(rotation)
                 });
             }
         }
@@ -68,35 +73,74 @@ const Confetti: React.FC<ConfettiProps> = ({ active }) => {
         function updateAndDraw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            particlesRef.current.forEach(p => {
+            const particles = particlesRef.current;
+            const frameCount = frameCountRef.current++;
+            const maxLife = 240; // 約4秒（60fps換算）
+
+            // 寿命チェック：すべてのパーティクルが同じ寿命なので一括判定
+            if (frameCount >= maxLife) {
+                particles.length = 0;
+                ctx.globalAlpha = 1;
+                return;
+            }
+
+            // 不透明度計算（残り寿命ベース） - 全パーティクル共通
+            const remainingLife = maxLife - frameCount;
+            const opacity = remainingLife > 120 ? 1 : remainingLife / 120;
+
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+
+                // 物理演算
                 p.y += p.vy;
                 p.vy += 0.01; // 重力（少し弱めに）
                 p.rotation += p.rotationSpeed;
-                p.life--;
-                p.opacity = Math.max(0, Math.min(1, p.life / 120));
 
-                // 描画
-                ctx.save();
-                ctx.translate(p.x, p.y);
-                ctx.rotate(p.rotation);
+                // 不透明度設定（全パーティクル共通値）
+                p.opacity = opacity;
+
+                // 三角関数を事前計算済みの値を更新
+                p.cosRotation = Math.cos(p.rotation);
+                p.sinRotation = Math.sin(p.rotation);
+
+                // 描画（save/restoreを使わない高速な方法）
+                const halfWidth = p.size / 4;
+                const halfHeight = p.size / 2;
+
+                // 回転した矩形の4つの角を計算
+                const x1 = p.x + (-halfWidth * p.cosRotation - (-halfHeight) * p.sinRotation);
+                const y1 = p.y + (-halfWidth * p.sinRotation + (-halfHeight) * p.cosRotation);
+                const x2 = p.x + (halfWidth * p.cosRotation - (-halfHeight) * p.sinRotation);
+                const y2 = p.y + (halfWidth * p.sinRotation + (-halfHeight) * p.cosRotation);
+                const x3 = p.x + (halfWidth * p.cosRotation - halfHeight * p.sinRotation);
+                const y3 = p.y + (halfWidth * p.sinRotation + halfHeight * p.cosRotation);
+                const x4 = p.x + (-halfWidth * p.cosRotation - halfHeight * p.sinRotation);
+                const y4 = p.y + (-halfWidth * p.sinRotation + halfHeight * p.cosRotation);
+
                 ctx.fillStyle = p.color;
                 ctx.globalAlpha = p.opacity;
-                ctx.fillRect(-p.size / 4, -p.size / 2, p.size / 2, p.size);
-                ctx.restore();
-            });
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.lineTo(x3, y3);
+                ctx.lineTo(x4, y4);
+                ctx.closePath();
+                ctx.fill();
+            }
 
-            // 寿命の尽きたパーティクルを削除
-            particlesRef.current = particlesRef.current.filter(p => p.life > 0);
-
-            if (particlesRef.current.length > 0) {
+            if (particles.length > 0) {
                 animationRef.current = requestAnimationFrame(updateAndDraw);
             } else {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.globalAlpha = 1; // アルファ値をリセット
             }
         }
 
         // activeが true になったときにconfettiを発射
-        if (active) launchConfetti();
+        if (active) {
+            frameCountRef.current = 0; // フレームカウンターをリセット
+            launchConfetti();
+        }
 
         updateAndDraw();
 
@@ -112,6 +156,7 @@ const Confetti: React.FC<ConfettiProps> = ({ active }) => {
             cancelAnimationFrame(animationRef.current);
             animationRef.current = null;
             particlesRef.current = [];
+            frameCountRef.current = 0;
         }
     }, [active]);
 
