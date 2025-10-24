@@ -22,7 +22,9 @@ const InputSection: React.FC<InputSectionProps> = ({ onGuess, onReset, disabled 
         if (input.trim() && !disabled) {
             onGuess(input.trim());
             setInput('');
-            inputRef.current?.focus();
+            setTimeout(() => {
+                inputRef.current?.focus();
+            }, 0);
         }
     };
 
@@ -47,7 +49,7 @@ const InputSection: React.FC<InputSectionProps> = ({ onGuess, onReset, disabled 
                     ref={inputRef}
                     value={input}
                     onChange={handleInputChange}
-                    onKeyPress={handleKeyPress}
+                    onKeyDown={handleKeyPress}
                     placeholder={t('enterGuess')}
                     maxLength={4}
                     isDisabled={disabled}
@@ -55,6 +57,8 @@ const InputSection: React.FC<InputSectionProps> = ({ onGuess, onReset, disabled 
                     textAlign="center"
                     fontSize="xl"
                     letterSpacing="wider"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
                 />
                 <Button
                     onClick={handleGuess}
