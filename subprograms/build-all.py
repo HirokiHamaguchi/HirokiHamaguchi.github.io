@@ -5,8 +5,8 @@ from typing import Dict, List, NamedTuple
 
 
 class Assets(NamedTuple):
-    js: str
-    css: str
+    js_path: str
+    css_path: str
     root_id: str
 
 
@@ -45,38 +45,36 @@ def extract_root_id(html_content: str, project_name: str) -> str:
     return root_id
 
 
-def extract_assets(dist_dir: Path) -> Assets:
+def extract_assets(dist_dir: Path, project_name: str) -> Assets:
     if not dist_dir.exists():
         raise FileNotFoundError(f"Distribution directory {dist_dir} not found")
 
+    # Find the HTML file for this project (in subdirectory)
+    html_file = dist_dir / project_name / "index.html"
+    if not html_file.exists():
+        raise FileNotFoundError(f"HTML file {html_file} not found")
+
+    html_content = read_file(html_file)
+    root_id = extract_root_id(html_content, project_name)
+
+    # Find JS and CSS files in assets directory
     assets_dir = dist_dir / "assets"
     if not assets_dir.exists():
         raise FileNotFoundError(f"Assets directory {assets_dir} not found")
 
-    html_files = list(dist_dir.glob("*.html"))
-    if len(html_files) != 1:
+    # Look for JS file matching the project name
+    js_files = list(assets_dir.glob(f"{project_name}.js"))
+    if len(js_files) != 1:
         raise ValueError(
-            f"Expected exactly one .html file in {dist_dir}, found {len(html_files)}"
+            f"Expected exactly one .js file matching {project_name}.js in {assets_dir}, found {len(js_files)}"
         )
+    js_path = f"/subprograms/dist/assets/{js_files[0].name}"
 
-    html_content = read_file(html_files[0])
-    root_id = extract_root_id(html_content, dist_dir.parent.name)
+    # Look for CSS file matching the project name
+    css_files = list(assets_dir.glob(f"{project_name}.css"))
+    css_path = f"/subprograms/dist/assets/{css_files[0].name}" if css_files else ""
 
-    js_files = list(assets_dir.glob("*.js"))
-    if len(js_files) > 1:
-        raise ValueError(
-            f"Expected at most one .js file in {assets_dir}, found {len(js_files)}"
-        )
-    js_content = read_file(js_files[0]) if js_files else ""
-
-    css_files = list(assets_dir.glob("*.css"))
-    if len(css_files) > 1:
-        raise ValueError(
-            f"Expected at most one .css file in {assets_dir}, found {len(css_files)}"
-        )
-    css_content = read_file(css_files[0]) if css_files else ""
-
-    return Assets(js=js_content, css=css_content, root_id=root_id)
+    return Assets(js_path=js_path, css_path=css_path, root_id=root_id)
 
 
 def validate_metadata(metadata: Dict, project_name: str) -> None:
@@ -117,15 +115,18 @@ date: {metadata["date"]}
 
     html_parts = [frontmatter]
 
-    if assets.css:
-        html_parts.append(f"<style>\n{assets.css}\n</style>\n")
+    # Add CSS link if exists
+    if assets.css_path:
+        html_parts.append(f'<link rel="stylesheet" href="{assets.css_path}">\n')
 
+    # Add root div
     html_parts.append(
         f'<div id="{assets.root_id}" style="all: unset; display: revert;"></div>\n'
     )
 
-    if assets.js:
-        html_parts.append(f"<script>\n{assets.js}\n</script>\n")
+    # Add JS script tag
+    if assets.js_path:
+        html_parts.append(f'<script type="module" src="{assets.js_path}"></script>\n')
 
     output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / f"{project_name}.html"
@@ -152,26 +153,22 @@ def run_command(command: List[str], cwd: Path) -> None:
         raise RuntimeError(f"Command failed: {' '.join(command)}\n{e.stdout}")
 
 
-def build_project(project_name: str, project_path: Path, output_dir: Path) -> None:
-    print(f"📦 Building {project_name}...")
+def process_project(
+    project_name: str, programs_dir: Path, dist_dir: Path, output_dir: Path
+) -> None:
+    """Process a single project by generating its Jekyll file."""
+    print(f"📦 Processing {project_name}...")
 
-    meta_path = project_path / "meta.json"
-    dist_dir = project_path / "dist"
+    meta_path = programs_dir / project_name / "meta.json"
 
     try:
         if not meta_path.exists():
-            raise FileNotFoundError(f"meta.json not found in {project_path}")
+            raise FileNotFoundError(f"meta.json not found for {project_name}")
 
         metadata = json.loads(meta_path.read_text(encoding="utf-8"))
 
-        if not (project_path / "node_modules").exists():
-            raise FileNotFoundError(f"node_modules not found in {project_path}")
-
-        print("  🏗️  Building project...")
-        run_command(["npm", "run", "build"], project_path)
-
         print("  📝 Extracting assets...")
-        assets = extract_assets(dist_dir)
+        assets = extract_assets(dist_dir, project_name)
 
         print("  📄 Generating Jekyll file...")
         generate_jekyll_html(project_name, metadata, assets, output_dir)
@@ -179,7 +176,7 @@ def build_project(project_name: str, project_path: Path, output_dir: Path) -> No
         print(f"  ✅ {project_name} completed!\n")
 
     except Exception as e:
-        print(f"  ❌ Error building {project_name}: {e}\n")
+        print(f"  ❌ Error processing {project_name}: {e}\n")
 
 
 def get_project_directories(programs_dir: Path) -> List[str]:
@@ -189,14 +186,8 @@ def get_project_directories(programs_dir: Path) -> List[str]:
             continue
 
         meta_json = item / "meta.json"
-        package_json = item / "package.json"
 
         if not meta_json.exists():
-            print(f"  ⚠️  Skipping {item.name}: meta.json not found")
-            continue
-
-        if not package_json.exists():
-            print(f"  ⚠️  Skipping {item.name}: package.json not found")
             continue
 
         project_dirs.append(item.name)
@@ -206,18 +197,23 @@ def get_project_directories(programs_dir: Path) -> List[str]:
 
 def main() -> None:
     programs_dir = Path(__file__).parent
-    output_dir = programs_dir.parent / "_programs"
 
+    # Check if node_modules exists
+    if not (programs_dir / "node_modules").exists():
+        print("❌ node_modules not found. Please run 'npm install' first.")
+        return
     print("🔨 Building all React/TypeScript programs for Jekyll...\n")
 
-    project_dirs = get_project_directories(programs_dir)
-    if not project_dirs:
-        print("No valid projects found.")
-        return
+    # Build all projects at once
+    output_dir = programs_dir.parent / "_programs"
+    dist_dir = programs_dir / "dist"
+    print("  🏗️  Running Vite build for all projects...")
+    run_command(["npm", "run", "build"], programs_dir)
+    print("  ✅ Build completed!\n")
 
-    for project_name in project_dirs:
-        project_path = programs_dir / project_name
-        build_project(project_name, project_path, output_dir)
+    # Process each project
+    for project_name in get_project_directories(programs_dir):
+        process_project(project_name, programs_dir, dist_dir, output_dir)
 
     print("🎉 All projects processed!")
 

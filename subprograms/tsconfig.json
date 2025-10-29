@@ -21,7 +21,8 @@
         "noFallthroughCasesInSwitch": true
     },
     "include": [
-        "src"
+        "hit-and-blow/src",
+        "hello-world/src"
     ],
     "references": [
         {
