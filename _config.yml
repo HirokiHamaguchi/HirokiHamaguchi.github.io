@@ -47,10 +47,8 @@ atom_feed:
 
 # Reading Files
 include:
-  - .htaccess
   - _pages
   - files
-  - subprograms/dist
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -62,6 +60,7 @@ exclude:
   - assets/js/_main.js
   - assets/js/plugins
   - assets/js/vendor
+  - subprograms
   - CHANGELOG
   - Capfile
   - config

@@ -5,7 +5,7 @@ import { resolve } from 'path'
 export default defineConfig({
     plugins: [react()],
     build: {
-        outDir: 'dist',
+        outDir: '../_programs/dist',
         rollupOptions: {
             input: {
                 'hit-and-blow': resolve(__dirname, 'hit-and-blow/index.html'),
