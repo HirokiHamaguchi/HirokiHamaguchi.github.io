@@ -9,7 +9,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 'hit-and-blow': resolve(__dirname, 'hit-and-blow/index.html'),
-                'hello-world': resolve(__dirname, 'hello-world/index.html'),
+                'text-tools': resolve(__dirname, 'text-tools/index.html'),
             },
             output: {
                 entryFileNames: 'assets/[name].js',

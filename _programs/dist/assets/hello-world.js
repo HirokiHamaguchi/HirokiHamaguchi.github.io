@@ -1,1 +1,0 @@
-import{j as e,d as t,a as r}from"./client.js";function o(){return e.jsx("div",{style:{padding:"20px",fontSize:"24px",textAlign:"center"},children:e.jsx("h1",{children:"Hello World"})})}t.createRoot(document.getElementById("hello-world-root")).render(e.jsx(r.StrictMode,{children:e.jsx(o,{})}));

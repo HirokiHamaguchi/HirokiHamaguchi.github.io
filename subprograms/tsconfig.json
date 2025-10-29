@@ -22,7 +22,7 @@
     },
     "include": [
         "hit-and-blow/src",
-        "hello-world/src"
+        "text-tools/src"
     ],
     "references": [
         {
