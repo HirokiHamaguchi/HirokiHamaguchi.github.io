@@ -52,32 +52,18 @@ include:
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .github
-  - .jekyll-assets-cache
-  - .sass-cache
   - assets/js/_main.js
   - assets/js/plugins
   - assets/js/vendor
-  - subprograms
-  - CHANGELOG
-  - Capfile
-  - config
-  - Dockerfile
-  - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - local
-  - log
   - node_modules
-  - package.json*
-  - Rakefile
-  - README
-  - tmp
+  - subprograms
   - vendor
-  - gen
+  - Gemfile*
+  - LICENSE
+  - package*.json
+  - pyproject.toml
+  - README.md
+  - uv.lock
 keep_files:
   - .git
   - .svn
