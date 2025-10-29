@@ -3,7 +3,6 @@
     "authors": "Hiroki Hamaguchi",
     "collection": "programs",
     "permalink": "/programs/text-tools",
-    "excerpt": "日本語の句読点を変換するツール",
-    "thumbnail": "/images/text_tools.png",
+    "excerpt": "テキスト用ツール集 (開発中)",
     "date": "2025-10-29"
 }
