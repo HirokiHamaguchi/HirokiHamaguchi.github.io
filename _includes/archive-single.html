@@ -65,14 +65,7 @@
     <p class="page__meta">Presented at <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
     {% endif %}
 
-    {% if post.excerpt and site.read_more != 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">
-    <p>{{ post.excerpt | markdownify | remove: '
-    <p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p>
-    </p>
-    {% endif %}
 
     {% if post.paperurl and post.slidesurl %}
     <p><a href="{{ post.paperurl }}">Link to the Paper</a> | <a href="{{ post.slidesurl }}">Download the Slide</a></p>
