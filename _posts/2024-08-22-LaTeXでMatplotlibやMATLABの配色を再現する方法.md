@@ -1,6 +1,6 @@
 ---
 title: "LaTeXでMatplotlibやMATLABの配色を再現する方法"
-permalink: /blogs/2024-08-22
+permalink: /blog/2024-08-22
 date: 2024-08-22
 thumbnail: https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/7a05e6cb-6e33-3e82-3d02-9077972f7574.png
 ---

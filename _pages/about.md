@@ -29,7 +29,7 @@ etc.
 * [CV](https://hirokihamaguchi.github.io/cv/)
 * [Program](https://hirokihamaguchi.github.io/program/)
 * [Diary](https://hirokihamaguchi.github.io/diary/)
-* [Blogs](https://hirokihamaguchi.github.io/blogs/)
+* [Blog](https://hirokihamaguchi.github.io/blog/)
 
 ### Other Sites
 

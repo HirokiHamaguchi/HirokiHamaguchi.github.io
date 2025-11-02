@@ -1,6 +1,6 @@
 ---
 title: "VS CodeでLaTeXのコンパイル方法をファイル毎に設定するには"
-permalink: /blogs/2025-05-28
+permalink: /blog/2025-05-28
 date: 2025-05-28
 thumbnail: https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/c5a319fd-9c04-430f-9a2c-9493aaa4c896.png
 ---
