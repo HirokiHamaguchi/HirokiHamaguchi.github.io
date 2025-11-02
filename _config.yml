@@ -102,6 +102,9 @@ collections:
   program:
     output: true
     permalink: /:collection/:path/
+  diary:
+    output: true
+    permalink: /:collection/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -161,6 +164,14 @@ defaults:
   - scope:
       path: ""
       type: program
+    values:
+      layout: single
+      author_profile: true
+      share: false
+  # _diary
+  - scope:
+      path: ""
+      type: diary
     values:
       layout: single
       author_profile: true

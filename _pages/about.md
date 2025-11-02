@@ -28,6 +28,7 @@ etc.
 * [Talks](https://hirokihamaguchi.github.io/talks/)
 * [CV](https://hirokihamaguchi.github.io/cv/)
 * [Program](https://hirokihamaguchi.github.io/program/)
+* [Diary](https://hirokihamaguchi.github.io/diary/)
 * [Blogs](https://hirokihamaguchi.github.io/blogs/)
 
 ### Other Sites

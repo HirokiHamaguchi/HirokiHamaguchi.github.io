@@ -8,6 +8,7 @@
     "material-icon-theme.folders.associations": {
         "_posts": "element",
         "_program": "element",
+        "_diary": "element",
         "_publications": "element",
         "_talks": "element",
         "_teaching": "element",
