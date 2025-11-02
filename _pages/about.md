@@ -27,7 +27,7 @@ etc.
 * [Publications](https://hirokihamaguchi.github.io/publications/)
 * [Talks](https://hirokihamaguchi.github.io/talks/)
 * [CV](https://hirokihamaguchi.github.io/cv/)
-* [Programs](https://hirokihamaguchi.github.io/programs/)
+* [Program](https://hirokihamaguchi.github.io/program/)
 * [Blogs](https://hirokihamaguchi.github.io/blogs/)
 
 ### Other Sites

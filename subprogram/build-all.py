@@ -58,16 +58,16 @@ def extract_assets(dist_dir: Path, project_name: str) -> Assets:
     js_files = list(assets_dir.glob(f"{project_name}.js"))
     css_files = list(assets_dir.glob(f"{project_name}.css"))
 
-    js_path = f"/programs/dist/assets/{js_files[0].name}" if js_files else ""
-    css_path = f"/programs/dist/assets/{css_files[0].name}" if css_files else ""
+    js_path = f"/program/dist/assets/{js_files[0].name}" if js_files else ""
+    css_path = f"/program/dist/assets/{css_files[0].name}" if css_files else ""
 
     return Assets(js_path=js_path, css_path=css_path, root_id=root_id)
 
 
 def process_project(
-    project_name: str, programs_dir: Path, dist_dir: Path, output_dir: Path
+    project_name: str, program_dir: Path, dist_dir: Path, output_dir: Path
 ) -> None:
-    meta_path = programs_dir / project_name / "meta.json"
+    meta_path = program_dir / project_name / "meta.json"
     assert meta_path.exists()
     metadata = json.loads(meta_path.read_text(encoding="utf-8"))
     assets = extract_assets(dist_dir, project_name)
@@ -120,15 +120,15 @@ date: {metadata["date"]}
 
 
 def main() -> None:
-    subprograms_dir = Path(__file__).parent
+    subprogram_dir = Path(__file__).parent
 
-    assert (subprograms_dir / "node_modules").exists()
+    assert (subprogram_dir / "node_modules").exists()
 
     # Build all projects at once
-    output_dir = subprograms_dir.parent / "_programs"
+    output_dir = subprogram_dir.parent / "_program"
     subprocess.run(
         ["npm", "run", "build"],
-        cwd=subprograms_dir,
+        cwd=subprogram_dir,
         check=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
@@ -140,10 +140,10 @@ def main() -> None:
 
     # Process each project
     dist_dir = output_dir / "dist"
-    for item in subprograms_dir.iterdir():
+    for item in subprogram_dir.iterdir():
         if not item.is_dir() or not (item / "meta.json").exists():
             continue
-        process_project(item.name, subprograms_dir, dist_dir, output_dir)
+        process_project(item.name, subprogram_dir, dist_dir, output_dir)
 
     print("🎉 All projects processed!")
 

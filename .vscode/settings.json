@@ -7,7 +7,7 @@
     },
     "material-icon-theme.folders.associations": {
         "_posts": "element",
-        "_programs": "element",
+        "_program": "element",
         "_publications": "element",
         "_talks": "element",
         "_teaching": "element",

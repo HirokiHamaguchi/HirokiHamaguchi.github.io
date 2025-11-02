@@ -1,7 +1,7 @@
 {
-    "name": "programs",
+    "name": "program",
     "version": "1.0.0",
-    "description": "programs",
+    "description": "program",
     "scripts": {
         "dev": "vite",
         "build": "vite build",

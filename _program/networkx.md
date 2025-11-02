@@ -1,8 +1,8 @@
 ---
 title: "Contributions to NetworkX"
 authors: 'Hiroki Hamaguchi'
-collection: programs
-permalink: /programs/networkx
+collection: program
+permalink: /program/networkx
 excerpt: 'Contributions to NetworkX.'
 thumbnail: "/files/imgs/networkx.png"
 date: 2025-04-15

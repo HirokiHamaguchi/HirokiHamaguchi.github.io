@@ -56,7 +56,7 @@ exclude:
   - assets/js/plugins
   - assets/js/vendor
   - node_modules
-  - subprograms
+  - subprogram
   - vendor
   - Gemfile*
   - LICENSE
@@ -99,7 +99,7 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  programs:
+  program:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -157,10 +157,10 @@ defaults:
       layout: single
       author_profile: true
       share: false
-  # _programs
+  # _program
   - scope:
       path: ""
-      type: programs
+      type: program
     values:
       layout: single
       author_profile: true
