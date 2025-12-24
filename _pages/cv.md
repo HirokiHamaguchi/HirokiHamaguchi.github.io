@@ -20,14 +20,17 @@ redirect_from:
 
 ## Work Experience
 
-* 2023 to now \| Research Assistant\\
-  * Supervisor: [Nobuyuki Yoshioka](https://sites.google.com/view/nyso/about)
-
 * 2024 to 2025 \| Teaching Assistant\\
   * Teacher: [Naoki Marumo](https://sites.google.com/view/nmarumo)
 
+* 2023 to now \| Research Assistant\\
+  * Supervisor: [Nobuyuki Yoshioka](https://sites.google.com/view/nyso/about)
+
 * 2022 to 2023 \| Asprova (part time job)\\
   * [8th Asprova Programming Contest](https://atcoder.jp/contests/asprocon8)
+
+* 2020 to now \| 西北出版 (proofreading, part time job)\\
+  * [西北出版](https://www.seihoku.co.jp/)
 
 ## Fellowships
 
