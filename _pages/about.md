@@ -20,6 +20,10 @@ I'm interested in
 
 etc.
 
+**SciPy Data 2026の発表資料はこちらからダウンロードできます。**
+
+[Download the Presentation Slides](/files/SciPy_Data_2026/SciPy_Data_2026.pdf)
+
 ## Links
 
 ### This Site
