@@ -7,42 +7,42 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-JP"
-title                    : "Hiroki Hamaguchi"
-title_separator          : "-"
-name                     : &name "Hiroki Hamaguchi"
-description              : &description "personal description"
-url                      : https://hirokihamaguchi.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "HirokiHamaguchi/HirokiHamaguchi.github.io"
-
+locale: "en-JP"
+title: "Hiroki Hamaguchi"
+title_separator: "-"
+name: &name "Hiroki Hamaguchi"
+description: &description "personal description"
+url: https://hirokihamaguchi.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+baseurl: "" # the subpath of your site, e.g. "/blog"
+repository: "HirokiHamaguchi/HirokiHamaguchi.github.io"
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
   book:
-    title: 'Books'
+    title: "Books"
   manuscript:
-    title: 'Journal Articles'
+    title: "Journal Articles"
   preprint:
-    title: 'Preprints'
+    title: "Preprints"
   conference:
-    title: 'Conference Papers'
+    title: "Conference Papers"
 
 talk_category:
   talk:
-    title: 'Talks'
+    title: "Talks"
   poster:
-    title: 'Posters'
+    title: "Posters"
+  outreach:
+    title: "Outreach"
 
 # Site Settings
-teaser                   : 500x300.png # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-words_per_minute         : 160
-future                   : true
-talkmap_link             : true      #change to true to add link to talkmap on talks page
+teaser: 500x300.png # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+words_per_minute: 160
+future: true
+talkmap_link: true #change to true to add link to talkmap on talks page
 atom_feed:
-  hide                   : true     # change to true to hide the RSS feed in the footer
-  path                   : # blank (default) uses feed.xml
-
+  hide: true # change to true to hide the RSS feed in the footer
+  path: # blank (default) uses feed.xml
 
 # Reading Files
 include:
@@ -69,14 +69,12 @@ keep_files:
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-
 # Conversion
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -88,7 +86,6 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-
 
 # These settings control the types of collections used by the template
 collections:
@@ -107,7 +104,6 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
-
 
 # These settings control how pages and collections are included in the site
 defaults:
@@ -176,20 +172,16 @@ defaults:
       author_profile: true
       share: false
 
-
-
 # Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
 
 # Outputting
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
 timezone: "Asia/Tokyo" # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
 
 # Plugins
 plugins:
@@ -209,7 +201,6 @@ whitelist:
   - jekyll-redirect-from
   - jemoji
 
-
 # Archives
 #  Type
 #  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
@@ -226,7 +217,6 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-
 
 # HTML Compression
 # - http://jch.penibelst.de/

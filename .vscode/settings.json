@@ -17,7 +17,8 @@
     },
     "latexlint.exceptions": [
         "Quantifying-Robustness",
-        "Decoding-Tool-For-Substitution-Cipher"
+        "Decoding-Tool-For-Substitution-Cipher",
+        "SciPy-Data"
     ],
     "cSpell.words": [
         "Akiko",
