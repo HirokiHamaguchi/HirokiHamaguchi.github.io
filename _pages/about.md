@@ -22,6 +22,8 @@ etc.
 
 **SciPy Data 2026の発表資料はこちらからダウンロードできます。**
 
+**You can download the presentation slides of SciPy Data 2026 from the link below.**
+
 [Download the Presentation Slides](/files/SciPy_Data_2026/SciPy_Data_2026.pdf)
 
 ## Links
