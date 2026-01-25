@@ -15,6 +15,11 @@
         "files": "store",
         "talkmap": "husky"
     },
+    "files.exclude": {
+        ".mypy_cache": true,
+        ".sass-cache": true,
+        ".bundle": true
+    },
     "latexlint.exceptions": [
         "Quantifying-Robustness",
         "Decoding-Tool-For-Substitution-Cipher",

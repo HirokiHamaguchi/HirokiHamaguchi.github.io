@@ -20,24 +20,8 @@ I'm interested in
 
 etc.
 
-**SciPy Data 2026の発表資料はこちらからダウンロードできます。**
-
-**You can download the presentation slides of SciPy Data 2026 from the link below.**
-
-[Download the Presentation Slides](/files/SciPy_Data_2026/SciPy_Data_2026.pdf)
-
 ## Links
 
-### This Site
-
-* [Publications](https://hirokihamaguchi.github.io/publications/)
-* [Talks](https://hirokihamaguchi.github.io/talks/)
-* [CV](https://hirokihamaguchi.github.io/cv/)
-* [Program](https://hirokihamaguchi.github.io/program/)
-* [Diary](https://hirokihamaguchi.github.io/diary/)
-* [Blog](https://hirokihamaguchi.github.io/blog/)
-
-### Other Sites
 
 <style>
   .ul-for-other {
@@ -56,6 +40,16 @@ etc.
     margin-right: 5px;
   }
 </style>
+
+### Contact
+
+<ul class="ul-for-other social-icons">
+  <li>
+    <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i> <a href="mailto:hirokihamaguchi0331@gmail.com">Email</a>
+  </li>
+</ul>
+
+### External Sites
 
 <ul class="ul-for-other social-icons">
   <li>
@@ -95,3 +89,12 @@ etc.
     </a>
   </li>
 </ul>
+
+### This Site
+
+* [Publications](https://hirokihamaguchi.github.io/publications/)
+* [Talks](https://hirokihamaguchi.github.io/talks/)
+* [CV](https://hirokihamaguchi.github.io/cv/)
+* [Program](https://hirokihamaguchi.github.io/program/)
+* [Diary](https://hirokihamaguchi.github.io/diary/)
+* [Blog](https://hirokihamaguchi.github.io/blog/)
