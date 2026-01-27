@@ -4,11 +4,11 @@ authors: 'Hiroki Hamaguchi'
 collection: program
 permalink: /program/networkx
 excerpt: 'Contributions to NetworkX.'
-thumbnail: "/files/imgs/networkx.png"
+thumbnail: "/files/2025/networkx.png"
 date: 2025-04-15
 ---
 
-<img src="/files/imgs/networkx.png" alt="networkx" width="50%" style="display: block; margin: 0 auto;">
+<img src="/files/2025/networkx.png" alt="networkx" width="50%" style="display: block; margin: 0 auto;">
 
 NetworkXの`nx.draw`関数などに貢献をしました。
 

@@ -14,4 +14,4 @@ paperurl: 'https://quantum-journal.org/papers/q-2024-09-05-1461/'
 
 Computation of Robustness of Magic using Column Generation.
 
-Press at [here](https://www.t.u-tokyo.ac.jp/press/pr2024-09-06-001).
+[Press by the University of Tokyo](https://www.t.u-tokyo.ac.jp/press/pr2024-09-06-001).
