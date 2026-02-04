@@ -7,6 +7,7 @@ OGP画像生成スクリプト
 
 from PIL import Image
 import os
+import sys
 
 # OGP画像の標準サイズ
 OGP_WIDTH = 1200
@@ -96,7 +97,7 @@ if __name__ == "__main__":
     # 入力ファイルの存在確認
     if not os.path.exists(input_path):
         print(f"エラー: 入力画像が見つかりません: {input_path}")
-        exit(1)
+        sys.exit(1)
     
     # OGP画像を生成
     create_ogp_image(input_path, output_path)
