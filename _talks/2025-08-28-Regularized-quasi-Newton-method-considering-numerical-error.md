@@ -7,6 +7,7 @@ permalink: /talks/2025-08-28-Regularized-quasi-Newton-method-considering-numeric
 venue: "連続最適化および関連分野に関する夏季学校 2025"
 date: 2025-08-28
 location: "統計数理研究所"
+poster_url: /files/2025/sscoke2025.pdf
 ---
 
 [Link to the Page](https://www.ism.ac.jp/~mirai/sscoke/2025/) \| [Download the Poster](/files/2025/sscoke2025.pdf)

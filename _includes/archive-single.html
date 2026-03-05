@@ -67,13 +67,13 @@
 
     <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
 
-    {% if post.paperurl and post.slidesurl %}
-    <p><a href="{{ post.paperurl }}">Link to the Paper</a> | <a href="{{ post.slidesurl }}">Download the Slide</a></p>
-    {% elsif post.paperurl %}
-    <p><a href=" {{ post.paperurl }} ">Link to the Paper</a></p>
-    {% elsif post.slidesurl %}
-    <p><a href="{{ post.slidesurl }}">Download the Slide</a></p>
-    {% endif %}
+    <p>
+      {% if post.paperurl %}<a href="{{ post.paperurl }}">Link to the Paper</a>{% endif %}
+      {% if post.paperurl and post.slidesurl %} | {% endif %}
+      {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Download the Slide</a>{% endif %}
+      {% if post.posterurl and (post.paperurl or post.slidesurl) %} | {% endif %}
+      {% if post.posterurl %}<a href="{{ post.posterurl }}">Download the Poster</a>{% endif %}
+    </p>
   </article>
 
   {% if post.thumbnail %}

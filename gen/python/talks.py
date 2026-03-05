@@ -32,11 +32,17 @@ def talks(dirname: str, html_escape: Callable[[str], str]):
         if len(str(item.venue)) > 3:
             md += 'venue: "' + item.venue + '"\n'
 
-        if len(str(item.location)) > 3:
+        if len(str(item.date)) > 3:
             md += "date: " + str(item.date) + "\n"
 
         if len(str(item.location)) > 3:
             md += 'location: "' + str(item.location) + '"\n'
+
+        if len(str(item.poster_url)) > 3:
+            md += "poster_url: " + str(item.poster_url) + "\n"
+
+        if len(str(item.slide_url)) > 3:
+            md += "slide_url: " + str(item.slide_url) + "\n"
 
         md += "---\n"
 
