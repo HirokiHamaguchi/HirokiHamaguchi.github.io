@@ -9,4 +9,4 @@ date: 2025-08-28
 location: "統計数理研究所"
 ---
 
-[Link to the Page](https://www.ism.ac.jp/~mirai/sscoke/2025/)
+[Link to the Page](https://www.ism.ac.jp/~mirai/sscoke/2025/) \| [Download the Poster](/files/2025/sscoke2025.pdf)

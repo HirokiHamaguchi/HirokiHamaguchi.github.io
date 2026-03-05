@@ -1,4 +1,18 @@
 [
+     {
+        "title": "魔法状態評価の大規模化に向けた効率的アルゴリズム",
+        "authors": [
+            "浜口広樹",
+            "浜田航宇",
+            "吉岡信行"
+        ],
+        "type": "talk",
+        "url_slug": "Efficient-algorithm-for-scaling-up-magic-state-evaluation",
+        "venue": "第10回量子ソフトウェア研究発表会",
+        "date": "2023-02-01",
+        "location": "立命館大学",
+        "talk_url": "https://www.ipsj.or.jp/kenkyukai/event/qs10.html"
+    },
     {
         "title": "Fast computation of magic monotones",
         "authors": [
@@ -25,22 +39,8 @@
         "venue": "日本応用数理学会第20回研究部会連合発表会",
         "date": "2024-03-05",
         "location": "長岡技術科学大学",
-        "talk_url": "https://conference.wdc-jp.com/jsiam/union/2024/program/program_flash.html#QuS8muWgtO+8iEFMM+ism+e+qeWupO+8iQ==",
-        "slide_url": "https://github.com/HirokiHamaguchi/GraduationThesis/blob/main/doc/presentation/final/final.pdf?raw=true"
-    },
-    {
-        "title": "魔法状態評価の大規模化に向けた効率的アルゴリズム",
-        "authors": [
-            "浜口広樹",
-            "浜田航宇",
-            "吉岡信行"
-        ],
-        "type": "talk",
-        "url_slug": "Efficient-algorithm-for-scaling-up-magic-state-evaluation",
-        "venue": "第10回量子ソフトウェア研究発表会",
-        "date": "2023-02-01",
-        "location": "立命館大学",
-        "talk_url": "https://www.ipsj.or.jp/kenkyukai/event/qs10.html"
+        "talk_url": "https://conference.wdc-jp.com/jsiam/union/2024/program/program_flash.html",
+        "slide_url": "/files/2024/bachelor_presentation.pdf"
     },
     {
         "title": "最適化手法を用いたグラフ描画とその初期配置",
@@ -68,6 +68,33 @@
         "venue": "連続最適化および関連分野に関する夏季学校 2025",
         "date": "2025-08-28",
         "location": "統計数理研究所",
-        "talk_url": "https://www.ism.ac.jp/~mirai/sscoke/2025/"
+        "talk_url": "https://www.ism.ac.jp/~mirai/sscoke/2025/",
+        "poster_url": "/files/2025/sscoke2025.pdf"
+    },
+    {
+        "title": "効率的な最適化手法\\\"L-BFGS法\\\"の、NetworkXでの活用とSciPyの実装について",
+        "authors": ["浜口広樹"],
+        "type": "outreach",
+        "url_slug": "SciPy-Data-2026",
+        "venue": "SciPy Data 2026",
+        "date": "2026-01-24",
+        "location": "御茶ノ水ソラシティ",
+        "talk_url": "https://scipydata.connpass.com/event/364718/",
+        "slide_url": "/files/2026/SciPy_Data_2026.pdf"
+    },
+    {
+        "title": "不正確な関数値下における実用的な正則化準ニュートン法",
+        "authors": [
+            "浜口広樹",
+            "丸茂直貴",
+            "武田朗子"
+        ],
+        "type": "talk",
+        "url_slug": "Practical-regularized-quasi-Newton-methods-with-inexact-function-values",
+        "venue": "日本オペレーションズ・リサーチ学会 2026年春季大会",
+        "date": "2026-03-05",
+        "location": "麗澤大学",
+        "talk_url": "https://orsj.org",
+        "slide_url": "/files/2026/OR_spring_2026.pdf"
     }
 ]
