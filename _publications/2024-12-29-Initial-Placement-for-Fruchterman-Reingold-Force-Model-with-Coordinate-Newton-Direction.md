@@ -8,9 +8,9 @@ excerpt: 'Using Coordinate Newton and L-BFGS, compute the graph layout.'
 date: 2024-12-29
 venue: 'arXiv'
 paperurl: 'https://arxiv.org/abs/2412.20317'
-slidesurl: 'https://github.com/HirokiHamaguchi/Initial_Placement_for_Fruchterman-Reingold_Force_Model_with_Coordinate_Newton_Direction/blob/main/doc/presentation/presentation.pdf?raw=true'
+slidesurl: 'https://raw.githubusercontent.com/HirokiHamaguchi/Initial_Placement_for_Fruchterman-Reingold_Force_Model_with_Coordinate_Newton_Direction/main/doc/presentation/presentation.pdf'
 ---
 
-<a href='https://arxiv.org/abs/2412.20317'>Link to the Paper</a> \| <a href='https://github.com/HirokiHamaguchi/Initial_Placement_for_Fruchterman-Reingold_Force_Model_with_Coordinate_Newton_Direction/blob/main/doc/presentation/presentation.pdf?raw=true'>Download the Slide</a>
+<a href='https://arxiv.org/abs/2412.20317'>Link to the Paper</a> \| <a href='https://raw.githubusercontent.com/HirokiHamaguchi/Initial_Placement_for_Fruchterman-Reingold_Force_Model_with_Coordinate_Newton_Direction/main/doc/presentation/presentation.pdf'>Download the Slide</a>
 
 Using Coordinate Newton and L-BFGS, compute the graph layout.
