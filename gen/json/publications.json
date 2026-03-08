@@ -27,7 +27,7 @@
     "excerpt": "Using Coordinate Newton and L-BFGS, compute the graph layout.",
     "url_slug": "Initial-Placement-for-Fruchterman-Reingold-Force-Model-with-Coordinate-Newton-Direction",
     "paper_url": "https://arxiv.org/abs/2412.20317",
-    "slides_url": "https://github.com/HirokiHamaguchi/Initial_Placement_for_Fruchterman-Reingold_Force_Model_with_Coordinate_Newton_Direction/blob/main/doc/presentation/presentation.pdf?raw=true"
+    "slides_url": "https://raw.githubusercontent.com/HirokiHamaguchi/Initial_Placement_for_Fruchterman-Reingold_Force_Model_with_Coordinate_Newton_Direction/main/doc/presentation/presentation.pdf"
   },
   {
     "pub_date": "2024-09-05",
