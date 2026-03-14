@@ -1,5 +1,19 @@
 [
   {
+    "pub_date": "2026-03-11",
+    "title": "Practical Regularized Quasi-Newton Methods with Inexact Function Values",
+    "authors": [
+      "Hiroki Hamaguchi",
+      "Naoki Marumo",
+      "Akiko Takeda"
+    ],
+    "venue": "arXiv",
+    "category": "preprint",
+    "excerpt": "Regularized quasi-Newton methods for optimization with inexact function values.",
+    "url_slug": "Practical-Regularized-Quasi-Newton-Methods-with-Inexact-Function-Values",
+    "paper_url": "https://arxiv.org/abs/2603.10642"
+  },
+  {
     "pub_date": "2025-01-28",
     "title": "Faster computation of nonstabilizerness",
     "authors": [
