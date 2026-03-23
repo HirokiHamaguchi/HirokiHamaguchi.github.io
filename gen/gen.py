@@ -1,4 +1,5 @@
 import os
+import sys
 
 from python.publications import publications
 from python.qiita import qiita
@@ -22,7 +23,11 @@ def main():
     talks(dirname, html_escape)
     talkmap(os.path.join(dirname, "../"))
     qiita(dirname, html_escape)
-    print_view(dirname)
+
+    if "-preview" in sys.argv:
+        print_view(dirname)
+    else:
+        print("With -preview, you can see Qiita views, likes, and stocks.")
 
 
 if __name__ == "__main__":

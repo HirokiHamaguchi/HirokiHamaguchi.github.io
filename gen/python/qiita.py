@@ -1,11 +1,57 @@
 import http.client
 import json
-import os
+import urllib.request
+from io import BytesIO
+from pathlib import Path
 from typing import Callable
+
+from PIL import Image
+
+
+def _extract_thumbnail_url(rendered_body: str) -> str:
+    target = 'data-canonical-src="'
+    start = rendered_body.find(target)
+    if start == -1:
+        return ""
+    start += len(target)
+    end = rendered_body.find('"', start)
+    if end == -1:
+        return ""
+    return rendered_body[start:end]
+
+
+def _download_image(url: str):
+    try:
+        with urllib.request.urlopen(url, timeout=10) as response:
+            image_data = response.read()
+        return Image.open(BytesIO(image_data))
+    except Exception as e:
+        print(f"[WARN] Failed to download thumbnail: {url} ({e})")
+        return None
+
+
+def _ensure_webp_thumbnail(thumbnail_url: str, webp_path: Path) -> bool:
+    if webp_path.exists():
+        return True
+
+    image = _download_image(thumbnail_url)
+    if image is None:
+        return False
+
+    try:
+        image.save(webp_path, "WEBP", quality=85)
+        return True
+    except Exception as e:
+        print(f"[WARN] Failed to save webp: {webp_path} ({e})")
+        return False
 
 
 def qiita(dirname: str, html_escape: Callable[[str], str]):
     USER_ID = "hari64"
+    project_root = Path(dirname).parent
+    posts_dir = project_root / "_posts"
+    thumbnails_dir = project_root / "images" / "thumbnails"
+    thumbnails_dir.mkdir(parents=True, exist_ok=True)
 
     # Assume that the number of items is less than 100
     PAGE = "1"
@@ -30,12 +76,17 @@ def qiita(dirname: str, html_escape: Callable[[str], str]):
         date = created_at[:10]
 
         body = jsonStr[num]["rendered_body"]
+        thumbnail_url = _extract_thumbnail_url(body)
+
+        webp_filename = str(date) + "-thumbnail.webp"
+        webp_path = thumbnails_dir / webp_filename
+        webp_rel_path = "/images/thumbnails/" + webp_filename
+
         thumbnail = ""
-        target = 'data-canonical-src="'
-        if body.find(target) != -1:
-            s = body.find(target) + len(target)
-            e = body.find('"', s)
-            thumbnail = body[s:e]
+        if thumbnail_url:
+            # ここで、thumbnailが実際に存在するか判定、存在済みならcontinue
+            _ensure_webp_thumbnail(thumbnail_url, webp_path)
+            thumbnail = webp_rel_path
 
         md = '---\ntitle: "' + title + '"'
 
@@ -56,9 +107,7 @@ def qiita(dirname: str, html_escape: Callable[[str], str]):
             + ".md"
         )
 
-        with open(
-            os.path.join(dirname, "../_posts/" + md_filename), "w", encoding="utf-8"
-        ) as f:
+        with open(posts_dir / md_filename, "w", encoding="utf-8") as f:
             f.write(md)
 
     conn.close()
