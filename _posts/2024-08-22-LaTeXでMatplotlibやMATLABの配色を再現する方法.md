@@ -8,11 +8,11 @@ thumbnail: /images/thumbnails/2024-08-22-thumbnail.webp
 
 Matplotlibを用いて作成された図と同じ配色を
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/7a05e6cb-6e33-3e82-3d02-9077972f7574.png" alt="AmatPlt.png">
+![AmatPlt.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/7a05e6cb-6e33-3e82-3d02-9077972f7574.png)
 
 TikZで再現する方法などについて、本稿では述べます。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/aa72393e-126f-811f-9150-3be6e5504711.png" alt="AmatTikZ.png">
+![AmatTikZ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/aa72393e-126f-811f-9150-3be6e5504711.png)
 
 ## 目次
 
@@ -46,7 +46,7 @@ https://mathlandscape.com/latex-color/
 CTANにて公開されているxcolorの[公式ドキュメント](https://ctan.org/pkg/xcolor?lang=en)における`4 Colors by Name`節には、既に様々な色が定義されていることが記載されています。
 もし、デフォルトの色パレットで目的が十分達成されるという場合には、それらを使うことをお勧めします。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/ff61533f-d25e-67de-f051-911699458cd6.png" alt="xcolor.png">
+![xcolor.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/ff61533f-d25e-67de-f051-911699458cd6.png)
 
 しかし、本記事では更に追加して、MatplotlibやMATLABの色パレットを定義する方法を紹介します。
 
@@ -64,7 +64,7 @@ https://github.com/matplotlib/matplotlib
 
 tab10とは下図右側のような配色です。([引用元](https://matplotlib.org/stable/users/prev_whats_new/dflt_style_changes.html#colors-in-default-property-cycle))
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/06502a65-771d-6796-8a27-15ab394a1173.png" alt="dflt_style_changes-1.2x.png">
+![dflt_style_changes-1.2x.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/06502a65-771d-6796-8a27-15ab394a1173.png)
 
 pltのデフォルトなので、見たことがある方も多いかと思います。通常の原色などと比べてより視認性が高いことが特徴です。
 
@@ -89,7 +89,7 @@ tab10のカラーコードは以下の通りです。
 
 https://www.mathworks.com/help/matlab/creating_plots/specify-plot-colors.html
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/2940ee39-9ad2-6322-bf35-d70965597ea7.png" alt="matlab.png">
+![matlab.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/2940ee39-9ad2-6322-bf35-d70965597ea7.png)
 
 ```latex
 \definecolor{matlabBlue}{HTML}{0072BD}
@@ -257,7 +257,7 @@ if __name__ == "__main__":
 以下に、これらの色を用いたサンプルを示します。
 これはTikZで作成されました。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/8a9d4527-3d71-26c3-1a51-d19ef97fa695.png" alt="test.png">
+![test.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/8a9d4527-3d71-26c3-1a51-d19ef97fa695.png)
 
 <details><summary>LaTeX Code</summary>
 
@@ -382,7 +382,7 @@ https://github.com/JLSteenwyk/ggpubfigs
 
 > Color palettes are all colorblind friendly. Thus, your figures will be accessible to more people, which is inarguably better for your audience and you.
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/b039af1e-1619-4c94-af4c-64d7217b3bce.png" alt="ggpubfigs">
+![ggpubfigs](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/b039af1e-1619-4c94-af4c-64d7217b3bce.png)
 
 ## Licenseの問題について
 

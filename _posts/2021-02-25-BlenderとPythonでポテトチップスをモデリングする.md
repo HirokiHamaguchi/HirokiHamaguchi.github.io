@@ -8,7 +8,7 @@ thumbnail: /images/thumbnails/2021-02-25-thumbnail.webp
 
 これを作ります。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/4caeeb69-c6f5-1f4f-449a-cc3489760b28.jpeg" alt="potato">
+![potato](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/4caeeb69-c6f5-1f4f-449a-cc3489760b28.jpeg)
 
 ## 動機
 
@@ -29,7 +29,7 @@ sachiko15さんという方が、[モデリング文化祭](https://www.youtube.
 
 図を見ればさらに直感的に理解できると思います。
 
-<img width=100% src="https://upload.wikimedia.org/wikipedia/commons/4/40/Saddle_point.png" alt="saddlePoint">
+![saddlePoint](https://upload.wikimedia.org/wikipedia/commons/4/40/Saddle_point.png)
 
 （Wikiより引用, パブリック・ドメイン, [link](https://commons.wikimedia.org/w/index.php?curid=21943)）
 
@@ -48,7 +48,7 @@ $z=f(x,y)$ の形式で表される二次曲面は、クロスタームを含ま
 Blenderの拡張機能であるaddonには、Add Mesh Extra Objectsというものが存在し、それのZ Math Surface([参考](https://github.com/sobotka/blender-addons/blob/master/add_mesh_extra_objects/add_mesh_3d_function_surface.py
 ))という機能は、先程のような $z=f(x,y)$ という数式をポリゴンに変換してくれます。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/e136e859-97c8-efc9-15d7-7c490c329003.jpeg" alt="blenderAddon">
+![blenderAddon](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/e136e859-97c8-efc9-15d7-7c490c329003.jpeg)
 
 これによって、自動でポテトチップスのモデリングを行うことが可能です。
 
@@ -95,13 +95,13 @@ for counter in range(101):
 
 上では100個のポテト曲面を作成していますが、その内の一つを取り出すとこんな形です。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/9fe1c05a-899c-3306-9a32-f3032d5e4d79.jpeg" alt="STEP1-1">
+![STEP1-1](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/9fe1c05a-899c-3306-9a32-f3032d5e4d79.jpeg)
 
 先ほど見た鞍点を含む曲面が出来ています。
 
 これを100個集めたのが以下の画像です。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/53763dc3-f945-97b3-5459-8e069c43f68d.jpeg" alt="STEP1-2">
+![STEP1-2](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/53763dc3-f945-97b3-5459-8e069c43f68d.jpeg)
 
 これをpotato surfaceというcollectionに入れておきます。
 
@@ -114,7 +114,7 @@ for counter in range(101):
 まず数式の部分だけ軽く説明します。
 ポテトを切り抜く型としては楕円が基本的な図形の中で最も近いですが、それではやや機械的すぎます。なので、y軸方向に楕円を非均一に押し潰してやります。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/a520047b-6327-006b-8af9-2a33514b83f4.jpeg" alt="STEP2">
+![STEP2](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/a520047b-6327-006b-8af9-2a33514b83f4.jpeg)
 
 上の図で言えば、青色の閉曲線が押しつぶされた楕円です。
 
@@ -152,13 +152,13 @@ for counter in range(101):
 
 ```
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/3a0ae262-c16a-2c07-78e6-fe7698a9bd20.jpeg" alt="STEP2-1">
+![STEP2-1](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/3a0ae262-c16a-2c07-78e6-fe7698a9bd20.jpeg)
 
 #### 2/3 閉曲線の作成
 
 ここではcopy attributesというaddonや、`ctrl+A`で出てくるApplyのVisual Geometry to Meshという機能を使って一括にbooleanを設定、適用していきます。後者の機能に関してはややマイナーかも知れませんが、非常に便利です。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/2f0d710a-edd8-57b3-fd5b-82383db0afc0.jpeg" alt="STEP2-2">
+![STEP2-2](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/2f0d710a-edd8-57b3-fd5b-82383db0afc0.jpeg)
 
 #### 3/3 型の作成
 
@@ -189,7 +189,7 @@ for i,obj in enumerate(bpy.context.selected_objects):
     obj.name = "mold.{:0=3}".format(i+1)
 ```
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/d4562b8c-b612-7fd0-f8fb-73ca2dcf283a.jpeg" alt="STEP2-3">
+![STEP2-3](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/d4562b8c-b612-7fd0-f8fb-73ca2dcf283a.jpeg)
 
 これでMoldという名前の、型を集めたcollectionが出来ました。
 
@@ -202,9 +202,9 @@ for i,obj in enumerate(bpy.context.selected_objects):
 potato surface内のオブジェクトを軽く位置をずらしておきます。そうすることで、切り抜きによりランダムさが加わります。
 Randomize Transformでそれを実現します。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/a839889d-e846-4a80-2599-7ef5af925091.jpeg" alt="STEP3-11">
+![STEP3-11](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/a839889d-e846-4a80-2599-7ef5af925091.jpeg)
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/299ac6a1-eb8c-c393-cf02-ec38a820214d.jpeg" alt="STEP3-12">
+![STEP3-12](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/299ac6a1-eb8c-c393-cf02-ec38a820214d.jpeg)
 
 #### 2/2 切り抜き
 
@@ -225,23 +225,23 @@ for i in range(100):
 
 これを実行します。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/bd5898ab-fee3-dcd0-68c1-98373228bb16.jpeg" alt="STEP3-21">
+![STEP3-21](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/bd5898ab-fee3-dcd0-68c1-98373228bb16.jpeg)
 
 上手く出来たでしょうか?
 
 moldを全て非表示にして、Randomize Transformでポテトを見やすく配置します
 すると、おお! ポテチらしきものが!!!
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/d968617f-abf6-97cc-d858-88951ad3bdf4.jpeg" alt="STEP3-22">
+![STEP3-22](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/d968617f-abf6-97cc-d858-88951ad3bdf4.jpeg)
 
 ただ数値設定をミスっていたせいでやや丸まりすぎなので、z方向に0.4倍してやって、、、
 
 今度こそ、揚げたてポテトの完成です。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/c2da0031-e8eb-f1f3-fd60-66e3b01018df.jpeg" alt="STEP3-23">
+![STEP3-23](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/c2da0031-e8eb-f1f3-fd60-66e3b01018df.jpeg)
 
 この中の数枚を取り出してみて見ましょう。
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/7df4dcec-c321-f232-4f03-83c474f05696.jpeg" alt="STEP3-24">
+![STEP3-24](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/7df4dcec-c321-f232-4f03-83c474f05696.jpeg)
 
 かなりポテチらしき形を有していませんか? 私は満足です。
 
@@ -257,15 +257,15 @@ Shade smoothを掛けてauto smoothを有効にします。ポテチ100枚だと
 
 マテリアルは以下の通りです。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/e422436f-7654-1bf0-6899-fb9b1e0e2f7a.jpeg" alt="material">
+![material](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/e422436f-7654-1bf0-6899-fb9b1e0e2f7a.jpeg)
 
 コンポジットは以下の通りです。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/5c8f3b17-b2c8-5517-4944-4a22c6374c1f.jpeg" alt="composite">
+![composite](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/5c8f3b17-b2c8-5517-4944-4a22c6374c1f.jpeg)
 
 そうして完成したのが、冒頭でもお見せしたこちらになります。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/4caeeb69-c6f5-1f4f-449a-cc3489760b28.jpeg" alt="potato">
+![potato](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/4caeeb69-c6f5-1f4f-449a-cc3489760b28.jpeg)
 
 ご覧いただきありがとうございました。
 
@@ -278,7 +278,7 @@ Geometry Nodeは主にBlender3.0から追加された新機能で、これまで
 
 以下にpotato surfaceを作成する部分だけではありますが、Geometry Nodeを用いた例をご紹介します。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/1b5d0ec3-b8ad-5912-31e0-eb1b3d3a550f.png" alt="image.png">
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/1b5d0ec3-b8ad-5912-31e0-eb1b3d3a550f.png)
 
 基本的にはこの[StackExchangeの記事](https://blender.stackexchange.com/questions/248789/using-geometry-nodes-to-create-and-plot-equations-functions)と同じことをしているだけですが、$z=x^2-y^2$ という操作が、Mesh Primitivesの<font color="LimeGreen">Grid</font>、そしてVectorの<font color="DeepSkyBlue">Separate XYZ</font>と<font color="DeepSkyBlue">Combine XYZ</font>によって実現可能です。
 

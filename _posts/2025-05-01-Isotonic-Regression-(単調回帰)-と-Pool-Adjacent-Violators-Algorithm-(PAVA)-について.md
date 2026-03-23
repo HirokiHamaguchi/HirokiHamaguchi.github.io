@@ -10,7 +10,7 @@ thumbnail: /images/thumbnails/2025-05-01-thumbnail.webp
 
 単調非減少という制約付きの最小二乗法である **Isotonic Regression** (**単調回帰**)について、本記事では解説します。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/06349ee7-d06a-44fe-891f-6607fafb8632.png" alt="scipy_IR">
+![scipy_IR](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/06349ee7-d06a-44fe-891f-6607fafb8632.png)
 
 ## 導入
 
@@ -40,7 +40,7 @@ thumbnail: /images/thumbnails/2025-05-01-thumbnail.webp
 
 このように定義される Isotonic Regression は、確率的分類（probabilistic classification）や、麻酔学や毒性学における連続的な用量反応関係（dose-response relationship）の推定という応用がある重要な手法となっています ([Wiki-Applications](https://en.wikipedia.org/wiki/Isotonic_regression#Applications))。
 
-<img width=100% src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Dose_response_curve_stimulation.jpg" alt="dose-response">
+![dose-response](https://upload.wikimedia.org/wikipedia/commons/8/8c/Dose_response_curve_stimulation.jpg)
 
 用量-反応曲線 [By Jamgoodman - Own work, CC BY-SA 4.0](https://commons.wikimedia.org/w/index.php?curid=79749638)
 
@@ -80,7 +80,7 @@ PAVA (Pool Adjacent Violators Algorithm) の擬似コードは以下のように
 
 先にPAVAのビジュアライズ結果をお見せします。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/2b40ab96-d406-4c96-b57e-ead2949620c8.gif" alt="pava">
+![pava](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/2b40ab96-d406-4c96-b57e-ead2949620c8.gif)
 
 <font color="#1f77b4">青い点が訓練データ $y=\lbrace y_i \rbrace_{i=1}^{n}$</font> で、<font color="2ca02c">緑の点が順次定められていく単調回帰 $x=\lbrace x_i \rbrace_{i=1}^{n}$</font> です。隣接するブロックどうしに<font color="red">制約違反(赤矢印)</font>がなくなったら終了で、<font color="ff7f0e">オレンジが出力される結果</font>を表しています。
 
@@ -88,7 +88,7 @@ PAVA (Pool Adjacent Violators Algorithm) の擬似コードは以下のように
 
 実装をしていきます。PAVAには非常に沢山のバリエーションがあり、基本的な流れは結局同じですが、実装の詳細は異なる点には注意が必要です。[monotone](https://cran.r-project.org/web/packages/monotone/index.html) の`src/legacyC.c`で全てのC言語実装が見られます。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/198fa074-bb5d-49aa-b230-a108edcc5c2f.png" alt="pava_table">
+![pava_table](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/198fa074-bb5d-49aa-b230-a108edcc5c2f.png)
 
 (文献[^monotone]より。)
 
@@ -571,7 +571,7 @@ https://qiita.com/taka_horibe/items/0c9b0993e0bd1c0135fa
 
 </details>
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/73662578-e8d7-495c-bf85-da7871096966.png" alt="constraints_3d">
+![constraints_3d](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/73662578-e8d7-495c-bf85-da7871096966.png)
 
 ($n=3$ の場合の実行可能領域 $x_1 \leq x_2 \leq x_3$ の図示)
 
@@ -672,13 +672,13 @@ https://qiita.com/taka_horibe/items/0c9b0993e0bd1c0135fa
 
 以下の具体例も参考にして下さい。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/6ac04acd-65a6-41a1-b91f-b06efae9429f.png" alt="p1">
+![p1](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/6ac04acd-65a6-41a1-b91f-b06efae9429f.png)
 (初期解)
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/0a8d8f3f-a85f-4d72-9b22-0b04ddb86b48.png" alt="p2">
+![p2](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/0a8d8f3f-a85f-4d72-9b22-0b04ddb86b48.png)
 (有効制約 $J$ の更新。停留性などの3条件は各ステップで満たしている。)
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/c45d97ca-66e2-4129-8fdd-76d2a88eb925.png" alt="p3">
+![p3](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/c45d97ca-66e2-4129-8fdd-76d2a88eb925.png)
 (PAVAが停止するとき、主問題の実行可能条件も満たしている。)
 
 #### 証明-1

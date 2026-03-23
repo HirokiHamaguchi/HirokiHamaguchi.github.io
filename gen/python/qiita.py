@@ -1,11 +1,110 @@
 import http.client
 import json
+import re
 import urllib.request
 from io import BytesIO
 from pathlib import Path
 from typing import Callable
 
 from PIL import Image
+
+_IMG_ATTR_PATTERN = re.compile(
+    r'([a-zA-Z_:][\w:.-]*)\s*=\s*("[^"]*"|\'[^\']*\'|[^\s"\'>]+)'
+)
+
+
+def _parse_img_attributes(line: str) -> dict[str, str]:
+    attributes: dict[str, str] = {}
+    for key, raw_value in _IMG_ATTR_PATTERN.findall(line):
+        value = raw_value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'"}:
+            value = value[1:-1]
+        attributes[key] = value
+    return attributes
+
+
+def _convert_img_line_to_markdown_if_needed(line: str) -> str:
+    line_without_newline = line.rstrip("\n")
+    if not (
+        line_without_newline.startswith("<img") and line_without_newline.endswith(">")
+    ):
+        return line
+
+    attrs = _parse_img_attributes(line_without_newline)
+    src = attrs.get("src", "")
+    alt = attrs.get("alt", "")
+
+    if not src:
+        return line
+
+    converted = f"![{alt}]({src})"
+    if line.endswith("\n"):
+        converted += "\n"
+    return converted
+
+
+def _wrap_unique_code_fence_with_liquid_raw(
+    content: str,
+    unique_fence_prefix: str,
+    liquid_error_message: str,
+) -> str:
+    match_count = content.count(unique_fence_prefix)
+    if match_count == 0:
+        return content
+
+    if match_count != 1:
+        print(
+            f"[WARN] Liquid raw-wrap skipped: expected 1 match, got {match_count}. "
+            f"prefix={unique_fence_prefix.splitlines()[0]}"
+        )
+        return content
+
+    block_start = content.find(unique_fence_prefix)
+    if block_start == -1:
+        return content
+
+    if "{% raw %}" in content[max(0, block_start - 200) : block_start]:
+        return content
+
+    block_end = content.find("\n```", block_start + 3)
+    if block_end == -1:
+        print(
+            "[WARN] Liquid raw-wrap skipped: closing code fence not found. "
+            f"prefix={unique_fence_prefix.splitlines()[0]}"
+        )
+        return content
+
+    insert_before = f"<!-- AUTO-FIX: {liquid_error_message} -->\n{{% raw %}}\n"
+    content = content[:block_start] + insert_before + content[block_start:]
+
+    block_end_after_insert = block_end + len(insert_before)
+    closing_fence_end = block_end_after_insert + len("\n```")
+    insert_after = "\n{% endraw %}"
+    content = content[:closing_fence_end] + insert_after + content[closing_fence_end:]
+
+    return content
+
+
+def _apply_liquid_error_fixes(content: str) -> str:
+    content = _wrap_unique_code_fence_with_liquid_raw(
+        content,
+        "```C++:differentKey.cpp\n#include <iostream>\n#include <map>\n#include <vector>",
+        'Liquid syntax error (line 831): Expected end_of_string but found comma in "&#123;&#123;key_a, 4&#125;&#125;"',
+    )
+    content = _wrap_unique_code_fence_with_liquid_raw(
+        content,
+        "```tex\n% \\XeTeXLinkBoxを使う例\n\\href{https://hirokihamaguchi.github.io/}{%",
+        "Liquid syntax error (line 27): Tag '&#123;%' was not properly terminated with regexp: /\\%\\}/",
+    )
+    return content
+
+
+def _transform_qiita_markdown(content: str) -> str:
+    transformed = "".join(
+        _convert_img_line_to_markdown_if_needed(line)
+        for line in content.splitlines(keepends=True)
+    )
+    return _apply_liquid_error_fixes(transformed)
 
 
 def _extract_thumbnail_url(rendered_body: str) -> str:
@@ -109,7 +208,7 @@ def qiita(dirname: str, html_escape: Callable[[str], str]):
         if len(matching_folders) == 1:
             qiita_md_path = matching_folders[0] / "Qiita.md"
             with open(qiita_md_path, "r", encoding="utf-8") as f:
-                md += "\n" + f.read()
+                md += "\n" + _transform_qiita_markdown(f.read())
         elif len(matching_folders) == 0:
             md += "\n\n" + "[Link to Qiita](" + jsonStr[num]["url"] + ")" + "\n"
         else:

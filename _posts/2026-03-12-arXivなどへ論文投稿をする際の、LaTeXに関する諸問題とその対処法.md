@@ -44,7 +44,7 @@ https://qiita.com/hari64/items/1ae14ff750f910275b29
 
 しかし、完全にbblファイルやbibファイルがない状態でOverleaf上でコンパイルが通るとしても、次のようなエラーが出てくることがあります。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/7ff04f7a-f4be-4a04-b6e6-3785e5c608aa.png" alt="arXiv_bbl_bib_error">
+![arXiv_bbl_bib_error](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/7ff04f7a-f4be-4a04-b6e6-3785e5c608aa.png)
 
 ```txt
 The scan did not detect a bibliography. Please include one.
@@ -85,12 +85,12 @@ Both bbl and bib files are missing
 
 しかし、arXivに投稿する際に、タイトルなどのmetadataで--と書くと、これendash(–)として処理されず、単なるダブルハイフン(--)のまま表示されてしまい、やや見栄えが悪くなります。また、arXivはmetadataとして、ASCII以外の文字は受け付けないので、endash(–)を直接書くことも出来ません。よって、**あくまで私の知る限りにおいて、このダブルハイフンを用いる手法が最善だと思います**。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/08f25c7d-f59e-432e-8865-6f6a2fa5bc34.png" alt="bad_characters">
+![bad_characters](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/08f25c7d-f59e-432e-8865-6f6a2fa5bc34.png)
 (Our metadata fields only accept ASCII input. Unicode characters should be converted to its TeX equivalent)
 
 一方で、endashをarXivのmetadataで`\unicode{x2013}`のように、Unicodeエスケープで指定する手法もあるようです。HTMLでは正しく処理されるので、一見良いように思えます。しかし、**この手法は全くおすすめ出来ません**。あえてリンクは載せませんが、2026年現在、arXivのmetadataでendashを使う際に、これを勧める記事がトップヒットしますが、**これはかなり危険な方法だと思います**。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/0fea0e12-8686-486b-b539-2533fcf978fd.png" alt="endash_twitter">
+![endash_twitter](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/0fea0e12-8686-486b-b539-2533fcf978fd.png)
 (Unicodeによるendashの使用例に関するツイート)
 
 具体的には、以下のかなり重大な欠点を抱えています:
@@ -98,10 +98,10 @@ Both bbl and bib files are missing
 * 参考文献としてbibtexで読み込んで使おうとすると、`\unicode{x2013}`が正しく処理されず、**エラーになり得ることがある**。
 * ロードのタイミング(?)では正しく描画されず、代わりに`\unicode{x2013}`の文字列が**そのまま表示されることがある**。
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/5d29a700-800e-4cd4-8495-725943d2f451.png" alt="test_endash">
+![test_endash](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/5d29a700-800e-4cd4-8495-725943d2f451.png)
 (LaTeXでは、`\unicode{x2013}`は正しく処理されず、コンパイルエラーになる。)
 
-<img width=100% src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/debfc59e-82b9-4421-88c3-74ff8b1f3fec.png" alt="x2013">
+![x2013](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/debfc59e-82b9-4421-88c3-74ff8b1f3fec.png)
 (過去に投稿した私の論文。タイトルに`\unicode{x2013}`を使ってしまっている。その後、修正しました。)
 
 よって、endashを使うときは、厳密な表記ではないという点から少し不満点は残りますが、普通に`--`と書くのが一番安全で確実な方法だと思います。
