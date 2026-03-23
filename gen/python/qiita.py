@@ -98,7 +98,24 @@ def qiita(dirname: str, html_escape: Callable[[str], str]):
 
         md += "\n---"
 
-        md += "\n\n" + "[Link to Qiita](" + jsonStr[num]["url"] + ")" + "\n"
+        # Check if Qiita.md exists in the external QiitaArticles folder
+        # Folder name may be like "20250827_ColorTile", matching "20250827*" pattern
+        qiita_articles_dir = Path("c:\\Users\\hirok\\Documents\\QiitaArticles")
+        date_without_dash = date.replace("-", "")
+        qiita_md_path = None
+
+        assert qiita_articles_dir.exists()
+        matching_folders = list(qiita_articles_dir.glob(f"{date_without_dash}*"))
+        if len(matching_folders) == 1:
+            qiita_md_path = matching_folders[0] / "Qiita.md"
+            with open(qiita_md_path, "r", encoding="utf-8") as f:
+                md += "\n" + f.read()
+        elif len(matching_folders) == 0:
+            md += "\n\n" + "[Link to Qiita](" + jsonStr[num]["url"] + ")" + "\n"
+        else:
+            raise Exception(
+                f"Multiple matching folders found for date {date_without_dash} in {qiita_articles_dir}"
+            )
 
         md_filename = (
             str(date)

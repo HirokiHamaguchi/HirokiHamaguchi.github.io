@@ -19,15 +19,14 @@ def html_escape(text):
 
 def main():
     dirname = os.path.dirname(__file__)
-    publications(dirname, html_escape)
-    talks(dirname, html_escape)
-    talkmap(os.path.join(dirname, "../"))
+    # publications(dirname, html_escape)
+    # talks(dirname, html_escape)
+    # talkmap(os.path.join(dirname, "../"))
     qiita(dirname, html_escape)
-
-    if "-preview" in sys.argv:
-        print_view(dirname)
-    else:
-        print("With -preview, you can see Qiita views, likes, and stocks.")
+    # if "-preview" in sys.argv:
+    #     print_view(dirname)
+    # else:
+    #     print("With -preview, you can see Qiita views, likes, and stocks.")
 
 
 if __name__ == "__main__":
