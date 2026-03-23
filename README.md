@@ -6,10 +6,6 @@ This is my personal website.
 
 This repository uses the template of [Academic Pages](https://github.com/academicpages/academicpages.github.io)
 
-## ToDo
-
-note folder is not reflected in the website. I will fix it.
-
 ## How to Run Locally
 
 ```bash
