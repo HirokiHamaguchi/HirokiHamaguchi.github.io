@@ -36,7 +36,7 @@ redirect_from:
 ## Work Experience
 
 * 2026 \| Research Intern\\
-  [NTT Research](https://group.ntt/en/rd/)
+  * [NTT Research](https://group.ntt/en/rd/)
 
 * 2024 to 2025 \| Teaching Assistant\\
   * Teacher: [Naoki Marumo](https://sites.google.com/view/nmarumo)
@@ -53,7 +53,7 @@ redirect_from:
 ## Work Experience (日本語)
 
 * 2026（令和8年） \| 研究インターン\\
-  [NTT Research](https://group.ntt/jp/rd/)
+  * [NTT Research](https://group.ntt/jp/rd/)
 
 * 2024（令和6年）〜 2025（令和7年） \| ティーチング・アシスタント\\
   * 担当教員: [Naoki Marumo](https://sites.google.com/view/nmarumo)
@@ -70,12 +70,12 @@ redirect_from:
 ## Fellowships
 
 * 2026-04 to 2029-03 | Research Fellowship for Young Scientists (DC1)\\
-  Japan Society for the Promotion of Science (JSPS)
+  * Japan Society for the Promotion of Science (JSPS)
 
 ## Fellowships (日本語)
 
 * 2026-04（令和8年4月）〜 2029-03（令和11年3月） | 特別研究員（DC1）\\
-  日本学術振興会（JSPS）
+  * 日本学術振興会（JSPS）
 
 ## Awards
 
