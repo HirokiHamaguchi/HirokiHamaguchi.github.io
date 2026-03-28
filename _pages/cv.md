@@ -69,12 +69,12 @@ redirect_from:
 
 ## Fellowships
 
-* 2026-04 to 2029-03 | Research Fellowship for Young Scientists (DC1)\\
+* 2026-04 to 2029-03 \| Research Fellowship for Young Scientists (DC1)\\
   * Japan Society for the Promotion of Science (JSPS)
 
 ## Fellowships (日本語)
 
-* 2026-04（令和8年4月）〜 2029-03（令和11年3月） | 特別研究員（DC1）\\
+* 2026-04（令和8年4月）〜 2029-03（令和11年3月） \| 特別研究員（DC1）\\
   * 日本学術振興会（JSPS）
 
 ## Awards
