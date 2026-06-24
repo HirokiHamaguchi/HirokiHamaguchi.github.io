@@ -90,7 +90,7 @@ console.log(f(1) || 999);
 
 そこで役立つのが **Null 合体演算子** (Nullish coalescing operator)である `??` です。
 
-https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FJavaScript%2FReference%2FOperators%2FNullish_coalescing" title="link card: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 この演算子は **Nullish** 、つまり、値が **`null` または `undefined` のいずれか** の時のみ、演算子の右にある値を返します。
 
@@ -155,9 +155,9 @@ Nullish とも Falsy とも、上手に仲良く付き合っていきたいも�
 
 ### 関連参考資料\_1
 
-https://developer.mozilla.org/ja/docs/Glossary/Nullish
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FGlossary%2FNullish" title="link card: https://developer.mozilla.org/ja/docs/Glossary/Nullish" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://developer.mozilla.org/ja/docs/Glossary/Falsy
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FGlossary%2FFalsy" title="link card: https://developer.mozilla.org/ja/docs/Glossary/Falsy" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ## 2. tsconfig の便利な設定
 
@@ -248,9 +248,9 @@ tsconfig の"compilerOptions"は`"strict": true`としただけでは、最も�
 
 ### 関連参考資料\_2
 
-https://qiita.com/ryokkkke/items/390647a7c26933940470
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2Fryokkkke%2Fitems%2F390647a7c26933940470" title="link card: https://qiita.com/ryokkkke/items/390647a7c26933940470" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://zenn.dev/chida/articles/bdbcd59c90e2e1
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fzenn.dev%2Fchida%2Farticles%2Fbdbcd59c90e2e1" title="link card: https://zenn.dev/chida/articles/bdbcd59c90e2e1" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ## 3. 依存関係の綺麗な図示の仕方
 
@@ -258,7 +258,7 @@ https://zenn.dev/chida/articles/bdbcd59c90e2e1
 
 それがプロジェクトの依存関係を分かりやすく図示してくれるツール、 **Dependency cruiser** です。
 
-https://github.com/sverweij/dependency-cruiser
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fsverweij%2Fdependency-cruiser" title="link card: https://github.com/sverweij/dependency-cruiser" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 > <img width=100% src="https://raw.githubusercontent.com/sverweij/dependency-cruiser/master/doc/assets/sample-dot-output.png" alt="sampleDotOutput">
 > これは、JavaScript、TypeScript、LiveScript、そして、CoffeeScript によるプロジェクトの依存関係を調べた上で、
@@ -285,15 +285,15 @@ npm や yarn 等で簡単に install 可能です。詳しくはレポジトリ�
 
 ちなみに、似たような別ツールに、madgeもあります。こちらも分かりやすそうです。
 
-https://github.com/pahen/madge
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fpahen%2Fmadge" title="link card: https://github.com/pahen/madge" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ### 関連参考資料\_3
 
-https://github.com/sverweij/dependency-cruiser
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fsverweij%2Fdependency-cruiser" title="link card: https://github.com/sverweij/dependency-cruiser" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://www.netlify.com/blog/2018/08/23/how-to-easily-visualize-a-projects-dependency-graph-with-dependency-cruiser/
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.netlify.com%2Fblog%2F2018%2F08%2F23%2Fhow-to-easily-visualize-a-projects-dependency-graph-with-dependency-cruiser%2F" title="link card: https://www.netlify.com/blog/2018/08/23/how-to-easily-visualize-a-projects-dependency-graph-with-dependency-cruiser/" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://qiita.com/akameco/items/e11023a59026c319b91b
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2Fakameco%2Fitems%2Fe11023a59026c319b91b" title="link card: https://qiita.com/akameco/items/e11023a59026c319b91b" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ## 4.正しい XSS のやり方
 
@@ -301,7 +301,7 @@ https://qiita.com/akameco/items/e11023a59026c319b91b
 
 実際、数年前その話がニュースになったこともありました。
 
-https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A9%E3%83%BC%E3%83%88%E3%83%AB%E3%83%BC%E3%83%97%E4%BA%8B%E4%BB%B6
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2582%25A2%25E3%2583%25A9%25E3%2583%25BC%25E3%2583%2588%25E3%2583%25AB%25E3%2583%25BC%25E3%2583%2597%25E4%25BA%258B%25E4%25BB%25B6" title="link card: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A9%E3%83%BC%E3%83%88%E3%83%AB%E3%83%BC%E3%83%97%E4%BA%8B%E4%BB%B6" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 さて、私はそんなある日、この聞きかじりの知識を記憶の引き出しにしまいながら、以下のようなコードを眺めていると、ふとあることに気付きました。
 
@@ -386,13 +386,13 @@ Elements 自体の更新は正しく行われていることが分かります�
 
 ### 関連参考資料\_4
 
-https://developer.mozilla.org/ja/docs/Web/API/Element/innerHTML
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FAPI%2FElement%2FinnerHTML" title="link card: https://developer.mozilla.org/ja/docs/Web/API/Element/innerHTML" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://www.ipa.go.jp/security/vuln/websecurity-HTML-1_5.html
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.ipa.go.jp%2Fsecurity%2Fvuln%2Fwebsecurity-HTML-1_5.html" title="link card: https://www.ipa.go.jp/security/vuln/websecurity-HTML-1_5.html" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://www.w3.org/TR/2008/WD-html5-20080610/dom.html#innerhtml0
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.w3.org%2FTR%2F2008%2FWD-html5-20080610%2Fdom.html%23innerhtml0" title="link card: https://www.w3.org/TR/2008/WD-html5-20080610/dom.html#innerhtml0" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://qiita.com/tadsan/items/50070788f4ef0dd8e8b5
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2F50070788f4ef0dd8e8b5" title="link card: https://qiita.com/tadsan/items/50070788f4ef0dd8e8b5" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ## 5.removeChildren
 
@@ -564,7 +564,7 @@ plt.show()
 
 ### 関連参考資料\_5
 
-https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F3955229%2Fremove-all-child-elements-of-a-dom-node-in-javascript" title="link card: https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ## 6.数値型を関数の引数として使う時の小技
 
@@ -709,7 +709,7 @@ function dfs(adj: number[][], ans: XY[], v: number, xy: XY) {
 
 ### 関連参考資料\_6
 
-https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Functions
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FJavaScript%2FGuide%2FFunctions" title="link card: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Functions" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ---
 
@@ -768,7 +768,7 @@ Stack Overflow などでも言及されている解決策として、`setTimeout
 
 ### 関連参考資料\_7
 
-https://zenn.dev/estra/books/js-async-promise-chain-event-loop
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fzenn.dev%2Festra%2Fbooks%2Fjs-async-promise-chain-event-loop" title="link card: https://zenn.dev/estra/books/js-async-promise-chain-event-loop" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 PADAone さんという方による「イベントループとプロミスチェーンで学ぶ JavaScript の非同期処理」という題で Zenn にて公開されている記事です。今回の話は特にその第一章に関連があります。
 
@@ -780,11 +780,11 @@ PADAone さんという方による「イベントループとプロミスチェ
 
 また、MDN の参考資料も以下に挙げます。
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FEventLoop" title="link card: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 このページは 2023 年 1 月現在、日本語版には載っていない情報(Zero delays)も、英語版の方では載っているので、そちらのリンクを掲載しています。
 
-https://developer.mozilla.org/ja/docs/Glossary/Main_thread
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FGlossary%2FMain_thread" title="link card: https://developer.mozilla.org/ja/docs/Glossary/Main_thread" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 > **メインスレッド** は、ブラウザーがユーザーのイベントや描画を処理するところです。既定では、ブラウザーは単一のスレッドを使用してページ内のすべての JavaScript を、レイアウト、再フロー、ガベージコレクションなどと同様に実行します。つまり、実行に時間がかかる JavaScript 関数がスレッドをブロックし、ページが反応しなくなり、使い勝手が悪くなります。
 
@@ -798,7 +798,7 @@ https://developer.mozilla.org/ja/docs/Glossary/Main_thread
 
 全てをここで列挙する訳には行きませんが、MDN の該当ページへのリンクを以下に記しておきます。`Object.is`による同値比較も合わせて中々ややこしいかと思われます。
 
-https://developer.mozilla.org/ja/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FJavaScript%2FEquality_comparisons_and_sameness%23same-value-zero_equality" title="link card: https://developer.mozilla.org/ja/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 一例を挙げると、
 
@@ -884,7 +884,7 @@ console.log(m.get(key_b));
 
 ### 関連参考資料\_8
 
-https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FMap" title="link card: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ## 9.for 文の使い分け
 
@@ -971,7 +971,7 @@ console.log("done.");
 
 ### 関連参考資料\_9
 
-https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Loops_and_iteration
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FJavaScript%2FGuide%2FLoops_and_iteration" title="link card: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Loops_and_iteration" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ## 10.その他豆知識
 
@@ -981,13 +981,13 @@ https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Loops_and_iteration
 
 - **Type Manipulation**
 
-https://www.typescriptlang.org/docs/handbook/2/types-from-types.html
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.typescriptlang.org%2Fdocs%2Fhandbook%2F2%2Ftypes-from-types.html" title="link card: https://www.typescriptlang.org/docs/handbook/2/types-from-types.html" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 TypeScript 限定の話ではありますが、型の操作に関するお話です。日本語の解説記事も世に溢れていますが、公式ドキュメントもかなり分かりやすく記述が丁寧です。読んだことがない方は読んでみると面白いかも知れません。自分は`-readonly`(readonly という属性をなくす)という書き方などを知りませんでした。
 
 - **Console API**
 
-https://developer.mozilla.org/ja/docs/Web/API/console
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FAPI%2Fconsole" title="link card: https://developer.mozilla.org/ja/docs/Web/API/console" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 `console.group()`、`console.table()`、`console.trace()`、`console.count()`あたりが小ネタとしてよく紹介されている印象があります。実際、使いこなせると便利ですね。
 
@@ -995,7 +995,7 @@ https://developer.mozilla.org/ja/docs/Web/API/console
 
 - **innerText と textContent の違い**
 
-https://developer.mozilla.org/ja/docs/Web/API/HTMLElement/innerText
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FAPI%2FHTMLElement%2FinnerText" title="link card: https://developer.mozilla.org/ja/docs/Web/API/HTMLElement/innerText" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 `style="display:none"`と設定した element 内の文字列は、一方では含まれて他方では含まれません。どちらがどちらか分かりますでしょうか?
 
@@ -1016,13 +1016,13 @@ https://developer.mozilla.org/ja/docs/Web/API/HTMLElement/innerText
 
 - **debugger**
 
-https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/debugger
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FJavaScript%2FReference%2FStatements%2Fdebugger" title="link card: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/debugger" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 (利用可能な場合は)ブレークポイントの設定などが可能になり、debug で便利です。
 
 - **document.lastModified**
 
-https://developer.mozilla.org/ja/docs/Web/API/Document/lastModified
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FAPI%2FDocument%2FlastModified" title="link card: https://developer.mozilla.org/ja/docs/Web/API/Document/lastModified" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 任意のウェブページの、最後に更新された日付と時刻が分かります。サイトに最終更新日が記載されているならば、それを優先して見るべきでしょうが、レポートなどで出典を書くときなどに便利ですね。実は、この記事の執筆に際しても利用しました。
 
@@ -1038,7 +1038,7 @@ JavaScript / TypeScript には関係ないので 10 選からは除外しまし�
 
 その中でも、CSS の`cursor`は特に面白いと思ったので少しだけ触れます。
 
-https://developer.mozilla.org/ja/docs/Web/CSS/cursor
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FCSS%2Fcursor" title="link card: https://developer.mozilla.org/ja/docs/Web/CSS/cursor" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 PC の人は以下の **ブロックにカーソルをおいて** みて、そうでない人は(残念ながらカーソルは出てこないので) **ブロックをクリック** することで、本来はどんなカーソルが出てくるのかをご覧下さい。
 

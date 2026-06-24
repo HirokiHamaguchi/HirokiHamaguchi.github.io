@@ -16,9 +16,9 @@ thumbnail: /images/thumbnails/2023-12-18-thumbnail.webp
 
 この内容は今年の11月にarXivにて公開された、私と友人と、東京大学大学院 工学系研究科 物理工学専攻助教の吉岡信行先生との共著による論文を基にしています。なお、ソースコード等はGitHub上で公開されています。
 
-https://arxiv.org/abs/2311.01362
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Farxiv.org%2Fabs%2F2311.01362" title="link card: https://arxiv.org/abs/2311.01362" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://github.com/quantum-programming/RoM-handbook/tree/main
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fquantum-programming%2FRoM-handbook%2Ftree%2Fmain" title="link card: https://github.com/quantum-programming/RoM-handbook/tree/main" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ## Robustness of Magicとは
 
@@ -278,7 +278,7 @@ Overlapが内積を用いた手法を表し、Randomがランダムに$A_n$の�
 双対問題に詳しくない方は、是非以下の記事もご覧下さい。本記事も参加している数理最適化 Advent Calendar 2023の9日目の記事です。
 とても分かりやすく、この節の内容を理解するのに必要な知識が全て書かれています。
 
-https://zenn.dev/jij_inc/articles/8539546423c0c0
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fzenn.dev%2Fjij_inc%2Farticles%2F8539546423c0c0" title="link card: https://zenn.dev/jij_inc/articles/8539546423c0c0" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 さて、そもそものRoMを求める問題、つまり、**主問題**は以下のように定式化されました。
 
@@ -358,11 +358,11 @@ NTT DATAによる列生成法の説明ページから、以下を引用します
 
 他の列生成法に関する説明としては、以下の宮本 裕一郎先生による『はじめての列生成法』や、
 
-https://orsj.org/wp-content/corsj/or57-4/or57_4_198.pdf
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Forsj.org%2Fwp-content%2Fcorsj%2For57-4%2For57_4_198.pdf" title="link card: https://orsj.org/wp-content/corsj/or57-4/or57_4_198.pdf" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 電気通信大学の岡本 吉央先生によるスライド
 
-http://dopal.cs.uec.ac.jp/okamotoy/lect/2022/ip/lect11.pdf
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=http%3A%2F%2Fdopal.cs.uec.ac.jp%2Fokamotoy%2Flect%2F2022%2Fip%2Flect11.pdf" title="link card: http://dopal.cs.uec.ac.jp/okamotoy/lect/2022/ip/lect11.pdf" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 なども参考になります。より詳細に知りたい方は、是非ご参照下さい。
 

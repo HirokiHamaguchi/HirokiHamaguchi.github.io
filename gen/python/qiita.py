@@ -8,6 +8,8 @@ from typing import Callable
 
 from PIL import Image
 
+from .link_card import replace_standalone_markdown_urls_with_link_cards
+
 _IMG_ATTR_PATTERN = re.compile(
     r'([a-zA-Z_:][\w:.-]*)\s*=\s*("[^"]*"|\'[^\']*\'|[^\s"\'>]+)'
 )
@@ -104,7 +106,9 @@ def _transform_qiita_markdown(content: str) -> str:
         _convert_img_line_to_markdown_if_needed(line)
         for line in content.splitlines(keepends=True)
     )
-    return _apply_liquid_error_fixes(transformed)
+    transformed = _apply_liquid_error_fixes(transformed)
+    transformed = replace_standalone_markdown_urls_with_link_cards(transformed)
+    return transformed
 
 
 def _extract_thumbnail_url(rendered_body: str) -> str:
@@ -230,7 +234,7 @@ def qiita(dirname: str, html_escape: Callable[[str], str]):
 
 
 def main():
-    print("Run from gen.py")
+    print("Run from gen_all.py")
 
 
 if __name__ == "__main__":

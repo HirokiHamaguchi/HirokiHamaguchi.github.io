@@ -69,7 +69,7 @@ def talks(dirname: str, html_escape: Callable[[str], str]):
 
 
 def main():
-    print("Run from gen.py")
+    print("Run from gen_all.py")
 
 
 if __name__ == "__main__":

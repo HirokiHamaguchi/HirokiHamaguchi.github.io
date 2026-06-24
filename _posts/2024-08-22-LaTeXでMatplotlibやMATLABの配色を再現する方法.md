@@ -33,7 +33,7 @@ TikZで再現する方法などについて、本稿では述べます。
 
 xcolorパッケージを用います。これは「数学の景色」さんによって詳しくまとめられています。
 
-https://mathlandscape.com/latex-color/
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fmathlandscape.com%2Flatex-color%2F" title="link card: https://mathlandscape.com/latex-color/" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 具体的には、
 
@@ -54,11 +54,11 @@ CTANにて公開されているxcolorの[公式ドキュメント](https://ctan.
 
 関連する公式ドキュメントは以下の通りです。
 
-https://matplotlib.org/stable/users/explain/colors/colormaps.html
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fusers%2Fexplain%2Fcolors%2Fcolormaps.html" title="link card: https://matplotlib.org/stable/users/explain/colors/colormaps.html" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 Matplotlibの実装はGitHubにて公開されています。
 
-https://github.com/matplotlib/matplotlib
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fmatplotlib%2Fmatplotlib" title="link card: https://github.com/matplotlib/matplotlib" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ### tab10
 
@@ -87,7 +87,7 @@ tab10のカラーコードは以下の通りです。
 
 しかし、個人的には、以下に示すMATLABのデフォルト配色の方が好みで、これらをよく用いています。
 
-https://www.mathworks.com/help/matlab/creating_plots/specify-plot-colors.html
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.mathworks.com%2Fhelp%2Fmatlab%2Fcreating_plots%2Fspecify-plot-colors.html" title="link card: https://www.mathworks.com/help/matlab/creating_plots/specify-plot-colors.html" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ![matlab.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/905155/2940ee39-9ad2-6322-bf35-d70965597ea7.png)
 
@@ -171,7 +171,7 @@ if __name__ == "__main__":
 
 なお、冒頭の画像は以下のLaTeXコードで作成されています。私の論文で使用した図です。
 
-https://github.com/quantum-programming/stabilizer_extent/blob/master/doc/summary/imgs/Amat.tex
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fquantum-programming%2Fstabilizer_extent%2Fblob%2Fmaster%2Fdoc%2Fsummary%2Fimgs%2FAmat.tex" title="link card: https://github.com/quantum-programming/stabilizer_extent/blob/master/doc/summary/imgs/Amat.tex" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ### jet
 
@@ -179,7 +179,7 @@ https://github.com/quantum-programming/stabilizer_extent/blob/master/doc/summary
 
 pltの`jet`は`LinearSegmentedColormap`で[実装](https://github.com/matplotlib/matplotlib/blob/main/lib/matplotlib/cm.py#L40)されています。
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fapi%2F_as_gen%2Fmatplotlib.colors.LinearSegmentedColormap.html" title="link card: https://matplotlib.org/stable/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 その為、比較的短いコードで定義することができます。ビジュアライザなどをRustやJavaScripts等の他言語で実装する際にも参考になるかと思います。
 以下に本質的に等価なコードを示します。
@@ -366,19 +366,19 @@ if __name__ == "__main__":
 
 釈迦に説法かも知れませんが、色を使う際にはユニバーサルデザインの観点から、いわゆる色弱者の方にも配慮する必要があります。私も完璧に守れている訳ではありませんが、なるべく配慮するようにしています。
 
-https://tsutawarudesign.com/universal1.html
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Ftsutawarudesign.com%2Funiversal1.html" title="link card: https://tsutawarudesign.com/universal1.html" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 Chromeだと、`Ctrl+Shift+I`で開ける開発者ツールのRenderingタブに、`Emulate vision deficiencies`という機能があります。
 これは様々な色覚異常をシミュレートする機能で、これを使って自分の作成した図がどのように見えるのかを確認することができます。
 色を多用した図を作成された際には、是非活用してみてください。
 
-https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/accessibility/emulate-vision-deficiencies
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fmicrosoft-edge%2Fdevtools-guide-chromium%2Faccessibility%2Femulate-vision-deficiencies" title="link card: https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/accessibility/emulate-vision-deficiencies" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 [追記]
 
 こういうのを見かけました。参考になるかも知れません。
 
-https://github.com/JLSteenwyk/ggpubfigs
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2FJLSteenwyk%2Fggpubfigs" title="link card: https://github.com/JLSteenwyk/ggpubfigs" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 > Color palettes are all colorblind friendly. Thus, your figures will be accessible to more people, which is inarguably better for your audience and you.
 
@@ -391,7 +391,7 @@ https://github.com/JLSteenwyk/ggpubfigs
 
 MATLABの方については単にカラーコードを使用しただけなので問題ないかと思いますが、MatplotlibのLicenseは以下のページに記載されています。
 
-https://matplotlib.org/stable/project/license.html
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fproject%2Flicense.html" title="link card: https://matplotlib.org/stable/project/license.html" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 > Matplotlib only uses BSD compatible code, and its license is based on the [PSF](https://docs.python.org/3/license.html) license. See the Open Source Initiative [licenses page](https://opensource.org/licenses) for details on individual licenses.
 > (MatplotlibはBSD互換のコードのみを使用しており、そのライセンスはPSFライセンスに基づいています。個々のライセンスの詳細については、Open Source Initiativeのライセンスページを参照してください。)

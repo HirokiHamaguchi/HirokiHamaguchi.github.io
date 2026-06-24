@@ -18,7 +18,7 @@ thumbnail: /images/thumbnails/2026-03-12-thumbnail.webp
 
 なお、特にarXivに投稿する際に問題点が生じて本記事をご参照なさっている場合、arXivの公式ページを参照することが一番確実な方法だと思いますので、以下にリンクを載せておきます。本記事はあくまでその補足程度の体験談としてご参照頂ければ幸いです。
 
-https://info.arxiv.org/help/submit_tex.html
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Finfo.arxiv.org%2Fhelp%2Fsubmit_tex.html" title="link card: https://info.arxiv.org/help/submit_tex.html" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 この記事は個人的な備忘録の側面が強く、困った問題が発生する度に更新する可能性があります。
 
@@ -34,7 +34,7 @@ arXivなどへ論文を投稿する際に、ORCIDを記載することが推奨�
 
 詳細は以下の記事をご覧下さい。
 
-https://qiita.com/hari64/items/1ae14ff750f910275b29
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2Fhari64%2Fitems%2F1ae14ff750f910275b29" title="link card: https://qiita.com/hari64/items/1ae14ff750f910275b29" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ## arXivに投稿する際のBibTeXエラー
 

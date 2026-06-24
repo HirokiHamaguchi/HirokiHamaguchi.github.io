@@ -526,9 +526,9 @@ make_gif("pava.gif")
 
 以下の説明ではある程度の基礎知識を仮定してしまいますが、場合によっては次の資料も参考にして下さい。特に1つ目は私の指導教員である武田先生の講義資料で分かりやすいと思います。
 
-https://www.or.mist.i.u-tokyo.ac.jp/takeda/Surikogaku/mathprog_2016.pdf
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.or.mist.i.u-tokyo.ac.jp%2Ftakeda%2FSurikogaku%2Fmathprog_2016.pdf" title="link card: https://www.or.mist.i.u-tokyo.ac.jp/takeda/Surikogaku/mathprog_2016.pdf" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://qiita.com/taka_horibe/items/0c9b0993e0bd1c0135fa
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2Ftaka_horibe%2Fitems%2F0c9b0993e0bd1c0135fa" title="link card: https://qiita.com/taka_horibe/items/0c9b0993e0bd1c0135fa" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 ### 解の一意性
 
@@ -893,19 +893,19 @@ Isotonic Regression が扱う最適化問題はかなりシンプルでしたが
 
 日本語のネット記事で Isotonic Regression を詳細に扱ったものは殆どないと認識していますが、以下の記事では触れられており、参考にさせて頂きました。
 
-https://qiita.com/dai08srhg/items/eb08fc98e7149748a9d5
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2Fdai08srhg%2Fitems%2Feb08fc98e7149748a9d5" title="link card: https://qiita.com/dai08srhg/items/eb08fc98e7149748a9d5" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://jp.corp-sansan.com/mimi/2018/02/monotonic_constraints.html
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fjp.corp-sansan.com%2Fmimi%2F2018%2F02%2Fmonotonic_constraints.html" title="link card: https://jp.corp-sansan.com/mimi/2018/02/monotonic_constraints.html" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 また、以下のレポジトリでは PAVA の Julia の実装があります。
 
-https://github.com/ajtulloch/Isotonic.jl
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fajtulloch%2FIsotonic.jl" title="link card: https://github.com/ajtulloch/Isotonic.jl" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 さらに、R のパッケージ isotone も PAVA などを取り扱っています。
 
-https://cran.r-project.org/web/packages/isotone/index.html
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fisotone%2Findex.html" title="link card: https://cran.r-project.org/web/packages/isotone/index.html" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
-https://cran.r-project.org/web/packages/isotone/vignettes/isotone.pdf
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fisotone%2Fvignettes%2Fisotone.pdf" title="link card: https://cran.r-project.org/web/packages/isotone/vignettes/isotone.pdf" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 [^monotone]: [Busing, F. M. T. A. (2022). Monotone Regression: A Simple and Fast O(n) PAVA Implementation. Journal of Statistical Software, Code Snippets, 102(1), 1–25.](https://doi.org/10.18637/jss.v102.c01)
 

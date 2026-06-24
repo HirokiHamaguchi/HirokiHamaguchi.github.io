@@ -46,7 +46,7 @@ XeTeXでは、TikZで作成した図にハイパーリンクをはると、リ�
 
 更なる詳細は以下のPRを参照してください。ここに書いていある提案の一部は、受理されておらず、別の方法で解決されているので、注意して下さい。
 
-https://github.com/latex3/hyperref/pull/412
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Flatex3%2Fhyperref%2Fpull%2F412" title="link card: https://github.com/latex3/hyperref/pull/412" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 また、hyperrefパッケージ開発者の意向で、パッケージの変更に後方互換性のない方法が採られたため、このPRの内容の再現実験をしようとすると今後は失敗する可能性があります。尤も、再現に失敗しているということはhyperrefの最新版を使っているということなので、大丈夫だとは思います。
 

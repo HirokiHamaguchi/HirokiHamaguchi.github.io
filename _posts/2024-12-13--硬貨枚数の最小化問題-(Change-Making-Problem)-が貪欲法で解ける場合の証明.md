@@ -543,7 +543,7 @@ $n=4,$ $a_1=1,$ $a_2=2,$ $a_3=4,$ $a_4=5$ の時点で貪欲法は最適解を�
 
 ## 通貨の画像について
 
-https://www.mof.go.jp/faq/currency/07af.htm
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.mof.go.jp%2Ffaq%2Fcurrency%2F07af.htm" title="link card: https://www.mof.go.jp/faq/currency/07af.htm" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 > デジタルカメラ等で撮影したこれらの画像データをホームページやブログに掲載した場合については、その行為自体は「通貨及証券模造取締法」の取締りの対象とはなりませんが、掲載した写真が印刷された場合には、同法に抵触する可能性がありますので、十分ご注意下さい。
 

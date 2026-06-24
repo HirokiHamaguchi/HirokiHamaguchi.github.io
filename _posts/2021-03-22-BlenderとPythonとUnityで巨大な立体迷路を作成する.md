@@ -702,7 +702,7 @@ public class Maze_game_manager : MonoBehaviour
 
 ゲームのリンク先
 
-https://unityroom.com/games/hari_kagiyanomusume_maze
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Funityroom.com%2Fgames%2Fhari_kagiyanomusume_maze" title="link card: https://unityroom.com/games/hari_kagiyanomusume_maze" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>
 
 WASDで操作、Spaceでジャンプ、Tでタイトル画面に戻ります。PCからお遊びください。
 
@@ -713,4 +713,4 @@ WASDで操作、Spaceでジャンプ、Tでタイトル画面に戻ります。P
 
 穴掘り法など
 
-https://algoful.com/Archive/Algorithm/MazeDig
+<iframe class="link-card" src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Falgoful.com%2FArchive%2FAlgorithm%2FMazeDig" title="link card: https://algoful.com/Archive/Algorithm/MazeDig" style="width:100%;height:155px;border:0;display:block;margin:1em 0;" loading="lazy"></iframe>

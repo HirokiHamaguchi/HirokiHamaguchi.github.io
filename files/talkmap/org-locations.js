@@ -11,8 +11,8 @@ var addressPoints = [
   ],
   [
     "Hokkaido University, Japan",
-    43.0790078,
-    141.3377295
+    43.0795634,
+    141.3373222
   ],
   [
     "\u7b51\u6ce2\u5927\u5b66",
