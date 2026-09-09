@@ -7,6 +7,14 @@ redirect_from:
   - /about.html
 ---
 
+## OR学会向け
+
+2026年9月9日の[OR学会](https://orsj.org/2026f/)参加者向け
+
+[発表資料はこちら](/files/2026/OR_fall_2026.pdf)
+
+## About Me
+
 浜口広樹です。東京大学の院生です。
 
 I am a student at the University of Tokyo.
