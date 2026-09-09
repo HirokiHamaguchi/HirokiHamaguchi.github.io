@@ -11,7 +11,7 @@ This repository uses the template of [Academic Pages](https://github.com/academi
 ```bash
 gem install bundler
 bundle install
-uv run gen/gen.py
+uv run gen/gen_all.py
 bundle config set --local path 'vendor/bundle'
 bundle exec jekyll serve -l -H localhost
 ```
