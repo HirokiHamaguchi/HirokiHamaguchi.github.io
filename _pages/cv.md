@@ -79,6 +79,9 @@ redirect_from:
 
 ## Awards
 
+* 2026-09-09 \| Operations Research Society of Japan \| Student Paper Award
+  * [OR](https://orsj.org/award-history)
+
 * 2024-08-30 \| 24th Asian Quantum Information Science Conference \| Silver Prize (Student Poster Awards)
   * [AQIS](http://aqis-conf.org/2024/student-poster-awards)
 
