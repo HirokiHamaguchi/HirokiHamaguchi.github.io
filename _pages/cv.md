@@ -98,6 +98,9 @@ redirect_from:
 
 ## Awards (日本語)
 
+* 2026-09-09 （令和8年9月9日） \| OR学会 \| 学生論文賞
+  * [OR](https://orsj.org/award-history)
+
 * 2024-08-30（令和6年8月30日） \| 第24回Asian Quantum Information Science Conference \| 銀賞（Student Poster Awards）
   * [AQIS](http://aqis-conf.org/2024/student-poster-awards)
 

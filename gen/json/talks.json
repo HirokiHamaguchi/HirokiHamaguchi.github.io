@@ -96,5 +96,21 @@
         "location": "麗澤大学",
         "talk_url": "https://orsj.org",
         "slide_url": "/files/2026/OR_spring_2026.pdf"
+    },
+    {
+        "title": "決定変数に依存した分布シフト下における適応的勾配法",
+        "authors": [
+            "浜口広樹",
+            "引間友也",
+            "澤田宏",
+            "武田朗子"
+        ],
+        "type": "talk",
+        "url_slug": "Adaptive-Gradient-Based-Methods-for-a-Broader-Class-of-Optimization-Problems-under-Performative-Prediction",
+        "venue": "日本オペレーションズ・リサーチ学会 2026年秋季大会",
+        "date": "2026-09-10",
+        "location": "京都大学",
+        "talk_url": "https://orsj.org",
+        "slide_url": "/files/2026/OR_fall_2026.pdf"
     }
 ]
