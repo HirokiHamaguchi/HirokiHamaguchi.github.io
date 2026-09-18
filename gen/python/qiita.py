@@ -13,6 +13,12 @@ from .link_card import replace_standalone_markdown_urls_with_link_cards
 _IMG_ATTR_PATTERN = re.compile(
     r'([a-zA-Z_:][\w:.-]*)\s*=\s*("[^"]*"|\'[^\']*\'|[^\s"\'>]+)'
 )
+_MATH_FENCE_START_PATTERN = re.compile(
+    r"^(?P<prefix>(?:[ \t]*>[ \t]?)*[ \t]*)(?P<fence>`{3,})math[ \t]*(?P<newline>\r?\n?)$"
+)
+_FENCE_END_PATTERN = re.compile(
+    r"^(?P<prefix>(?:[ \t]*>[ \t]?)*[ \t]*)(?P<fence>`{3,})[ \t]*(?P<newline>\r?\n?)$"
+)
 
 
 def _parse_img_attributes(line: str) -> dict[str, str]:
@@ -43,6 +49,47 @@ def _convert_img_line_to_markdown_if_needed(line: str) -> str:
     if line.endswith("\n"):
         converted += "\n"
     return converted
+
+
+def _convert_qiita_math_fences(content: str) -> str:
+    """Convert Qiita's ```math blocks to kramdown display math blocks."""
+    lines = content.splitlines(keepends=True)
+    result: list[str] = []
+    index = 0
+
+    while index < len(lines):
+        start = _MATH_FENCE_START_PATTERN.match(lines[index])
+        if start is None:
+            result.append(lines[index])
+            index += 1
+            continue
+
+        closing_index = index + 1
+        while closing_index < len(lines):
+            end = _FENCE_END_PATTERN.match(lines[closing_index])
+            if (
+                end is not None
+                and end.group("prefix") == start.group("prefix")
+                and len(end.group("fence")) >= len(start.group("fence"))
+            ):
+                break
+            closing_index += 1
+
+        # Keep malformed input unchanged instead of turning the rest of the post
+        # into a math block.
+        if closing_index == len(lines):
+            result.extend(lines[index:])
+            break
+
+        prefix = start.group("prefix")
+        result.append(f'{prefix}$${start.group("newline")}')
+        result.extend(lines[index + 1 : closing_index])
+        end = _FENCE_END_PATTERN.match(lines[closing_index])
+        assert end is not None
+        result.append(f'{prefix}$${end.group("newline")}')
+        index = closing_index + 1
+
+    return "".join(result)
 
 
 def _wrap_unique_code_fence_with_liquid_raw(
@@ -106,6 +153,7 @@ def _transform_qiita_markdown(content: str) -> str:
         _convert_img_line_to_markdown_if_needed(line)
         for line in content.splitlines(keepends=True)
     )
+    transformed = _convert_qiita_math_fences(transformed)
     transformed = _apply_liquid_error_fixes(transformed)
     transformed = replace_standalone_markdown_urls_with_link_cards(transformed)
     return transformed

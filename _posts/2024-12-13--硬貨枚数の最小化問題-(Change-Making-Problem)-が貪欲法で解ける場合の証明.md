@@ -22,13 +22,13 @@ $n$ 枚の硬貨があり、それぞれの価値が $a_1, \\: a_2, \ldots, a_n$
 
 常にちょうど支払えるよう、本記事では $a_1=1$ とし、各 $a_i$ 円硬貨の支払枚数を $x_i$ とします。この時、CMPは以下の最適化問題として定式化されます。
 
-```math
+$$
 \begin{align*}
 \text{(CMP)       minimize} \quad & \sum_{i=1}^n x_i \\
 \text{subject to} \quad & \sum_{i=1}^n a_i x_i = p, \\
 & x_i \in \mathbb{N} \quad \text{for $1 \leq i \leq n$}.
 \end{align*}
-```
+$$
 
 ここで、「全ての $i \in \lbrace 1, 2, \ldots, n-1 \rbrace$ で $a_{i+1}$ が $a_i$ の倍数」という条件を課します。以下、これを**倍数条件**と呼びます。例えば、現在の日本の硬貨は、5円は1円の倍数、10円は5円の倍数、50円は10円の倍数、……と、確かに倍数条件を満たしています。
 
@@ -92,9 +92,9 @@ def greedy2(a: List[int], p: int) -> int:
 
 > 貪欲解は
 >
-> ```math
+> $$
 > x_i = \left\lfloor \frac{p \bmod{a_{i+1}}}{a_i} \right\rfloor
-> ```
+> $$
 >
 > である。
 
@@ -114,15 +114,15 @@ $n=1$ の時、$a_1=1$ なので $x_1=x_1^\*=p$ より最適です。以下、$n
 
 任意の $i \leq n-1$ に対し、倍数条件より $a_{i+1}/ a_i$ は整数です。もし $x_i^\* \geq a_{i+1}/a_i$ だと、$a_i$ 円硬貨 $a_{i+1}/a_i$ 枚を $a_{i+1}$ 円硬貨 $1$ 枚で両替すれば使用枚数が減るので矛盾します。よって $x_i^\* \in \mathbb{N}$ より、
 
-```math
+$$
 x_i^* \leq \frac{a_{i+1}}{a_i} -1
-```
+$$
 
 が成立します。この不等式から、
 
-```math
+$$
 \sum_{j=1}^{i} a_j x_j^* \leq \sum_{j=1}^{i} (a_{j+1} - a_j) = a_{i+1} - a_1 < a_{i+1}
-```
+$$
 
 が成立し、$a_{i+1}$ 円未満の硬貨による最適な支払額は $a_{i+1}$ 円未満です。
 
@@ -136,36 +136,36 @@ x_i^* \leq \frac{a_{i+1}}{a_i} -1
 
 $\sum_{j=1}^{i} a_j x_j^\* < a_{i+1}$ は $i=n$ でも成立します。ここから $x_i^\* = \lfloor (p \bmod{a_{i+1}}) / a_i \rfloor$ を導きます。支払い金額がちょうど $p$ 円なので、
 
-```math
+$$
 \sum_{j=1}^{n} a_j x_j^* = p
-```
+$$
 
 でした。したがって、倍数条件より、
 
-```math
+$$
 \begin{align*}
 (p \bmod {a_{i+1}}) ={}&
 \left( \sum_{j=1}^{n} a_j x_j^* \bmod {a_{i+1}} \right)\\
 ={}& \left(\sum_{j=1}^{i} a_j x_j^* \bmod {a_{i+1}} \right)\\
 ={}& \sum_{j=1}^{i} a_j x_j^*\quad (\because a_{i+1}\text{未満})
 \end{align*}
-```
+$$
 
 となります。両辺に $\lfloor \cdot / a_i \rfloor$ を適用することで、
 
-```math
+$$
 \begin{align*}
 \left\lfloor \frac{p \bmod{a_{i+1}}}{a_i} \right\rfloor ={}& \left\lfloor \frac{\sum_{j=1}^{i} a_j x_j^*}{a_i} \right\rfloor \\
 ={}& x_i^* + \left\lfloor \frac{\sum_{j=1}^{i-1} a_j x_j^*}{a_i} \right\rfloor\\
 ={}& x_i^* \quad \left(\because \sum_{j=1}^{i-1} a_j x_j^* < a_i \right)
 \end{align*}
-```
+$$
 
 である為、
 
-```math
+$$
 x_i^* = \left\lfloor \frac{p \bmod{a_{i+1}}}{a_i} \right\rfloor
-```
+$$
 
 が導けました。
 
@@ -181,22 +181,22 @@ $n=1$ では先述同様明らかです。
 
 $n=k+1$ とします。倍数条件と $a_1=1$ より、$p \equiv \sum_{i=1}^{k+1} a_i x_i^\* \equiv x_1^\* \pmod{a_{2}}$ です。もし $x_1^\* \geq a_2$ だと、$a_1=1$ 円硬貨 $a_2$ 枚を $a_2$ 円硬貨1枚で両替すれば使用枚数が減り矛盾します。よって、
 
-```math
+$$
 x_1^* = (p \bmod{a_{2}}) = \left\lfloor \frac{p \bmod{a_{2}}}{a_1} \right\rfloor
-```
+$$
 
 となります。
 
 以上より、$p^\prime=p-(p \bmod a_2)$ 円 を $a^\prime_1=a_2, \\: a^\prime_2=a_3, \\: \dots, \\: a^\prime_k=a_{k+1}$ 円硬貨の $k$ 種類で支払う問題に帰着されます（便宜上 $a_{k+1}^\prime$ も適当に定めます）。この問題の最適解は各変数を $a_2$ で割った問題の最適解と等しいことは簡単に確かめられます。帰納法の仮定より $2 \leq i \leq k+1$ について、
 
-```math
+$$
 \begin{align*}
 x_i^* &= \left\lfloor \frac{p^\prime/a_2 \bmod a^\prime_{i}/a_2}{a^\prime_{i-1}/a_2} \right\rfloor \quad (\because \text{帰納法の仮定}) \\
     &= \left\lfloor \frac{p^\prime \bmod a^\prime_{i}}{a^\prime_{i-1}} \right\rfloor \quad (\because \text{剰余演算の性質}) \\
     &= \left\lfloor \frac{(p-(p \bmod a_2)) \bmod a_{i+1}}{a_i} \right\rfloor \quad (\because \text{定義}) \\
     &= \left\lfloor \frac{p \bmod a_{i+1}}{a_i} \right\rfloor \quad (\because \text{倍数条件など})
 \end{align*}
-```
+$$
 
 が導けるので、$n=k+1$ でも成立し、帰納法が回ります。つまり、貪欲法の出力が最適解であることが示されました。
 
@@ -218,20 +218,20 @@ x_i^* &= \left\lfloor \frac{p^\prime/a_2 \bmod a^\prime_{i}/a_2}{a^\prime_{i-1}/
 
 $t$ 未満の全ての $i$ について、$y_i \leq a_{i+1}/a_i -1$ と仮定します。この時、
 
-```math
+$$
 \begin{align*}
 \sum_{i=1}^{t-1} a_i y_i &\leq \sum_{i=1}^{t-1} a_i \left( \frac{a_{i+1}}{a_i} - 1 \right) \\
 &= \sum_{i=1}^{t-1} (a_{i+1} - a_i) \\
 &= a_t - a_1 \\
 &< a_t
 \end{align*}
-```
+$$
 
 であり、
 
-```math
+$$
 \sum_{i=1}^{t-1} a_i y_i \geq a_t
-```
+$$
 
 という上記性質に矛盾します。したがって、「$y_i \geq a_{i+1}/a_i$ なる $i$ が存在する」ことが示され、貪欲解以外は非最適だと示されました。
 
@@ -241,42 +241,42 @@ $t$ 未満の全ての $i$ について、$y_i \leq a_{i+1}/a_i -1$ と仮定し
 
 $1 \leq i \leq t-1$ について、$a_i$ 円硬貨を $y_i$ 枚使い、$a_t$ 円以上を支払っているとします。つまり、
 
-```math
+$$
 \sum_{i=1}^{t-1} a_i y_i \geq a_t
-```
+$$
 
 です。ここで、$a_t > 0$ なので、
 
-```math
+$$
 \begin{align*}
 \sum_{i=s+1}^{t-1} a_i y_i <{}& a_t \\
 \sum_{i=s}^{t-1} a_i y_i \geq{}& a_t
 \end{align*}
-```
+$$
 
 を満たす $s$ が存在します。変形して、
 
-```math
+$$
 \begin{gather*}
 a_t - \sum_{i=s+1}^{t-1} a_i y_i > 0\\
 y_s \geq \frac{a_t - \sum_{i=s+1}^{t-1} a_i y_i}{a_s}
 \end{gather*}
-```
+$$
 
 より、$a_s$ 円硬貨 $y_s$ 枚の内、
 
-```math
+$$
 \frac{a_t - \sum_{i=s+1}^{t-1} a_i y_i}{a_s}
-```
+$$
 
 枚が取り出せます。これは倍数条件より自然数です。以上より、
 
-```math
+$$
 \begin{align*}
 a_t \text{円} = {}& a_s \text{円} \times \frac{a_t - \sum_{i=s+1}^{t-1} a_i y_i}{a_s} \text{枚}\\
 & + \sum_{i=s+1}^{t-1} (a_i \text{円} \times y_i \text{枚})
 \end{align*}
-```
+$$
 
 となる為、「$a_t$ 円未満の硬貨による支払額が $a_t$ 円以上ならば、そこからちょうど $a_t$ 円を支払うような硬貨の組合せが存在する」ことが示され、 $a_t$ 円硬貨と両替すれば使用枚数が減ります。
 
@@ -302,13 +302,13 @@ a_t \text{円} = {}& a_s \text{円} \times \frac{a_t - \sum_{i=s+1}^{t-1} a_i y_
 
 問題(CMP)より広いクラスの問題として、以下の整数ナップサック問題があります。
 
-```math
+$$
 \begin{align*}
 \text{(KP)       minimize} \quad & \sum_{i=1}^n c_i x_i \\
 \text{subject to} \quad & \sum_{i=1}^n a_i x_i = p, \\
 & x_i \in \mathbb{N} \quad \text{for $1 \leq i \leq n$}.
 \end{align*}
-```
+$$
 
 つまり、$a_i$ 円の硬貨が1枚あたり $c_i$ のコストを持つ最適化問題です。$c_i=1$ の時、問題(KP)は問題(CMP)に一致します。文献[^Hu]では、$c_i$ も含めて貪欲法が最適解を与える条件を示していますが、本記事の主眼がCMPにある為、その結果を $c_i=1$ の場合に限定して記します。
 
@@ -330,9 +330,9 @@ $\mathrm{GRE}\_i(p)$ は $p$ 円を $a_1, \\: a_2, \\: \dots, \\: a_i$ 円硬貨
 
 全ての $i \in \lbrace 1, 2, \ldots, n-1 \rbrace$ に対して、
 
-```math
+$$
 a_{i+1} = \rho_i a_i - \delta_i \quad (0 \leq \delta_i < a_i)
-```
+$$
 
 を満たすものとして、$\rho_i, \\: \delta_i$ を定義します。
 
@@ -340,9 +340,9 @@ a_{i+1} = \rho_i a_i - \delta_i \quad (0 \leq \delta_i < a_i)
 
 > 全ての $i \in \lbrace 1, 2, \ldots, n-1 \rbrace$ で $\mathrm{GRE}\_i(\delta_i) < \rho_i$ が成り立つとする。この時、任意の $p \in \mathbb{N}$ に対し、
 >
-> ```math
+> $$
 > \mathrm{GRE}_n(p) = \mathrm{OPT}_n(p)
-> ```
+> $$
 >
 > が成り立つ。つまり、貪欲法が最適解を与える。
 
@@ -363,7 +363,7 @@ $\overline{p} = a_{k+1}$ ならば $\mathrm{GRE}\_{k+1}(\overline{p}) = 1 < \mat
 
 したがって、$\overline{p} > a_{k+1}$ であり、
 
-```math
+$$
 \begin{align*}
             &\mathrm{GRE}_{k+1}(\overline{p}) > \mathrm{GRE}_k(\overline{p}) \\
 \Rightarrow {} & \mathrm{GRE}_{k+1}(\overline{p} - a_{k+1}) \geq \mathrm{GRE}_k(\overline{p})\\
@@ -373,19 +373,19 @@ $\overline{p} = a_{k+1}$ ならば $\mathrm{GRE}\_{k+1}(\overline{p}) = 1 < \mat
 \Rightarrow {} & \mathrm{GRE}_k(\delta_k) + \mathrm{GRE}_k(\overline{p} - a_{k+1}) \geq \mathrm{GRE}_k(\delta_k + \overline{p})\\
             & (\because \text{帰納法の仮定である $\mathrm{GRE}_k$ の最適性})
 \end{align*}
-```
+$$
 
 と評価できます。また、$a_{k+1}= \rho_k a_k - \delta_k$ より、$\delta_k + \overline{p} = \rho_k a_k + (\overline{p} - a_{k+1})$ なので、右辺は、
 
-```math
+$$
 \mathrm{GRE}_k(\delta_k + \overline{p}) = \rho_k + \mathrm{GRE}_k(\overline{p} - a_{k+1})
-```
+$$
 
 と等しく、
 
-```math
+$$
 \mathrm{GRE}_k(\delta_k) \geq \rho_k
-```
+$$
 
 が成立します。これは緩和条件である $\mathrm{GRE}\_k(\delta_k) < \rho_k$ に矛盾するので、結局、硬貨の種類数を増やすと貪欲法が悪化するような状況は存在しません。
 
@@ -394,7 +394,7 @@ $\overline{p} = a_{k+1}$ ならば $\mathrm{GRE}\_{k+1}(\overline{p}) = 1 < \mat
 $x_{k+1}^\*$ を $\mathrm{OPT}\_{k+1}(p)$ における $a_{k+1}$ 円硬貨の枚数とします。
 先程の議論より硬貨の種類数を増やしても貪欲法は悪化しないので、
 
-```math
+$$
 \begin{align*}
    &\mathrm{GRE}_{k}(p-x_{k+1}^*a_{k+1}) \\
 \geq{}& \mathrm{GRE}_{k+1}(p-x_{k+1}^*a_{k+1}) \quad (\because \text{先程の議論})\\
@@ -402,24 +402,24 @@ $x_{k+1}^\*$ を $\mathrm{OPT}\_{k+1}(p)$ における $a_{k+1}$ 円硬貨の枚
 ={}& \mathrm{OPT}_{k}(p-x_{k+1}^*a_{k+1}) \quad (\because \text{$x_{k+1}^*$ の定義})\\
 ={}&\mathrm{GRE}_{k}(p-x_{k+1}^*a_{k+1}) \quad (\because \text{帰納法})
 \end{align*}
-```
+$$
 
 です。よって、不等号では等号が成立し、
 
-```math
+$$
 \mathrm{GRE}_{k+1}(p-x_{k+1}^*a_{k+1}) = \mathrm{OPT}_{k+1}(p-x_{k+1}^*a_{k+1})
-```
+$$
 
 となります。これより、
 
-```math
+$$
 \begin{align*}
     & \mathrm{GRE}_{k+1}(p) \\
   = {} & \mathrm{GRE}_{k+1}(p-x_{k+1}^*a_{k+1}) + x_{k+1}^* \quad (\because \text{貪欲法の定義}) \\
   = {} & \mathrm{OPT}_{k+1}(p-x_{k+1}^*a_{k+1}) + x_{k+1}^* \quad (\because \text{上記の関係式}) \\
   = {} & \mathrm{OPT}_{k+1}(p) \quad (\because \text{$x_{k+1}^*$ の定義})
 \end{align*}
-```
+$$
 
 となり、帰納法が回りました。
 
@@ -431,29 +431,29 @@ $x_{k+1}^\*$ を $\mathrm{OPT}\_{k+1}(p)$ における $a_{k+1}$ 円硬貨の枚
 
 緩和条件 $\mathrm{GRE}\_i(\delta_i) < \rho_i$ は、倍数条件を包含します。
 
-```math
+$$
 a_{i+1}= \rho_i a_i - \delta_i \quad (0 \leq \delta_i < a_i)
-```
+$$
 
 でした。倍数条件が成立するならば、
 
-```math
+$$
 \mathrm{GRE}_i(\delta_i = 0) = 0 < \rho_i = a_{i+1}/a_i
-```
+$$
 
 なので、緩和条件が成立しています。
 
 そして、緩和条件は、先に示した1, 2, 5ユーロセントの場合にも成立します。実際、
 
-```math
+$$
 5 = 3 \times 2 - 1 = \rho_2 \times 2 - \delta_2
-```
+$$
 
 であり、
 
-```math
+$$
 \mathrm{GRE}_2(\delta_2=1) = 1 < \rho_2 = 3
-```
+$$
 
 なので、緩和条件は成立しています。つまり、この場合でも貪欲法は最適解を与えます。
 
@@ -461,15 +461,15 @@ a_{i+1}= \rho_i a_i - \delta_i \quad (0 \leq \delta_i < a_i)
 
 一方、記事前半でお見せした1, 3, 4円硬貨の場合（6円は2枚で支払うのが最適）では、
 
-```math
+$$
 4 = 2 \times 3 - 2 = \rho_2 \times 3 - \delta_2
-```
+$$
 
 であり、
 
-```math
+$$
 \mathrm{GRE}_2(2) = 2 \geq \rho_2 = 2
-```
+$$
 
 なので、倍数条件のみならず、緩和条件も満たしません。
 
@@ -477,7 +477,7 @@ a_{i+1}= \rho_i a_i - \delta_i \quad (0 \leq \delta_i < a_i)
 
 証明の帰納法において、$\mathrm{GRE}\_{k+1}(p) = \mathrm{OPT}\_{k+1}(p)$ が全ての $p\in \mathbb{N}$ で成立するならば、
 
-```math
+$$
 \begin{align*}
      & \mathrm{GRE}_{k}(\delta_k)\\
 = {} & \mathrm{GRE}_{k+1}(\delta_k) \quad (\because \delta_k < a_k < a_{k+1})\\
@@ -489,13 +489,13 @@ a_{i+1}= \rho_i a_i - \delta_i \quad (0 \leq \delta_i < a_i)
 = {} &\rho_k -1 \\
 < {} & \rho_k
 \end{align*}
-```
+$$
 
 が成り立ち、
 
-```math
+$$
 \mathrm{GRE}_{k}(\delta_k) < \rho_k
-```
+$$
 
 と緩和条件が導かれ、確かに再帰的な必要十分条件だと言えます。
 
@@ -507,15 +507,15 @@ $n=5,$ $a_1=1,$ $a_2=2,$ $a_3=4,$ $a_4=5,$ $a_5=8$ の時、貪欲法は最適�
 
 実際、$a_{3+1}=5$ と $a_3=4$ に対して、
 
-```math
+$$
 5 = 2 \times 4 - 3 = \rho_3 \times 4 - \delta_3
-```
+$$
 
 であり、
 
-```math
+$$
 \mathrm{GRE}_3(\delta_3=3) =2 \geq \rho_3 = 2
-```
+$$
 
 と、緩和条件を満たしていません。
 

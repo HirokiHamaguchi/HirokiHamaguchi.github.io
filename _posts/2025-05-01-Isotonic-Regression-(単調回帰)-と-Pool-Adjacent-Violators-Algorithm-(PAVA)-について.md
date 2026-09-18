@@ -18,23 +18,23 @@ thumbnail: /images/thumbnails/2025-05-01-thumbnail.webp
 
 文献[^monotone] 及び [SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.isotonic_regression.html) では、$n$ 点からなるデータ $y=\lbrace y_i \rbrace_{i=1}^{n}$ と正の重み $w=\lbrace w_i \rbrace_{i=1}^{n}$ が与えられたとき、以下の最適化問題の解となる回帰値 $x=\lbrace x_i \rbrace_{i=1}^{n}$ を求めることと定義されます。
 
-```math
+$$
 \begin{align*}
     \min_{x} \quad & \sum_{i=1}^n w_i (y_i - x_i)^2\\
     \text{s.t.} \quad & x_1 \leq x_2 \leq \dots \leq x_n
 \end{align*}
-```
+$$
 
 なお、[Wikipedia](https://en.wikipedia.org/wiki/Isotonic_regression) 及び [scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.isotonic.IsotonicRegression.html#sklearn.isotonic.IsotonicRegression) では、観測されるデータの添字部分についてより一般化した定義を採用していますが、本記事では上記のみを扱います。
 
 また、重み $w_i$ が全て1である、つまり、
 
-```math
+$$
 \begin{align*}
     \min_x \quad & \sum_{i=1}^n (y_i - x_i)^2\\
     \text{s.t.} \quad & x_1 \leq x_2 \leq \dots \leq x_n
 \end{align*}
-```
+$$
 
 と、目的関数自体は通常の最小二乗問題に帰着されることも多いです。本質的には特に変わりません。
 
@@ -534,12 +534,12 @@ make_gif("pava.gif")
 
 証明の前に、Isotonic Regression が解く問題に、解の一意性があることを述べます。問題は以下でした。
 
-```math
+$$
 \begin{align*}
     \min_x \quad & \sum_{i=1}^n w_i (y_i - x_i)^2\\
     \text{s.t.} \quad & x_1 \leq x_2 \leq \dots \leq x_n
 \end{align*}
-```
+$$
 
 これは非空な閉凸集合(下図)上の狭義凸な二次関数を最小化する問題です。その為、最適解が存在し、かつ一意に定まることが分かります。以下ではこれを前提とします。
 
@@ -561,11 +561,11 @@ make_gif("pava.gif")
 
 なお、この証明における「強凸」というのは少し強すぎる十分条件となります。有界性を言うだけならば、coercive (文献[^coercive] Definition 11.11)、つまり、
 
-```math
+$$
 \begin{equation*}
     \lim_{\lVert x \rVert \to +\infty} f(x) = +\infty
 \end{equation*}
-```
+$$
 
 で十分です。今回はこれを用いてもあまり簡略化されませんが、もう少し一般的にも議論出来るということは記しておきます。
 
@@ -583,21 +583,21 @@ make_gif("pava.gif")
 
 今回解くべき最適化問題は、標準的な形式で表すと、
 
-```math
+$$
 \begin{align*}
     \min_x \quad & f(x) \mathrel{\vcenter{:}}= \sum_{i=1}^n w_i (y_i - x_i)^2\\
     \text{s.t.} \quad & g_i(x) \mathrel{\vcenter{:}}= x_i - x_{i+1} \leq 0 \quad (i=1,\dots,n-1)
 \end{align*}
-```
+$$
 
 となります。その双対問題はLagrange乗数 $v = \lbrace v_i \rbrace_{i=1}^{n-1}$ を用いて、
 
-```math
+$$
 \begin{align*}
     \max_v \quad & \left(\min_x L(x,v) \mathrel{\vcenter{:}}= f(x) + \sum_{i=1}^{n-1} v_i g_i(x)\right)\\
     \text{s.t.} \quad & v_i \geq 0 \quad (i=1,\dots,n-1)
 \end{align*}
-```
+$$
 
 となります。
 
@@ -607,12 +607,12 @@ make_gif("pava.gif")
 
 さらに、$g_i(x) \leq 0$ と $v_i \geq 0$ より、
 
-```math
+$$
 \begin{align*}
     &\sum_{i=1}^{n-1} v_i g_i(x) = 0 \\
     \iff {} & \forall i \in \lbrace 1,\dots,n-1 \rbrace, \; v_i g_i(x) = 0
 \end{align*}
-```
+$$
 
 です。Slater条件を満たすならば双対ギャップが0、つまり主問題と双対問題の最適値が一致する(文献[^yabe] 定理5.8)ことより、目的関数を見比べると $(x^\*, v^\*)$ は相補性条件を満たすことが分かります。よって、KKT条件の充足が最適性の必要十分条件になります。
 
@@ -620,7 +620,7 @@ make_gif("pava.gif")
 
 * **停留性**: 以下の条件を満たす:
 
-```math
+$$
 \begin{align*}
     -\nabla f(x) &= \sum_{i=1}^{n-1} v_i \nabla g_i(x)\\
     \text{i.e.,} &\\
@@ -630,7 +630,7 @@ make_gif("pava.gif")
     -2w_{n-1} (x_{n-1} - y_{n-1}) &= -v_{n-2} + v_{n-1},\\
     -2w_n (x_n - y_n) &= -v_{n-1}
 \end{align*}
-```
+$$
 
 * スラック変数に関する条件(**相補性条件**): $v_i g_i(x) = v_i (x_i - x_{i+1}) = 0$
 * **主問題の実行可能条件**: $g_i(x) = x_i - x_{i+1} \leq 0$
@@ -687,25 +687,25 @@ make_gif("pava.gif")
 
 言い換えると、以下の問題を考えています。
 
-```math
+$$
 \begin{equation*}
     \min_{\bar{x} \in \mathbb{R}} \quad   \sum_{i=p}^q w_i (y_i - \bar{x})^2
 \end{equation*}
-```
+$$
 
 これは単なる二次式の最小化問題なので、最適解 $\bar{x}^*$ は
 
-```math
+$$
 \begin{equation*}
 \bar{x}^* = \frac{\sum_{i=p}^q w_i y_i}{\sum_{i=p}^q w_i}
 \end{equation*}
-```
+$$
 
 と求まります。これはブロック $B$ 内における $y$ の重み付き平均であり、[実装の節](#実装)を参照して頂ければ分かる通り、PAVAは正にこれをブロックのマージで求めています。以下ではこの値を $\mathrm{Av}(B)$ と表記します。
 
 また、Lagrange乗数 $v$ はKKT条件の停留性より、
 
-```math
+$$
 \begin{align*}
     -2w_p (x_p - y_p) &= v_p,\\
     -2w_{p+1} (x_{p+1} - y_{p+1}) &= -v_p + v_{p+1},\\
@@ -713,26 +713,26 @@ make_gif("pava.gif")
     -2w_{q-1} (x_{q-1} - y_{q-1}) &= -v_{q-2} + v_{q-1},\\
     -2w_q (x_q - y_q) &= -v_{q-1}
 \end{align*}
-```
+$$
 
 を満たします。ここで $x_p = x_{p+1} = \dots = x_q = \mathrm{Av}(B)$ を代入すると、
 
-```math
+$$
 \begin{align*}
     v_p &= 2w_p (y_p - \mathrm{Av}(B)), \\
     v_{p+1} &= 2(w_p+w_{p+1}) \left(\frac{y_p w_p + y_{p+1} w_{p+1}}{w_p+w_{p+1}} - \mathrm{Av}(B)\right), \\
     \vdots &
 \end{align*}
-```
+$$
 
 つまり、$B_{p,i}=\lbrace p,\dots,i \rbrace$, $B_{i+1,q}=\lbrace i+1,\dots,q \rbrace$ という記法のもと、
 
-```math
+$$
 \begin{align*}
     v_i &= 2 \left( \sum_{j=p}^i w_j \right) \left(\mathrm{Av}(B_{p,i}) - \mathrm{Av}(B)\right)\\
         &= 2 \left( \sum_{j=i+1}^q w_j \right) \left(\mathrm{Av}(B) - \mathrm{Av}(B_{i+1,q})\right)
 \end{align*}
-```
+$$
 
 と各 $i \in \lbrace p,\dots,q \rbrace$ で一意に定まります。なお、上の2式目は $\mathrm{Av}(B)$ を代入する順序を逆向きにすると簡単に得られ、これは証明-2で必要な表式です。
 
@@ -744,7 +744,7 @@ KKT条件に関する3条件が PAVA の各ステップで満たされること�
 
 まず、任意の有効制約 $J$ に対応する解を、各ブロック毎に[証明-1](#証明-1)で求めたものにセットし、かつこの時点で未定な $v_i$ を全て0にセットすることで定義します。例えば、先程の具体例で $J=\lbrace 1,3 \rbrace$ のとき、
 
-```math
+$$
 \begin{gather*}
 x_1 = x_2 = \mathrm{Av}(\lbrace 1,2 \rbrace), \\
 x_3 = x_4 = \mathrm{Av}(\lbrace 3,4 \rbrace), \\
@@ -753,7 +753,7 @@ v_1 = 2w_1 (y_1 - \mathrm{Av}(\lbrace 1,2 \rbrace)), \quad  v_2 = 0, \\
 v_3 = 2w_3 (y_3 - \mathrm{Av}(\lbrace 3,4 \rbrace)), \quad v_4 = 0, \\
 v_5 = 2w_3 (y_5 - y_5) = 0
 \end{gather*}
-```
+$$
 
 となります。
 
@@ -767,19 +767,19 @@ v_5 = 2w_3 (y_5 - y_5) = 0
 
 次に、PAVA の各マージ過程に注目します。[実装](#実装)におけるマージでは、最後から2番目のブロック $B_2 = \lbrace p_2, \dots, q_2 \rbrace$ と最後のブロック $B_1 = \lbrace p_1, \dots, q_1 \rbrace$ をマージして新しいブロック $B$ を生成していました。このとき、マージを行う条件より、
 
-```math
+$$
 \begin{equation*}
 \mathrm{Av}(B_2) \geq \mathrm{Av}(B_1)
 \end{equation*}
-```
+$$
 
 が成立しています。特に、重みが正であることから、
 
-```math
+$$
 \begin{equation*}
 \mathrm{Ab}(B_2) \geq \mathrm{Av}(B) \geq \mathrm{Av}(B_1)
 \end{equation*}
-```
+$$
 
 です。
 
@@ -787,37 +787,37 @@ v_5 = 2w_3 (y_5 - y_5) = 0
 
 ##### 最後から2番目のブロック内について
 
-```math
+$$
 \begin{equation*}
     v_i = 2 \left( \sum_{j=p_2}^{i} w_j \right) \left(\mathrm{Av}(B_{p_2,i}) - \mathrm{Av}(B_2)\right) \geq 0
 \end{equation*}
-```
+$$
 
 が元々言えていたので、マージ後の
 
-```math
+$$
 \begin{equation*}
     v'_i = 2 \left( \sum_{j=p_2}^i w_j \right) \left(\mathrm{Av}(B_{p_2,i}) - \mathrm{Av}(B)\right) \geq 0
 \end{equation*}
-```
+$$
 
 も、$\mathrm{Av}(B_2) \geq \mathrm{Av}(B)$ より成立します。
 
 ##### 最後のブロック内について
 
-```math
+$$
 \begin{equation*}
     v_i = 2 \left( \sum_{j=i+1}^{q_1} w_j \right) \left(\mathrm{Av}(B_1) - \mathrm{Av}(B_{i+1,q_1})\right) \geq 0
 \end{equation*}
-```
+$$
 
 が元々言えていたので、マージ後の
 
-```math
+$$
 \begin{equation*}
     v'_i = 2 \left( \sum_{j=i+1}^{q_1} w_j \right) \left(\mathrm{Av}(B) - \mathrm{Av}(B_{i+1,q_1})\right) \geq 0
 \end{equation*}
-```
+$$
 
 も、$\mathrm{Av}(B) \geq \mathrm{Av}(B_1)$ より成立します。
 
@@ -825,11 +825,11 @@ v_5 = 2w_3 (y_5 - y_5) = 0
 
 境目とはつまり $i=q_2$ であり、
 
-```math
+$$
 \begin{equation*}
    v'_i = 2 \left( \sum_{j=p_2}^{q_2} w_j \right) \left(\mathrm{Av}(B_2) - \mathrm{Av}(B)\right) \geq 0
 \end{equation*}
-```
+$$
 
 が、$\mathrm{Av}(B_2) \geq \mathrm{Av}(B)$ より成立します。
 

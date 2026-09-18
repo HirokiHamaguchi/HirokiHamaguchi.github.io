@@ -31,12 +31,12 @@ thumbnail: /images/thumbnails/2023-12-18-thumbnail.webp
 
 さて、Robustness of Magicは、次の **$L^1$ノルム最小化問題** の最適値として定式化されます。
 
-```math
+$$
 \begin{align*}
     \min_{\boldsymbol{x}} & \quad \lVert\boldsymbol{x}\rVert_1 \\
     \text{s.t.} & \quad A_n\boldsymbol{x} = \boldsymbol{b}
 \end{align*}
-```
+$$
 
 $n$は量子ビット数に対応する自然数(本記事では$1 \leq n \leq 8$を満たす)で、
 $\boldsymbol{b}$は長さ$4^n$のベクトル、
@@ -51,9 +51,9 @@ $A_n$は$n$のみによって一意に決まり、$n=1,2$の場合は以下の�
 
 ここで、$\mathcal{S}_n$は$n$量子ビットの純粋スタビライザー状態と呼ばれるものの集合として定義されており、重要なのは、
 
-```math
+$$
     |\mathcal{S}_n| = 2^n \prod_{k=0}^{n-1} (2^{n-k}+1)
-```
+$$
 
 という性質です。この$|\mathcal{S}_n|$は**非常に爆発的に増加**し、具体的な値は以下の通りです。
 
@@ -82,13 +82,13 @@ $A_n$は$n$のみによって一意に決まり、$n=1,2$の場合は以下の�
 まず前提として、$L^1$ノルム最小化問題は、補助変数を用いることで線形計画問題に帰着できることで有名です([参考記事](https://www.msi.co.jp/solution/nuopt/docs/techniques/articles/norm-minimization.html))。
 つまり、$|x_i| = x_i^+ + x_i^- \quad (x_i^+=\max(x_i,0), x_i^-=\max(-x_i,0))$として絶対値を外し、適当に変数を置き換えると、
 
-```math
+$$
 \begin{align*}
     \min_{\boldsymbol{u}} & \quad \sum_{i} u_i \\
     \text{s.t.} & \quad \begin{pmatrix} A_n & -A_n\end{pmatrix} \boldsymbol{u} = \boldsymbol{b} \\
                 & \quad \boldsymbol{u} \geq 0
 \end{align*}
-```
+$$
 
 となります。これは**線形計画問題**の等式標準形です。
 よって、[gurobi](https://www.gurobi.com/)などの疎行列用LP Solverを利用すれば$n \leq 5$で解けることが既存研究によって知られています。しかし、$n \geq 6$では$A_n$が巨大すぎるので、このままでは解けないという話でした。
@@ -167,7 +167,7 @@ in Signal and Image Processing”. [Springer](https://link.springer.com/book/10.
 この図をよく観察すると、$2^n$列ごとにブロックのようなものが形成されていることがお分かりいただけるでしょうか。
 具体的には、$n=2$の最初の4列を取り出すと、図にあるインデックスを用いることで、
 
-```math
+$$
 \begin{equation*}
     \begin{pmatrix}
         +II & +II& +II& +II \\
@@ -176,7 +176,7 @@ in Signal and Image Processing”. [Springer](https://link.springer.com/book/10.
         +XX & -XX& -XX& +XX
     \end{pmatrix}
 \end{equation*}
-```
+$$
 
 という、特殊な構造を持った行列が現れます。
 その他の列でも、細かい符号の反転などはありますが、基本は同じように列が並んでいきます。
@@ -191,7 +191,7 @@ in Signal and Image Processing”. [Springer](https://link.springer.com/book/10.
 
 Sylvesterの方法で生成される(正規化されていない)Walsh行列は、[クロネッカー積](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AD%E3%83%8D%E3%83%83%E3%82%AB%E3%83%BC%E7%A9%8D)を用いて
 
-```math
+$$
 \begin{align*}
     H_1 & = \begin{pmatrix}
     1   & 1  \\
@@ -200,7 +200,7 @@ Sylvesterの方法で生成される(正規化されていない)Walsh行列は�
     \quad
     H_k = H_{k-1}\otimes H_1 \quad (k \geq 2)
 \end{align*}
-```
+$$
 
 と定義されます。緑を+1、赤を-1として、下図のような行列になります。
 
@@ -282,21 +282,21 @@ Overlapが内積を用いた手法を表し、Randomがランダムに$A_n$の�
 
 さて、そもそものRoMを求める問題、つまり、**主問題**は以下のように定式化されました。
 
-```math
+$$
 \begin{align*}
     \min_{\boldsymbol{x}} & \quad \lVert\boldsymbol{x}\rVert_1 \\
     \text{s.t.} & \quad A_n\boldsymbol{x} = \boldsymbol{b}
 \end{align*}
-```
+$$
 
 この主問題の**双対問題**は以下のようになります。
 
-```math
+$$
 \begin{align*}
     \max_{\boldsymbol{y}} & \quad \boldsymbol{b}^\top \boldsymbol{y} \\
     \text{s.t.} & \quad \left\lVert A_n^\top \boldsymbol{y} \right\rVert_\infty \leq 1
 \end{align*}
-```
+$$
 
 なお、$\left\lVert\left\rVert A_n^\top \boldsymbol{y} \right\lVert\right\rVert_\infty \leq 1$は$-\boldsymbol{1} \leq A_n^\top \boldsymbol{y} \leq +\boldsymbol{1}$と同値です。
 
@@ -432,15 +432,15 @@ $n$量子ビットの純粋スタビライザー状態の集合$\mathcal{S}_n$�
 
 $\genfrac{[}{]}{0pt}{}{n}{k}_2$でq=2の場合のq二項係数を表すとする。また、ある$\sigma_1$に対し、$\mathcal{L}_n(k)$で$\langle \sigma_1 | \sigma_2 \rangle = 2^{n-k}$になるような状態$\sigma_2$の個数を表すとする。なお、この$\mathcal{L}_n(k)$は$\sigma_1$に依らず
 
-```math
+$$
     \mathcal{L}_n(k)=2^{k(k+3)/2}\genfrac{[}{]}{0pt}{}{n}{k}_2
-```
+$$
 
 であることが証明できる。
 
 すると、
 
-```math
+$$
 \begin{align*}
     E[\langle \sigma_1 | \sigma_2 \rangle] & =\frac{\sum_{k=0}^{n} 2^{n-k}\mathcal{L}_n(k)}{|\mathcal{S}_n|} \\
             & =\frac{
@@ -450,7 +450,7 @@ $\genfrac{[}{]}{0pt}{}{n}{k}_2$でq=2の場合のq二項係数を表すとする
     }                                                                     \\
             & =1
 \end{align*}
-```
+$$
 
 となる。
 ただし、コーシーの二項定理を最後に用いた。
@@ -471,9 +471,9 @@ $\genfrac{[}{]}{0pt}{}{n}{k}_2$でq=2の場合のq二項係数を表すとする
 
 事実としてこのような現象が成立するので、逆算して一体何故このようなことが起きるのかを考えます。すると、最終的には証明でも使用した、[コーシーの二項定理](https://ja.wikipedia.org/wiki/Q%E4%BA%8C%E9%A0%85%E5%AE%9A%E7%90%86)から導かれる関係式
 
-```math
+$$
     |\mathcal{S}_n| = 2^n \prod_{k=0}^{n-1} (2^{n-k}+1) = 2^n \sum_{k=0}^{n} 2^{\frac{k(k+1)}{2}} \genfrac{[}{]}{0pt}{}{n}{k}_2
-```
+$$
 
 に辿り着きます。この等式こそが、この定理のもたらす真の果実です。
 
