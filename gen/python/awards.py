@@ -48,7 +48,7 @@ def similarity(left, right):
 
 
 def cv_entries(text, heading):
-    match = re.search(rf"^## {re.escape(heading)}\s*\n(.*?)(?=^## |\Z)", text, re.MULTILINE | re.DOTALL)
+    match = re.search(rf"^## {re.escape(heading)}\s*\n(.*?)(?=^## |^</div>|\Z)", text, re.MULTILINE | re.DOTALL)
     if not match:
         raise ValueError(f"Missing CV section: {heading}")
     entries = []
@@ -94,7 +94,7 @@ def awards():
     items = fetch_awards()
     text = (ROOT / "_pages/cv.md").read_text(encoding="utf-8")
     warnings = []
-    for heading, language in [("Awards", "en"), ("Awards (日本語)", "ja")]:
+    for heading, language in [("Awards", "en"), ("受賞", "ja")]:
         warnings.extend(check_section(items, cv_entries(text, heading), language))
     if warnings:
         for warning in warnings:
