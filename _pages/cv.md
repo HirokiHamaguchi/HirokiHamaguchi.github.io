@@ -79,6 +79,9 @@ redirect_from:
 
 ## Awards
 
+* 2026-09 \| The Operations Research Society of Japan \| Outstanding Student Presentation Award
+  * [OR](https://orsj.org/2026f/conference/student_award/)
+
 * 2026-09-09 \| Operations Research Society of Japan \| Student Paper Award
   * [OR](https://orsj.org/award-history)
 
@@ -101,7 +104,10 @@ redirect_from:
 
 ## Awards (日本語)
 
-* 2026-09-09 （令和8年9月9日） \| OR学会 \| 学生論文賞
+* 2026-09（令和8年9月） \| OR学会 \| 学生優秀発表賞
+  * [OR](https://orsj.org/2026f/conference/student_award/)
+
+* 2026-09-09（令和8年9月9日） \| OR学会 \| 学生論文賞
   * [OR](https://orsj.org/award-history)
 
 * 2024-08-30（令和6年8月30日） \| 第24回Asian Quantum Information Science Conference \| 銀賞（Student Poster Awards）

@@ -1,6 +1,7 @@
 import os
 import sys
 
+from python.awards import awards
 from python.publications import publications
 from python.qiita import qiita
 from python.talkmap import talkmap
@@ -19,6 +20,7 @@ def html_escape(text):
 
 def main():
     dirname = os.path.dirname(__file__)
+    awards()
     publications(dirname, html_escape)
     talks(dirname, html_escape)
     talkmap(os.path.join(dirname, "../"))
