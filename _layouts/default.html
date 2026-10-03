@@ -9,7 +9,8 @@ layout: compress
 {% endif %}
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+{% assign default_lang = site.locale | slice: 0,2 %}
+<html lang="{{ page.lang | default: default_lang | escape }}" class="no-js">
 
 <head>
   <meta charset="utf-8">

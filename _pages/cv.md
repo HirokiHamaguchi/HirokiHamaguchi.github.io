@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "CV"
+lang: ja
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -245,6 +246,7 @@ redirect_from:
   const buttons = controls.querySelectorAll('[data-cv-language]');
   const sections = document.querySelectorAll('.cv-language');
   function selectLanguage(language) {
+    document.documentElement.lang = language;
     sections.forEach(section => { section.hidden = section.lang !== language; });
     buttons.forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.cvLanguage === language));
