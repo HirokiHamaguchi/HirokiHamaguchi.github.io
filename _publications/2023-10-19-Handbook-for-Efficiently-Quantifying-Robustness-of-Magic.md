@@ -2,7 +2,7 @@
 title: "魔法状態評価の大規模化に向けた効率的アルゴリズム"
 authors: '浜口広樹, 浜田航宇, 吉岡信行'
 collection: publications
-category: preprint
+category: technical_report
 permalink: /publication/2023-10-19-Handbook-for-Efficiently-Quantifying-Robustness-of-Magic
 excerpt: 'Handbook for Quantifying Robustness of Magic の日本語版'
 date: 2023-10-19

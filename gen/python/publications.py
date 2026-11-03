@@ -55,7 +55,7 @@ def publications(dirname: str, html_escape: Callable[[str], str]):
 
         md += "\ncollection: publications"
 
-        assert item.category in ["manuscript", "preprint"], item.category
+        assert item.category in ["manuscript", "preprint", "technical_report"], item.category
         md += "\ncategory: " + item.category
 
         md += """\npermalink: /publication/""" + html_filename

@@ -1,5 +1,22 @@
 [
   {
+    "pub_date": "2026-06-19",
+    "title": "Bounded-depth spacetime lattice surgery for resource-efficient fault-tolerant quantum computation",
+    "authors": [
+      "Kou Hamada",
+      "Hiroki Hamaguchi",
+      "Yosuke Ueno",
+      "Yasunari Suzuki",
+      "Teruo Tanimoto",
+      "Nobuyuki Yoshioka"
+    ],
+    "venue": "arXiv",
+    "category": "preprint",
+    "excerpt": "Constant-depth double-slice routing for lattice surgery.",
+    "url_slug": "Bounded-depth-spacetime-lattice-surgery-for-resource-efficient-fault-tolerant-quantum-computation",
+    "paper_url": "https://arxiv.org/abs/2606.21192"
+  },
+  {
     "pub_date": "2026-03-11",
     "title": "Practical Regularized Quasi-Newton Methods with Inexact Function Values",
     "authors": [
@@ -80,7 +97,7 @@
       "吉岡信行"
     ],
     "venue": "情報処理学会研究報告",
-    "category": "preprint",
+    "category": "technical_report",
     "excerpt": "Handbook for Quantifying Robustness of Magic の日本語版",
     "url_slug": "Handbook-for-Efficiently-Quantifying-Robustness-of-Magic",
     "paper_url": "https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=228560&item_no=1"

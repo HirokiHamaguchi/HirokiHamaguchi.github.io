@@ -26,6 +26,8 @@ publication_category:
     title: "Preprints"
   conference:
     title: "Conference Papers"
+  technical_report:
+    title: "Technical Reports"
 
 talk_category:
   talk:
