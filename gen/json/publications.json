@@ -29,18 +29,18 @@
     "paper_url": "https://link.aps.org/doi/10.1103/PhysRevApplied.23.014069"
   },
   {
-    "pub_date": "2024-12-29",
+    "pub_date": "2026-11-02",
     "title": "Initial Placement for Fruchterman--Reingold Force Model With Coordinate Newton Direction",
     "authors": [
       "Hiroki Hamaguchi",
       "Naoki Marumo",
       "Akiko Takeda"
     ],
-    "venue": "arXiv",
-    "category": "preprint",
+    "venue": "Journal of Graph Algorithms and Applications",
+    "category": "manuscript",
     "excerpt": "Using Coordinate Newton and L-BFGS, compute the graph layout.",
     "url_slug": "Initial-Placement-for-Fruchterman-Reingold-Force-Model-with-Coordinate-Newton-Direction",
-    "paper_url": "https://arxiv.org/abs/2412.20317",
+    "paper_url": "https://doi.org/10.7155/jgaa.v30i1.3113",
     "slides_url": "https://raw.githubusercontent.com/HirokiHamaguchi/Initial_Placement_for_Fruchterman-Reingold_Force_Model_with_Coordinate_Newton_Direction/main/doc/presentation/presentation.pdf"
   },
   {

@@ -1,9 +1,36 @@
 import json
 import os
+import re
+from pathlib import Path
 from typing import Callable
 
 import numpy as np
 import pandas as pd
+
+
+def remove_old_preprints(data, directory: Path):
+    expected = {
+        os.path.basename(f"{item['pub_date']}-{item['url_slug']}.md")
+        for item in data
+    }
+    for item in data:
+        if item["category"] != "manuscript":
+            continue
+        filename = os.path.basename(f"{item['pub_date']}-{item['url_slug']}.md")
+        if not (directory / filename).is_file():
+            continue
+        pattern = re.compile(r"\d{4}-\d{2}-\d{2}-" + re.escape(item["url_slug"]) + r"\.md")
+        for old in directory.iterdir():
+            if old.name in expected or not pattern.fullmatch(old.name) or not old.is_file():
+                continue
+            # Only remove preprint pages for this slug, preserving unrelated/manual pages.
+            sections = old.read_text(encoding="utf-8").split("---", 2)
+            if len(sections) != 3 or sections[0].strip():
+                continue
+            if not re.search(r"^category:\s*preprint\s*$", sections[1], re.MULTILINE):
+                continue
+            old.unlink()
+            print(f"Removed old preprint: {old.name}")
 
 
 def publications(dirname: str, html_escape: Callable[[str], str]):
@@ -73,6 +100,9 @@ def publications(dirname: str, html_escape: Callable[[str], str]):
             encoding="utf-8",
         ) as f:
             f.write(md)
+
+    # Clean up only after every replacement page has been written successfully.
+    remove_old_preprints(data, Path(dirname).resolve().parent / "_publications")
 
 
 def main():
