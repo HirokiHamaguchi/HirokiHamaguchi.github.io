@@ -3,25 +3,17 @@
    ========================================================================== */
 
 #main {
-  @include container;
   @include clearfix;
   margin-top: 2em;
-  padding-left: 1em;
-  padding-right: 1em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
-  @include breakpoint($x-large) {
-    max-width: $x-large;
-  }
 }
 
 .page {
-  @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-    @include suffix(0.5 of 12);
-  }
+  width: 100%;
+  min-width: 0;
+  margin: 0;
 
   .page__inner-wrap {
     @include full();
@@ -35,6 +27,7 @@
 }
 
 .page__title {
+  overflow-wrap: anywhere;
   margin-top: 0;
   line-height: 1;
 
@@ -44,6 +37,9 @@
 }
 
 .page__content {
+  overflow-wrap: anywhere;
+
+  pre { overflow-x: auto; overflow-wrap: normal; }
 
   h2 {
     padding-bottom: 0.5em;
@@ -115,4 +111,32 @@
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
+}
+
+.home-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem;
+  h1 { margin: 0; font-size: 2.3rem; font-weight: 500; line-height: 1.25; letter-spacing: -0.04em; }
+  img { width: 88px; height: 88px; flex-shrink: 0; object-fit: cover; border-radius: 4px; }
+  @media (max-width: 600px) {
+    gap: 0.75rem;
+    h1 { font-size: 1.65rem; }
+    img { width: 60px; height: 60px; }
+  }
+}
+.home-intro__label { margin: 0 0 0.5rem; font-size: 0.9rem; }
+.home-intro__affiliation {
+  margin: 0.8rem 0 0;
+  color: #59616b;
+  font-size: 0.8rem;
+  @media (max-width: 600px) { font-size: 0.72rem; }
+}
+.ul-for-other {
+  list-style-type: none;
+  a { color: inherit; text-decoration: none; }
+  img { width: 30px; height: 30px; vertical-align: middle; margin-right: 10px; }
+  .external-site-icon { display: inline-block; width: 30px; margin-right: 10px; vertical-align: middle; text-align: center; font-size: 24px; }
 }

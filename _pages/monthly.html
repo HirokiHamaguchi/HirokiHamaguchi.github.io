@@ -2,7 +2,6 @@
 layout: archive
 title: "Monthly Logs"
 permalink: /diary/monthly/
-author_profile: true
 ---
 
 {% assign monthly_posts = site.diary | where_exp: "item", "item.title contains '月記'" | sort: "date" | reverse %}

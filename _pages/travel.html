@@ -2,7 +2,6 @@
 layout: archive
 title: "Travel"
 permalink: /diary/travel/
-author_profile: true
 ---
 
 {% assign travel_posts = site.diary | where_exp: "item", "item.title contains '旅行'" | sort: "date" | reverse %}

@@ -1,0 +1,13 @@
+// Share the same content edges between navigation and every page layout.
+.notebook-header, #main {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @media (max-width: 600px) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}

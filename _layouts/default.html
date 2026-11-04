@@ -154,28 +154,19 @@ layout: compress
   </div>
   <![endif]-->
 
-  <div class="masthead">
-    <div class="masthead__inner-wrap">
-      <div class="masthead__menu">
-        <nav id="site-nav" class="greedy-nav">
-          <button>
-            <div class="navicon"></div>
-          </button>
-          <ul class="visible-links">
-            <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-            <li class="masthead__menu-item"><a href="{{ base_path }}/publications/">Publications</a></li>
-            <li class="masthead__menu-item"><a href="{{ base_path }}/talks/">Talks</a></li>
-            <li class="masthead__menu-item"><a href="{{ base_path }}/cv/">CV</a></li>
-            <li class="masthead__menu-item"><a href="{{ base_path }}/program/">Program</a></li>
-            <li class="masthead__menu-item"><a href="{{ base_path }}/diary/">Diary</a></li>
-            <li class="masthead__menu-item"><a href="{{ base_path }}/blog/">Blog</a></li>
-          </ul>
-          <ul class="hidden-links hidden"></ul>
-        </nav>
-      </div>
-    </div>
-  </div>
-
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="notebook-header">
+    <a class="notebook-brand" href="{{ '/' | relative_url }}">Hiroki Hamaguchi</a>
+    <nav class="notebook-nav" aria-label="Main navigation">
+      <ul>
+        {% assign sections = 'Publications,Talks,CV,Program,Diary,Blog' | split: ',' %}
+        {% for section in sections %}
+          {% assign section_path = section | downcase | prepend: '/' | append: '/' %}
+          <li><a href="{{ section_path | relative_url }}"{% if page.url contains section_path %} aria-current="page"{% endif %}>{{ section }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
   {{ content }}
 
   <script src="{{ base_path }}/assets/js/main.min.js"></script>

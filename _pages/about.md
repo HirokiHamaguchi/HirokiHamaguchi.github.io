@@ -1,7 +1,6 @@
 ---
 permalink: /
 title: "About"
-author_profile: true
 redirect_from:
   - /about/
   - /about.html
@@ -24,24 +23,6 @@ etc.
 
 ## Links
 
-
-<style>
-  .ul-for-other {
-    list-style-type: none;
-  }
-
-  .ul-for-other a {
-    color:inherit;
-    text-decoration: none;
-  }
-
-  .ul-for-other img {
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-    margin-right: 10px;
-  }
-</style>
 
 ### Contact
 
@@ -71,6 +52,9 @@ etc.
   </li>
   <li>
     <a href="https://github.com/HirokiHamaguchi"><img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub">GitHub</a>
+  </li>
+  <li>
+    <a href="https://researchmap.jp/hirokihamaguchi0331"><i class="fas fa-address-card external-site-icon" aria-hidden="true"></i>researchmap</a>
   </li>
   <li>
     <a href="https://qiita.com/hari64"><img src="https://cdn.qiita.com/assets/favicons/public/apple-touch-icon-ec5ba42a24ae923f16825592efdc356f.png" alt="Qiita">Qiita</a>

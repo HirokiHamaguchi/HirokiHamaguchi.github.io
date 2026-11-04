@@ -1,66 +1,19 @@
-/* ==========================================================================
-   MASTHEAD
-   ========================================================================== */
-
-.masthead {
-  position: fixed;
-  background: white;
-  border-bottom: 1px solid $border-color;
-  height: $masthead-height;
-  top: 0;
-  width: 100%;
-
-  -webkit-animation: intro 0.3s both;
-  animation: intro 0.3s both;
-  -webkit-animation-delay: 0.15s;
-  animation-delay: 0.15s;
-  z-index: 20;
-
-  &__inner-wrap {
-    @include container;
-    @include clearfix;
-    padding: 1em 1em 1em;
-    font-family: $sans-serif-narrow;
-
-    @include breakpoint($x-large) {
-      max-width: $x-large;
-    }
-
-    nav {
-      z-index: 10;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  }
+.notebook-header {
+  padding-top: 2rem;
+  @media (max-width: 600px) { padding-top: 1.25rem; }
 }
 
-.masthead__menu {
-
-  ul {
-    margin: 0;
-    padding: 0;
-    clear: both;
-    list-style-type: none;
-  }
+.notebook-brand {
+  font-size: 1.4rem;
+  font-weight: 650;
+  text-decoration: none;
+  color: inherit;
 }
 
-.masthead__menu-item {
-  display: block;
-  list-style-type: none;
-  white-space: nowrap;
-
-  &--lg {
-    padding-right: 2em;
-    font-weight: 700;
-  }
-}
-
-@media print {
-
-  .masthead {
-    display: none;
-  }
-
+.skip-link {
+  position: absolute;
+  top: -5rem;
+  left: 1rem;
+  z-index: 100;
+  &:focus { top: 0.5rem; }
 }
