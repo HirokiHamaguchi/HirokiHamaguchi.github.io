@@ -8,6 +8,22 @@ import numpy as np
 import pandas as pd
 
 
+def validate_excerpts(data):
+    assert isinstance(data, list) and data, "publications.json must be a nonempty list"
+    for index, item in enumerate(data, start=1):
+        assert isinstance(item, dict), f"Publication #{index} must be an object"
+        title = item.get("title", f"Publication #{index}")
+        excerpt = item.get("excerpt")
+        assert isinstance(excerpt, dict), f"{title}: excerpt must be an object"
+        assert "ja" in excerpt, f"{title}: excerpt.ja is required"
+        assert set(excerpt) <= {"ja", "en"}, f"{title}: excerpt supports only ja/en"
+        for language, text in excerpt.items():
+            assert isinstance(text, str) and text.strip(), (
+                f"{title}: excerpt.{language} must be a nonempty string; "
+                "omit the key if no English excerpt is needed"
+            )
+
+
 def remove_old_preprints(data, directory: Path):
     expected = {
         os.path.basename(f"{item['pub_date']}-{item['url_slug']}.md")
@@ -41,6 +57,8 @@ def publications(dirname: str, html_escape: Callable[[str], str]):
     ) as file:
         data = json.load(file)
 
+    # Check every record before writing any pages to avoid partial generation.
+    validate_excerpts(data)
     publications = pd.DataFrame(data)
 
     for row, item in publications.iterrows():
@@ -61,7 +79,7 @@ def publications(dirname: str, html_escape: Callable[[str], str]):
         md += """\npermalink: /publication/""" + html_filename
 
         # Japanese is the default excerpt; absent English text stays omitted.
-        excerpt = item.excerpt.get("ja", "")
+        excerpt = item.excerpt["ja"]
         md += "\nexcerpt: " + json.dumps(excerpt, ensure_ascii=False)
         if item.excerpt.get("en"):
             md += "\nexcerpt_en: " + json.dumps(item.excerpt["en"], ensure_ascii=False)
