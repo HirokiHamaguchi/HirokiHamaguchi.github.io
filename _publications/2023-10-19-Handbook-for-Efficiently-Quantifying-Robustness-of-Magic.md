@@ -4,7 +4,8 @@ authors: '浜口広樹, 浜田航宇, 吉岡信行'
 collection: publications
 category: technical_report
 permalink: /publication/2023-10-19-Handbook-for-Efficiently-Quantifying-Robustness-of-Magic
-excerpt: 'Handbook for Quantifying Robustness of Magic の日本語版'
+excerpt: "Handbook for Quantifying Robustness of Magicの日本語版"
+excerpt_en: "Japanese version of Handbook for Quantifying Robustness of Magic"
 date: 2023-10-19
 venue: '情報処理学会研究報告'
 paperurl: 'https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=228560&item_no=1'
@@ -12,4 +13,4 @@ paperurl: 'https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_vie
 
 <a href='https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=228560&item_no=1'>Link to the Paper</a>
 
-Handbook for Quantifying Robustness of Magic の日本語版
+{% include page-excerpt.html %}

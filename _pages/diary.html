@@ -1,12 +1,11 @@
 ---
+i18n_key: diary
 layout: archive
 title: "Diary"
 permalink: /diary/
 ---
 
-<p>
-    <a href="https://note.com/hari64boli64" target="_blank" rel="noopener">Note</a>でも公開しています。
-</p>
+<p><span data-site-language="ja" lang="ja"><a href="https://note.com/hari64boli64" target="_blank" rel="noopener">Note</a>でも公開しています。</span><span data-site-language="en" lang="en" hidden>I also publish on <a href="https://note.com/hari64boli64" target="_blank" rel="noopener">Note</a>.</span></p>
 
 {% for post in site.diary reversed %}
 {% unless post.title contains '月記' or post.title contains '旅行' %}
@@ -14,7 +13,5 @@ permalink: /diary/
 {% endunless %}
 {% endfor %}
 
-<p>
-    <a href="/diary/monthly/">Monthly Logs(月記)</a> |
-    <a href="/diary/travel/">Travel (旅行記)</a>
-</p>
+<p><a href="{{ '/diary/monthly/' | relative_url }}">{% include translated.html key="monthly" %}</a> |
+<a href="{{ '/diary/travel/' | relative_url }}">{% include translated.html key="travel" %}</a></p>

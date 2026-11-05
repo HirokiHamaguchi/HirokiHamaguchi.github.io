@@ -1,0 +1,13 @@
+<div class="archive__item-excerpt" itemprop="description">
+{%- if page.i18n_key and post.collection == 'talks' -%}
+    <div data-site-language="ja" lang="ja">{{ post.excerpt | markdownify | replace: 'Link to the Page', '発表ページ' | replace: 'Download the Poster', 'ポスターをダウンロード' | replace: 'Download the Slide', 'スライドをダウンロード' }}</div>
+    <div data-site-language="en" lang="en" hidden>{{ post.excerpt | markdownify }}</div>
+{%- elsif page.i18n_key -%}
+    <div data-site-language="ja" lang="ja">{{ post.excerpt | markdownify }}</div>
+    {%- if post.excerpt_en and post.excerpt_en != empty -%}
+    <div data-site-language="en" lang="en" hidden>{{ post.excerpt_en | markdownify }}</div>
+    {%- endif -%}
+{%- else -%}
+  {{ post.excerpt | markdownify }}
+{%- endif -%}
+</div>

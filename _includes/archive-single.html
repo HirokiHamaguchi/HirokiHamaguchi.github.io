@@ -32,25 +32,27 @@
     {% elsif post.collection == 'publications' %}
     <p class="page__meta"><i class="fa fa-user" aria-hidden="true"></i> {{ post.authors }}</p>
     {% if post.category == 'preprint' %}
-    <p class="page__meta">Submitted to <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}
+    <p class="page__meta">{% include translated.html key="submitted" %} <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}
     </p>
     {% else %}
-    <p class="page__meta">Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}
+    <p class="page__meta">{% include translated.html key="published" %} <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}
     </p>
     {% endif %}
     {% elsif post.collection == 'talks' %}
     <p class="page__meta"><i class="fa fa-user" aria-hidden="true"></i> {{ post.authors }}</p>
-    <p class="page__meta">Presented at <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+    <p class="page__meta">{% include translated.html key="presented" %} <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
     {% endif %}
 
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+    {% unless post.collection == 'posts' or post.collection == 'diary' %}
+      {% include archive-excerpt.html %}
+    {% endunless %}
 
     <p>
-      {% if post.paperurl %}<a href="{{ post.paperurl }}">Link to the Paper</a>{% endif %}
+      {% if post.paperurl %}<a href="{{ post.paperurl }}">{% include translated.html key="paper" %}</a>{% endif %}
       {% if post.paperurl and post.slidesurl %} | {% endif %}
-      {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Download the Slide</a>{% endif %}
-      {% if post.posterurl and (post.paperurl or post.slidesurl) %} | {% endif %}
-      {% if post.posterurl %}<a href="{{ post.posterurl }}">Download the Poster</a>{% endif %}
+      {% if post.slidesurl %}<a href="{{ post.slidesurl }}">{% include translated.html key="slides" %}</a>{% endif %}
+      {% if post.posterurl %}{% if post.paperurl or post.slidesurl %} | {% endif %}{% endif %}
+      {% if post.posterurl %}<a href="{{ post.posterurl }}">{% include translated.html key="poster_link" %}</a>{% endif %}
     </p>
   </article>
 

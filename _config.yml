@@ -137,6 +137,7 @@ defaults:
       type: publications
     values:
       layout: single
+      i18n_key: publications
       share: false
   # _portfolio
   - scope:
@@ -158,6 +159,7 @@ defaults:
       type: program
     values:
       layout: single
+      i18n_key: program
       share: false
   # _diary
   - scope:

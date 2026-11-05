@@ -17,3 +17,34 @@
   z-index: 100;
   &:focus { top: 0.5rem; }
 }
+
+// Author styles can otherwise override the native hidden attribute on flex items.
+[data-site-language][hidden], .language-switch[hidden] { display: none !important; }
+
+.header-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.language-switch {
+  display: flex;
+  gap: 0.5rem;
+
+  svg { display: block; width: 24px; height: 16px; }
+
+  button {
+    padding: 0.3em 0.6em;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  [aria-pressed="true"] { outline: 2px solid currentColor; outline-offset: 1px; }
+}

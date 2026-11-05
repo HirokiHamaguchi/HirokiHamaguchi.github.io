@@ -1,0 +1,6 @@
+{% if page.excerpt and page.excerpt != empty %}
+<div data-site-language="ja" lang="ja">{{ page.excerpt | markdownify }}</div>
+{% endif %}
+{% if page.excerpt_en and page.excerpt_en != empty %}
+<div data-site-language="en" lang="en" hidden>{{ page.excerpt_en | markdownify }}</div>
+{% endif %}

@@ -1,4 +1,5 @@
 ---
+i18n_key: about
 permalink: /
 title: "About"
 redirect_from:
@@ -6,25 +7,21 @@ redirect_from:
   - /about.html
 ---
 
-## About Me
+## {% include translated.html key="about_me" %}
 
-浜口広樹です。東京大学の院生です。
+<p>{% include translated.html key="bio" %}</p>
 
-I am a student at the University of Tokyo.
+<p>{% include translated.html key="interests" %}</p>
 
-I'm interested in
+* {% include translated.html key="continuous_optimization" %}
+* {% include translated.html key="discrete_optimization" %}
+* {% include translated.html key="quantum_information" %}
+* {% include translated.html key="machine_learning" %}
 
-* Continuous Optimization,
-* Discrete Optimization,
-* Quantum Information,
-* Machine Learning,
-
-etc.
-
-## Links
+## {% include translated.html key="links" %}
 
 
-### Contact
+### {% include translated.html key="contact" %}
 
 <ul class="ul-for-other">
   <li>
@@ -32,16 +29,16 @@ etc.
   </li>
 </ul>
 
-### This Site
+### {% include translated.html key="this_site" %}
 
-* [Publications](https://hirokihamaguchi.github.io/publications/)
-* [Talks](https://hirokihamaguchi.github.io/talks/)
-* [CV](https://hirokihamaguchi.github.io/cv/)
-* [Program](https://hirokihamaguchi.github.io/program/)
-* [Diary](https://hirokihamaguchi.github.io/diary/)
-* [Blog](https://hirokihamaguchi.github.io/blog/)
+* [{% include translated.html key="publications" %}]({{ '/publications/' | relative_url }})
+* [{% include translated.html key="talks" %}]({{ '/talks/' | relative_url }})
+* [{% include translated.html key="cv" %}]({{ '/cv/' | relative_url }})
+* [{% include translated.html key="program" %}]({{ '/program/' | relative_url }})
+* [{% include translated.html key="diary" %}]({{ '/diary/' | relative_url }})
+* [{% include translated.html key="blog" %}]({{ '/blog/' | relative_url }})
 
-### External Sites
+### {% include translated.html key="external_sites" %}
 
 <ul class="ul-for-other">
   <li>

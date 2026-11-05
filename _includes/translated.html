@@ -1,0 +1,6 @@
+{%- assign translation = site.data.i18n[include.key] -%}
+{%- if page.i18n_key -%}
+<span data-site-language="ja" lang="ja">{{ translation.ja }}</span><span data-site-language="en" lang="en" hidden>{{ translation.en }}</span>
+{%- else -%}
+  {{- translation.en | default: include.fallback -}}
+{%- endif -%}

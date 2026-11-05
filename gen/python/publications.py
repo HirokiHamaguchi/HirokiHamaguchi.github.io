@@ -60,8 +60,11 @@ def publications(dirname: str, html_escape: Callable[[str], str]):
 
         md += """\npermalink: /publication/""" + html_filename
 
-        if len(str(item.excerpt)) > 5:
-            md += "\nexcerpt: '" + html_escape(item.excerpt) + "'"
+        # Japanese is the default excerpt; absent English text stays omitted.
+        excerpt = item.excerpt.get("ja", "")
+        md += "\nexcerpt: " + json.dumps(excerpt, ensure_ascii=False)
+        if item.excerpt.get("en"):
+            md += "\nexcerpt_en: " + json.dumps(item.excerpt["en"], ensure_ascii=False)
 
         md += "\ndate: " + str(item.pub_date)
 
@@ -85,8 +88,8 @@ def publications(dirname: str, html_escape: Callable[[str], str]):
 
             md += "\n"
 
-        if len(str(item.excerpt)) > 5:
-            md += "\n" + html_escape(item.excerpt) + "\n"
+        # Render the same metadata as the listing, respecting the selected language.
+        md += "\n{% include page-excerpt.html %}\n"
 
         if item.content is not np.nan:
             md += "\n" + html_escape(item.content) + "\n"

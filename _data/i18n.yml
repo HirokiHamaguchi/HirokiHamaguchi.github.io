@@ -1,0 +1,41 @@
+# Jekyll data files: https://jekyllrb.com/docs/datafiles/
+# Interface text is separate from publication and talk titles, which stay verbatim.
+about: {ja: 自己紹介, en: About}
+publications: {ja: 論文, en: Publications}
+talks: {ja: 発表, en: Talks}
+talks_title: {ja: 発表・ポスター, en: Talks and Posters}
+cv: {ja: 経歴, en: CV}
+program: {ja: プログラム, en: Program}
+diary: {ja: 日記, en: Diary}
+blog: {ja: ブログ, en: Blog}
+blog_title: {ja: ブログ記事, en: Blog Posts}
+skip: {ja: 本文へ移動, en: Skip to content}
+affiliation: {ja: 東京大学 博士課程1年, en: D1 Student · The University of Tokyo}
+about_me: {ja: 自己紹介, en: About Me}
+bio: {ja: 浜口広樹です。東京大学の大学院生です。, en: "I am Hiroki Hamaguchi, a doctoral student at the University of Tokyo."}
+interests: {ja: "以下の分野に関心があります:", en: "I'm interested in the following areas:"}
+continuous_optimization: {ja: 連続最適化, en: Continuous Optimization}
+discrete_optimization: {ja: 離散最適化, en: Discrete Optimization}
+quantum_information: {ja: 量子情報, en: Quantum Information}
+machine_learning: {ja: 機械学習, en: Machine Learning}
+links: {ja: リンク, en: Links}
+contact: {ja: 連絡先, en: Contact}
+this_site: {ja: サイト内リンク, en: This Site}
+external_sites: {ja: 外部サイト, en: External Sites}
+book: {ja: 書籍, en: Books}
+manuscript: {ja: 学術誌論文, en: Journal Articles}
+preprint: {ja: プレプリント, en: Preprints}
+conference: {ja: 会議論文, en: Conference Papers}
+technical_report: {ja: 技術報告, en: Technical Reports}
+talk: {ja: 講演, en: Talks}
+poster: {ja: ポスター, en: Posters}
+outreach: {ja: アウトリーチ, en: Outreach}
+submitted: {ja: 投稿先, en: Submitted to}
+published: {ja: 掲載先, en: Published in}
+presented: {ja: 発表先, en: Presented at}
+paper: {ja: 論文へのリンク, en: Link to the Paper}
+slides: {ja: スライドをダウンロード, en: Download the Slides}
+poster_link: {ja: ポスターをダウンロード, en: Download the Poster}
+talkmap: {ja: これまでの発表場所を地図で見る, en: See a map of all the places I've given talks}
+monthly: {ja: 月記, en: Monthly Logs}
+travel: {ja: 旅行記, en: Travel}

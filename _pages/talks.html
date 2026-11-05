@@ -1,4 +1,5 @@
 ---
+i18n_key: talks_title
 layout: archive
 title: "Talks and Posters"
 permalink: /talks/
@@ -12,7 +13,7 @@ permalink: /talks/
       {% continue %}
     {% endif %}
     {% unless title_shown %}
-      <h2>{{ category[1].title }}</h2>
+      <h2>{% assign category_key = category[0] %}{% include translated.html key=category_key %}</h2>
       <hr />
       {% assign title_shown=true %}
     {% endunless %}
@@ -23,5 +24,5 @@ permalink: /talks/
 {% if site.talkmap_link == true %}
 <hr />
 <br>
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given talks</a></p>
+<p style="text-decoration:underline;"><a href="/talkmap.html">{% include translated.html key="talkmap" %}</a></p>
 {% endif %}

@@ -1,39 +1,14 @@
 ---
+lang: ja
+i18n_key: cv
 layout: archive
 title: "CV"
-lang: ja
 permalink: /cv/
 redirect_from:
   - /resume
 ---
 
-<div id="cv-language-switch" role="group" aria-label="CV language / 表示言語" hidden>
-  <button type="button" class="btn" data-cv-language="en" aria-pressed="false">
-    <svg class="cv-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="24" height="16" aria-hidden="true" focusable="false">
-      <rect width="60" height="30" fill="#012169"/>
-      <path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/>
-      <path d="M0 0L30 15H26L0 2ZM60 0L30 15H26L56 0ZM0 30L30 15H34L4 30ZM60 30L30 15H34L60 28Z" fill="#c8102e"/>
-      <path d="M30 0V30M0 15H60" stroke="#fff" stroke-width="10"/>
-      <path d="M30 0V30M0 15H60" stroke="#c8102e" stroke-width="6"/>
-    </svg> English
-  </button>
-  <button type="button" class="btn" data-cv-language="ja" aria-pressed="true">
-    <svg class="cv-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="24" height="16" aria-hidden="true" focusable="false">
-      <rect width="60" height="40" fill="#fff"/>
-      <circle cx="30" cy="20" r="12" fill="#bc002d"/>
-    </svg> 日本語
-  </button>
-</div>
-
-<style>
-  #cv-language-switch { display: flex; gap: 0.5em; margin-bottom: 1.5em; }
-  #cv-language-switch[hidden], .cv-language[hidden] { display: none; }
-  #cv-language-switch .btn { margin: 0; }
-  #cv-language-switch .cv-flag { width: 1.5em; height: 1em; vertical-align: -0.1em; }
-  #cv-language-switch [aria-pressed="true"] { outline: 2px solid currentColor; outline-offset: 2px; }
-</style>
-
-<div class="cv-language" lang="en" markdown="1">
+<div data-site-language="en" lang="en" hidden markdown="1">
 
 ## Education
 
@@ -50,7 +25,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-language" lang="ja" markdown="1">
+<div data-site-language="ja" lang="ja" markdown="1">
 
 ## 学歴
 
@@ -67,7 +42,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-language" lang="en" markdown="1">
+<div data-site-language="en" lang="en" hidden markdown="1">
 
 ## Work Experience
 
@@ -88,7 +63,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-language" lang="ja" markdown="1">
+<div data-site-language="ja" lang="ja" markdown="1">
 
 ## 職歴
 
@@ -109,7 +84,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-language" lang="en" markdown="1">
+<div data-site-language="en" lang="en" hidden markdown="1">
 
 ## Fellowships
 
@@ -118,7 +93,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-language" lang="ja" markdown="1">
+<div data-site-language="ja" lang="ja" markdown="1">
 
 ## フェローシップ
 
@@ -127,7 +102,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-language" lang="en" markdown="1">
+<div data-site-language="en" lang="en" hidden markdown="1">
 
 ## Awards
 
@@ -156,7 +131,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-language" lang="ja" markdown="1">
+<div data-site-language="ja" lang="ja" markdown="1">
 
 ## 受賞
 
@@ -185,7 +160,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-language" lang="en" markdown="1">
+<div data-site-language="en" lang="en" hidden markdown="1">
 
 ## Others
 
@@ -212,7 +187,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-language" lang="ja" markdown="1">
+<div data-site-language="ja" lang="ja" markdown="1">
 
 ## その他
 
@@ -238,23 +213,3 @@ redirect_from:
   * [結果](https://www.imojp.org/archive/mo2018/jmo2018/yosen_result.html)
 
 </div>
-
-<script>
-(() => {
-  const controls = document.getElementById('cv-language-switch');
-  const buttons = controls.querySelectorAll('[data-cv-language]');
-  const sections = document.querySelectorAll('.cv-language');
-  function selectLanguage(language) {
-    document.documentElement.lang = language;
-    sections.forEach(section => { section.hidden = section.lang !== language; });
-    buttons.forEach(button => {
-      button.setAttribute('aria-pressed', String(button.dataset.cvLanguage === language));
-    });
-  }
-  buttons.forEach(button => {
-    button.addEventListener('click', () => selectLanguage(button.dataset.cvLanguage));
-  });
-  selectLanguage('ja');
-  controls.hidden = false;
-})();
-</script>

@@ -1,11 +1,12 @@
 ---
+i18n_key: publications
 layout: archive
 title: "Publications"
 permalink: /publications/
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <div class="wordwrap"><span data-site-language="ja" lang="ja"><a href="{{site.author.googlescholar}}">Google Scholarのプロフィール</a>でも論文を確認できます。</span><span data-site-language="en" lang="en" hidden>You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</span></div>
 {% endif %}
 
 <!-- New style rendering if publication categories are defined -->
@@ -16,7 +17,7 @@ permalink: /publications/
       {% continue %}
     {% endif %}
     {% unless title_shown %}
-      <h2>{{ category[1].title }}</h2>
+      <h2>{% assign category_key = category[0] %}{% include translated.html key=category_key %}</h2>
       <hr />
       {% assign title_shown=true %}
     {% endunless %}

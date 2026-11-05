@@ -1,5 +1,22 @@
 [
   {
+    "pub_date": "2026-07-29",
+    "title": "Adaptive Gradient-Based Methods for a Broader Class of Optimization Problems under Performative Prediction",
+    "authors": [
+      "Hiroki Hamaguchi",
+      "Yuya Hikima",
+      "Hiroshi Sawada",
+      "Akiko Takeda"
+    ],
+    "venue": "arXiv",
+    "category": "preprint",
+    "excerpt": {
+      "ja": "決定変数に依存した分布シフト下における適応的勾配法"
+    },
+    "url_slug": "Adaptive-Gradient-Based-Methods-for-a-Broader-Class-of-Optimization-Problems-under-Performative-Prediction",
+    "paper_url": "https://arxiv.org/abs/2607.26562"
+  },
+  {
     "pub_date": "2026-06-19",
     "title": "Bounded-depth spacetime lattice surgery for resource-efficient fault-tolerant quantum computation",
     "authors": [
@@ -12,7 +29,9 @@
     ],
     "venue": "arXiv",
     "category": "preprint",
-    "excerpt": "Constant-depth double-slice routing for lattice surgery.",
+    "excerpt": {
+      "ja": "有限深さ時空間格子手術による資源効率的なFTQC"
+    },
     "url_slug": "Bounded-depth-spacetime-lattice-surgery-for-resource-efficient-fault-tolerant-quantum-computation",
     "paper_url": "https://arxiv.org/abs/2606.21192"
   },
@@ -26,7 +45,9 @@
     ],
     "venue": "arXiv",
     "category": "preprint",
-    "excerpt": "Regularized quasi-Newton methods for optimization with inexact function values.",
+    "excerpt": {
+      "ja": "不正確な関数値下における実用的な正則化準ニュートン法"
+    },
     "url_slug": "Practical-Regularized-Quasi-Newton-Methods-with-Inexact-Function-Values",
     "paper_url": "https://arxiv.org/abs/2603.10642"
   },
@@ -41,7 +62,9 @@
     ],
     "venue": "Physical Review Applied",
     "category": "manuscript",
-    "excerpt": "Faster computation of stabilizer fidelity and stabilizer extent.",
+    "excerpt": {
+      "ja": "Stabilizer Fidelityの高速計算"
+    },
     "url_slug": "Faster-Computation-of-Nonstabilizerness",
     "paper_url": "https://link.aps.org/doi/10.1103/PhysRevApplied.23.014069"
   },
@@ -55,7 +78,9 @@
     ],
     "venue": "Journal of Graph Algorithms and Applications",
     "category": "manuscript",
-    "excerpt": "Using Coordinate Newton and L-BFGS, compute the graph layout.",
+    "excerpt": {
+      "ja": "座標ニュートン方向を用いたFruchterman--Reingold力モデルの初期配置"
+    },
     "url_slug": "Initial-Placement-for-Fruchterman-Reingold-Force-Model-with-Coordinate-Newton-Direction",
     "paper_url": "https://doi.org/10.7155/jgaa.v30i1.3113",
     "slides_url": "https://raw.githubusercontent.com/HirokiHamaguchi/Initial_Placement_for_Fruchterman-Reingold_Force_Model_with_Coordinate_Newton_Direction/main/doc/presentation/presentation.pdf"
@@ -70,7 +95,9 @@
     ],
     "venue": "Quantum",
     "category": "manuscript",
-    "excerpt": "Computation of Robustness of Magic using Column Generation.",
+    "excerpt": {
+      "ja": "Robustness of Magic計算のためのハンドブック"
+    },
     "url_slug": "Handbook-for-Quantifying-Robustness-of-Magic",
     "paper_url": "https://quantum-journal.org/papers/q-2024-09-05-1461/",
     "content": "[Press by the University of Tokyo](https://www.t.u-tokyo.ac.jp/press/pr2024-09-06-001)."
@@ -84,7 +111,9 @@
     ],
     "venue": "arXiv",
     "category": "preprint",
-    "excerpt": "Using the graph rigidity, prove the sample complexity.",
+    "excerpt": {
+      "ja": "一様ランダムなエントリからの低ランクテンソル補完におけるサンプル複雑度"
+    },
     "url_slug": "Sample-Complexity-of-Low-rank-Tensor-Recovery-from-Uniformly-Random-Entries",
     "paper_url": "https://arxiv.org/abs/2408.03504"
   },
@@ -98,7 +127,10 @@
     ],
     "venue": "情報処理学会研究報告",
     "category": "technical_report",
-    "excerpt": "Handbook for Quantifying Robustness of Magic の日本語版",
+    "excerpt": {
+      "ja": "Handbook for Quantifying Robustness of Magicの日本語版",
+      "en": "Japanese version of Handbook for Quantifying Robustness of Magic"
+    },
     "url_slug": "Handbook-for-Efficiently-Quantifying-Robustness-of-Magic",
     "paper_url": "https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=228560&item_no=1"
   }

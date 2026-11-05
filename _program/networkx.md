@@ -3,14 +3,16 @@ title: "Contributions to NetworkX"
 authors: 'Hiroki Hamaguchi'
 collection: program
 permalink: /program/networkx
-excerpt: 'Contributions to NetworkX.'
+excerpt: 'NetworkXの`nx.draw`関数などへの貢献'
+excerpt_en: "Contributions to NetworkX"
 thumbnail: "/files/2025/networkx.png"
 date: 2025-04-15
 ---
 
-<img src="/files/2025/networkx.png" alt="networkx" width="50%" style="display: block; margin: 0 auto;">
+<img src="/files/2025/networkx.png" alt="networkx" width="50%"
+  style="display: block; margin: 0 auto;">
 
-NetworkXの`nx.draw`関数などに貢献をしました。
+{% include page-excerpt.html %}
 
 [PR-#7889](https://github.com/networkx/networkx/pull/7889)
 [PR-#8041](https://github.com/networkx/networkx/pull/8041)
