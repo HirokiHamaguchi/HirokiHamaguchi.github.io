@@ -13,7 +13,14 @@ body {
   padding-bottom: 9em;
   color: $text-color;
   font-family: $global-font-family;
-  line-height: 1.5;
+  // DADS Standard body styles: 16px/170% and 18px/160%.
+  // https://design.digital.go.jp/dads/foundations/typography/
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+
+  @include breakpoint($medium) {
+    line-height: 1.6;
+  }
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -28,7 +35,7 @@ h4,
 h5,
 h6 {
   margin: 2em 0 0.5em;
-  line-height: 1.2;
+  line-height: 1.5;
   font-family: $header-font-family;
   font-weight: bold;
 }
@@ -141,6 +148,7 @@ kbd,
 samp,
 pre {
   font-family: $monospace;
+  letter-spacing: normal;
 }
 
 pre {

@@ -29,7 +29,7 @@
 .page__title {
   overflow-wrap: anywhere;
   margin-top: 0;
-  line-height: 1;
+  line-height: 1.5;
 
   &+.page__meta {
     margin-top: -0.5em;
@@ -119,20 +119,19 @@
   justify-content: space-between;
   gap: 1.5rem;
   margin-bottom: 0.75rem;
-  h1 { margin: 0; font-size: 2.3rem; font-weight: 500; line-height: 1.25; letter-spacing: -0.04em; }
+  h1 { margin: 0; font-size: 1.75rem; font-weight: 400; line-height: 1.5; letter-spacing: normal; }
   img { width: 88px; height: 88px; flex-shrink: 0; object-fit: cover; border-radius: 4px; }
   @media (max-width: 600px) {
     gap: 0.75rem;
-    h1 { font-size: 1.65rem; }
     img { width: 60px; height: 60px; }
   }
 }
-.home-intro__label { margin: 0 0 0.5rem; font-size: 0.9rem; }
+.home-intro__label { margin: 0.25rem 0 0; font-size: 16px; line-height: 1.7; }
 .home-intro__affiliation {
   margin: 0.8rem 0 0;
   color: #59616b;
-  font-size: 0.8rem;
-  @media (max-width: 600px) { font-size: 0.72rem; }
+  font-size: 16px;
+  line-height: 1.7;
 }
 .ul-for-other {
   list-style-type: none;
