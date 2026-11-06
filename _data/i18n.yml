@@ -32,6 +32,8 @@ poster: {ja: ポスター, en: Posters}
 outreach: {ja: アウトリーチ, en: Outreach}
 submitted: {ja: 投稿先, en: Submitted to}
 published: {ja: 掲載先, en: Published in}
+published_date: {ja: 公開日, en: Published}
+recommended_citation: {ja: 推奨引用形式, en: Recommended citation}
 presented: {ja: 発表先, en: Presented at}
 paper: {ja: 論文へのリンク, en: Link to the Paper}
 slides: {ja: スライドをダウンロード, en: Download the Slides}

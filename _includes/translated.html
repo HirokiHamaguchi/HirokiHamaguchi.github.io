@@ -1,6 +1,7 @@
 {%- assign translation = site.data.i18n[include.key] -%}
-{%- if page.i18n_key -%}
+{%- comment -%}Shared UI translations also apply to pages without a translated title.{%- endcomment -%}
+{%- if translation -%}
 <span data-site-language="ja" lang="ja">{{ translation.ja }}</span><span data-site-language="en" lang="en" hidden>{{ translation.en }}</span>
 {%- else -%}
-  {{- translation.en | default: include.fallback -}}
+  {{- include.fallback -}}
 {%- endif -%}

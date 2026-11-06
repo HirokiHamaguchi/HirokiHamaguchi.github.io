@@ -4,7 +4,7 @@ authors: 'Hiroki Hamaguchi, Kou Hamada, Nobuyuki Yoshioka'
 collection: publications
 category: manuscript
 permalink: /publication/2024-09-05-Handbook-for-Quantifying-Robustness-of-Magic
-excerpt: "Robustness of Magic計算のためのハンドブック"
+excerpt: "Robustness of Magicの計算のためのハンドブック"
 date: 2024-09-05
 venue: 'Quantum'
 paperurl: 'https://quantum-journal.org/papers/q-2024-09-05-1461/'

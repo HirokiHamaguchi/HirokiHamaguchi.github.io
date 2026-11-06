@@ -160,7 +160,7 @@ layout: compress
 
   <a class="skip-link" href="#main">{% include translated.html key="skip" %}</a>
   <header class="notebook-header">
-    <div class="header-top"><a class="notebook-brand" href="{{ '/' | relative_url }}">Hiroki Hamaguchi</a>{% if page.i18n_key %}{% include language-switch.html %}{% endif %}</div>
+    <div class="header-top"><a class="notebook-brand" href="{{ '/' | relative_url }}">Hiroki Hamaguchi</a>{% include language-switch.html %}</div>
     <nav class="notebook-nav" aria-label="Main navigation">
       <ul>
         {% assign sections = 'Publications,Talks,CV,Program,Diary,Blog' | split: ',' %}
@@ -174,7 +174,7 @@ layout: compress
   {{ content }}
 
   <script src="{{ base_path }}/assets/js/main.min.js"></script>
-  {% if page.i18n_key %}<script src="{{ '/assets/js/language.js' | relative_url }}" defer></script>{% endif %}
+  <script src="{{ '/assets/js/language.js' | relative_url }}" defer></script>
 
 </body>
 
